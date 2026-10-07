@@ -1,0 +1,109 @@
+{% extends 'frontend/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Tuxum prognozi" %} · DOA Nutrition{% endblock %}
+{% block page_title %}{% trans "Tuxum tug‘uvchanlik prognozi va samaradorligi" %}{% endblock %}
+
+{% block content %}
+{% if kpi.partiya_soni == 0 %}
+  <div class="card" style="text-align:center;padding:40px">
+    <p style="color:var(--text-muted)">{% trans "Prognoz uchun avval faol partiya va joja (tovuq) ma’lumotlarini kiriting." %}</p>
+    <a href="{% url 'partiya_add' %}" class="btn-add" style="margin-top:14px;display:inline-flex">{% trans "Partiya qo‘shish" %}</a>
+  </div>
+{% else %}
+
+  {# KPI kartalar #}
+  <div class="grid cols-4">
+    <div class="card kpi">
+      <div class="stat-ico ico-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3C9 3 6.5 8 6.5 12.5a5.5 5.5 0 0 0 11 0C17.5 8 15 3 12 3z"/></svg></div>
+      <div class="num">{{ kpi.kutilgan_bugun }}</div>
+      <div class="cap">{% trans "Bugun kutilayotgan tuxum (dona)" %}</div>
+    </div>
+    <div class="card kpi">
+      <div class="stat-ico ico-emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div class="num">{% if kpi.ort_samaradorlik != None %}{{ kpi.ort_samaradorlik }}%{% else %}—{% endif %}</div>
+      <div class="cap">{% trans "O‘rtacha samaradorlik (real/standart)" %}</div>
+    </div>
+    <div class="card kpi">
+      <div class="stat-ico ico-emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+      <div class="num" style="font-size:1.1rem">{% if kpi.eng_yaxshi %}{{ kpi.eng_yaxshi.partiya.nomi }}{% else %}—{% endif %}</div>
+      <div class="cap">{% trans "Eng samarali partiya" %}{% if kpi.eng_yaxshi %} · {{ kpi.eng_yaxshi.samaradorlik }}%{% endif %}</div>
+    </div>
+    <div class="card kpi">
+      <div class="stat-ico ico-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></div>
+      <div class="num" style="font-size:1.1rem">{% if kpi.eng_past %}{{ kpi.eng_past.partiya.nomi }}{% else %}—{% endif %}</div>
+      <div class="cap">{% trans "E’tibor kerak partiya" %}{% if kpi.eng_past %} · {{ kpi.eng_past.samaradorlik }}%{% endif %}</div>
+    </div>
+  </div>
+
+  {# Chiziqli grafik: standart vs real #}
+  <div class="card" style="margin-top:18px">
+    <div class="panel-head" style="margin-bottom:10px">
+      <h3>{% trans "Tug‘uvchanlik egri chizig‘i (HDEP %)" %}</h3>
+      {% if partiyalar %}
+      <form method="get" style="margin:0">
+        <select name="partiya" class="filial-select" onchange="this.form.submit()" style="min-width:160px">
+          {% for p in partiyalar %}
+          <option value="{{ p.pk }}" {% if tanlangan and tanlangan.pk == p.pk %}selected{% endif %}>{{ p.nomi }}</option>
+          {% endfor %}
+        </select>
+      </form>
+      {% endif %}
+    </div>
+
+    <div class="chart-legend">
+      <span class="lg-item"><span class="lg-dot" style="background:#10b981"></span>{% trans "Zot standarti" %}</span>
+      <span class="lg-item"><span class="lg-dot" style="background:#ef4444"></span>{% trans "Sizning real holatingiz" %}</span>
+    </div>
+
+    <div class="hdep-chart">
+      <svg viewBox="0 0 {{ grafik.W }} {{ grafik.H }}" style="width:100%;height:auto">
+        {% for yl in grafik.y_lines %}
+        <line x1="30" y1="{{ yl.y }}" x2="{{ grafik.W|add:'-30' }}" y2="{{ yl.y }}" class="hdep-grid"/>
+        <text x="4" y="{{ yl.y|add:'4' }}" class="hdep-axis">{{ yl.val }}</text>
+        {% endfor %}
+        {% for xl in grafik.x_labels %}
+        <text x="{{ xl.x }}" y="{{ grafik.H|add:'-6' }}" class="hdep-axis" text-anchor="middle">{{ xl.hafta }}</text>
+        {% endfor %}
+        {% if grafik.std_pts %}<polyline points="{{ grafik.std_pts }}" class="hdep-std"/>{% endif %}
+        {% if grafik.real_pts %}<polyline points="{{ grafik.real_pts }}" class="hdep-real"/>{% endif %}
+      </svg>
+      <div class="hdep-xtitle">{% trans "Yosh (hafta)" %}</div>
+    </div>
+    {% if not grafik.bor_real %}
+    <p class="hint" style="margin-top:8px">{% trans "Real chiziq uchun “Tuxum yig‘imi” bo‘limiga kunlik yig‘ilgan tuxumni kiriting." %}</p>
+    {% endif %}
+  </div>
+
+  {# Partiyalar bo'yicha jadval #}
+  <div class="card" style="margin-top:18px">
+    <div class="panel-head" style="margin-bottom:10px"><h3>{% trans "Partiyalar samaradorligi" %}</h3></div>
+    <div class="table-scroll">
+    <table class="ftable">
+      <thead><tr>
+        <th>{% trans "Partiya" %}</th><th>{% trans "Yosh (hafta)" %}</th><th>{% trans "Tirik tovuq" %}</th>
+        <th>{% trans "Standart HDEP" %}</th><th>{% trans "Real HDEP" %}</th>
+        <th>{% trans "Kutilgan/kun" %}</th><th>{% trans "Samaradorlik" %}</th><th class="nofilter">{% trans "Tavsiya" %}</th>
+      </tr></thead>
+      <tbody>
+        {% for t in tahlil %}
+        <tr>
+          <td>{{ t.partiya.nomi }}</td>
+          <td>{% if t.yosh != None %}{{ t.yosh }}{% else %}—{% endif %}</td>
+          <td>{{ t.tirik }}</td>
+          <td>{% if t.std_hdep != None %}{{ t.std_hdep }}%{% else %}—{% endif %}</td>
+          <td>{% if t.real_hdep != None %}{{ t.real_hdep }}%{% else %}—{% endif %}</td>
+          <td>{{ t.kutilgan }}</td>
+          <td>{% if t.samaradorlik != None %}<b>{{ t.samaradorlik }}%</b>{% else %}—{% endif %}</td>
+          <td><span class="tag sig-{{ t.signal }}">{{ t.tavsiya }}</span></td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="8" class="empty">{% trans "Faol partiya yo‘q" %}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+{% endif %}
+{% endblock %}

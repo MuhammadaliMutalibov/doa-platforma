@@ -1,0 +1,66 @@
+{% extends 'frontend/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Tovuqlar bazasi" %} · DOA Nutrition{% endblock %}
+{% block page_title %}{% trans "Tovuqlar bazasi" %}{% endblock %}
+
+{% block content %}
+
+  {# Bo'lim tanlash #}
+  <div class="chips">
+    <a href="?bolim=holati" class="chip {% if bolim == 'holati' %}active{% endif %}">{% trans "Joja holati" %}</a>
+    <a href="?bolim=vazn" class="chip {% if bolim == 'vazn' %}active{% endif %}">{% trans "Haftalik vazn" %}</a>
+    <a href="?bolim=harid" class="chip {% if bolim == 'harid' %}active{% endif %}">{% trans "Joja haridi" %}</a>
+  </div>
+
+  {% if bolim == 'holati' %}
+    {# Holat jadvali #}
+    <div class="grid cols-2" style="margin-bottom:20px">
+      {% for h in holat %}
+      <div class="card">
+        <div class="bal-head"><span class="bal-cur">{{ h.jins }}</span></div>
+        <div class="bal-row"><span class="lbl">{% trans "Sotib olingan" %}</span><span class="pos">{{ h.olingan }}</span></div>
+        <div class="bal-row"><span class="lbl">{% trans "Nobud bo‘ldi" %}</span><span class="neg">{{ h.nobud }}</span></div>
+        <div class="bal-total"><span class="lbl">{% trans "Qoldiq" %}</span><span class="val pos">{{ h.qoldiq }}</span></div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {# Nobud yozuvlari #}
+    <div class="card">
+      <div class="panel-head" style="margin-bottom:12px">
+        <h3>{% trans "Nobud bo‘lganlar" %}</h3>
+        <a href="{{ nobud_add_url }}" class="btn-add">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          {% trans "Qo‘shish" %}
+        </a>
+      </div>
+      {% include 'frontend/_poultry_table.html' with headers=nobud_headers rows=nobud_rows %}
+    </div>
+
+  {% elif bolim == 'vazn' %}
+    <div class="card">
+      <div class="panel-head" style="margin-bottom:12px">
+        <h3>{% trans "Haftalik vaznlar" %}</h3>
+        <a href="{{ vazn_add_url }}" class="btn-add">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          {% trans "Qo‘shish" %}
+        </a>
+      </div>
+      {% include 'frontend/_poultry_table.html' with headers=vazn_headers rows=vazn_rows %}
+    </div>
+
+  {% else %}
+    <div class="card">
+      <div class="panel-head" style="margin-bottom:12px">
+        <h3>{% trans "Joja haridi" %}</h3>
+        <a href="{{ harid_add_url }}" class="btn-add">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          {% trans "Qo‘shish" %}
+        </a>
+      </div>
+      {% include 'frontend/_poultry_table.html' with headers=harid_headers rows=harid_rows %}
+    </div>
+  {% endif %}
+
+{% endblock %}

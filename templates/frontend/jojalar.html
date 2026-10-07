@@ -1,0 +1,14 @@
+{% extends 'frontend/object_list.html' %}
+{% load i18n humanize %}
+
+{% block before_list %}
+<div class="card stat reveal" style="margin-bottom:18px;max-width:360px">
+  <div class="stat-ico ico-amber">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a6 6 0 0 0 6-6c0-4-3-9-6-9s-6 5-6 9a6 6 0 0 0 6 6z"/><path d="M9.5 13.5a2.5 2.5 0 0 0 5 0"/></svg>
+  </div>
+  <div>
+    <div class="num">{{ joja_qoldiq|intcomma }}</div>
+    <div class="cap">{% trans "Jojalar qoldig‘i (dona)" %}</div>
+  </div>
+</div>
+{% endblock %}

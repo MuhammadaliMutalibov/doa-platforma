@@ -1,0 +1,35 @@
+{% extends 'frontend/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Bildirishnomalar" %} · DOA Nutrition{% endblock %}
+{% block page_title %}{% trans "Bildirishnomalar" %}{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="panel-head" style="margin-bottom:12px">
+    <h3>{% trans "Bildirishnomalar" %}</h3>
+    {% if bildirishnoma_soni %}
+    <a href="{% url 'bildirishnoma_hammasi' %}" class="btn-add">{% trans "Hammasini o‘qilgan" %}</a>
+    {% endif %}
+  </div>
+
+  <div class="notif-list">
+    {% for n in object_list %}
+    <a href="{% url 'bildirishnoma_oqish' n.pk %}" class="notif {% if not n.oqilgan %}unread{% endif %}">
+      <span class="bell-dot amal-{{ n.amal }}"></span>
+      <span class="notif-txt"><b>{{ n.xabar }}</b><em>{{ n.vaqt|date:"d F Y · H:i" }}</em></span>
+    </a>
+    {% empty %}
+    <div class="empty">{% trans "Hozircha bildirishnoma yo‘q" %}</div>
+    {% endfor %}
+  </div>
+
+  {% if is_paginated %}
+  <div class="pager">
+    {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">‹ {% trans "Oldingi" %}</a>{% endif %}
+    <span>{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+    {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}">{% trans "Keyingi" %} ›</a>{% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

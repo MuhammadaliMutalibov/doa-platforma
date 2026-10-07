@@ -1,0 +1,74 @@
+{% extends 'frontend/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Telegram" %} · DOA Nutrition{% endblock %}
+{% block page_title %}{% trans "Telegram bot" %}{% endblock %}
+
+{% block content %}
+<div class="grid" style="grid-template-columns:1fr 1fr;gap:18px;align-items:start">
+
+  {# Ulanish #}
+  <div class="card">
+    <div class="panel-head" style="margin-bottom:14px"><h3>{% trans "Ulanish" %}</h3></div>
+
+    <ol class="tg-steps">
+      <li>{% blocktrans %}Telegramda botni oching:{% endblocktrans %}
+        {% if bot_username %}<a href="https://t.me/{{ bot_username }}" target="_blank" class="tg-bot">@{{ bot_username }}</a>{% else %}<b>—</b>{% endif %}
+      </li>
+      <li>{% trans "Botga" %} <code>/start</code> {% trans "deb yozing" %}</li>
+      <li>{% trans "Quyidagi bir martalik kodni botga yuboring" %}</li>
+    </ol>
+
+    {% if kod %}
+    <div class="tg-code">{{ kod.kod }}</div>
+    <p class="hint" style="text-align:center">{% trans "Kod 15 daqiqa amal qiladi va bir marta ishlatiladi." %}</p>
+    {% else %}
+    <p class="hint" style="text-align:center;padding:14px 0">{% trans "Hali faol kod yo‘q." %}</p>
+    {% endif %}
+
+    <form method="post" action="{% url 'telegram_kod_yarat' %}" data-loading="{% trans 'Saqlanmoqda' %}" style="margin-top:12px">
+      {% csrf_token %}
+      <button type="submit" class="btn" style="width:100%">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></svg>
+        {% trans "Yangi kod yaratish" %}
+      </button>
+    </form>
+  </div>
+
+  {# Holat / ulangan akkauntlar #}
+  <div class="card">
+    <div class="panel-head" style="margin-bottom:14px"><h3>{% trans "Ulangan akkauntlar" %}</h3></div>
+
+    {% if ulanishlar %}
+      {% for u in ulanishlar %}
+      <div class="tg-conn">
+        <div class="tg-conn-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2.5 12.5l6 2 2 6 3-4 5 3.5z"/></svg>
+        </div>
+        <div class="tg-conn-txt">
+          <b>{% if u.username %}@{{ u.username }}{% else %}{{ u.ism|default:u.chat_id }}{% endif %}</b>
+          <em>{% trans "Ulangan" %}: {{ u.ulangan|date:"d F Y, H:i" }}</em>
+        </div>
+        <form method="post" action="{% url 'telegram_uzish' u.pk %}" style="margin:0">
+          {% csrf_token %}
+          <button type="submit" class="btn-ghost tg-unlink">{% trans "Uzish" %}</button>
+        </form>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p class="hint" style="padding:14px 0">{% trans "Hali hech qanday Telegram akkaunt ulanmagan." %}</p>
+    {% endif %}
+
+    <div class="tg-info">
+      <b>{% trans "Bot nima qiladi?" %}</b>
+      <ul>
+        <li>🔔 {% trans "Tizimdagi har bir yangilikni darhol yuboradi" %}</li>
+        <li>📊 {% trans "Har kuni kechqurun kunlik hisobot yuboradi" %}</li>
+        <li>💬 {% trans "So‘rov: /balance, /eggs, /poultry, /report" %}</li>
+        <li>🌐 {% trans "Til tanlash: /language" %}</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

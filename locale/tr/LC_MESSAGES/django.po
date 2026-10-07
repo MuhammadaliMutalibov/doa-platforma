@@ -1,0 +1,1215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 10:08+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Oʻzbekiston"
+msgstr "Özbekistan"
+
+msgid "Tojikiston"
+msgstr "Tacikistan"
+
+msgid "Turkmaniston"
+msgstr "Türkmenistan"
+
+msgid "Turkiya"
+msgstr "Türkiye"
+
+msgid "Filial nomi"
+msgstr "Şube adı"
+
+msgid "Davlat"
+msgstr "Ülke"
+
+msgid "Manzil"
+msgstr "Adres"
+
+msgid "Faol"
+msgstr "Aktif"
+
+msgid "Yaratilgan"
+msgstr "Oluşturuldu"
+
+msgid "Filial"
+msgstr "Şube"
+
+msgid "Filiallar"
+msgstr "Şubeler"
+
+msgid "Administrator"
+msgstr "Yönetici"
+
+msgid "Buxgalter"
+msgstr "Muhasebeci"
+
+msgid "Hodim"
+msgstr "Çalışan"
+
+msgid "Rol"
+msgstr "Rol"
+
+msgid "Telefon"
+msgstr "Telefon"
+
+msgid "Rasm"
+msgstr "Fotoğraf"
+
+msgid "Bo‘sh qoldirilsa — super admin (barcha filiallarni ko‘radi)"
+msgstr "Boş bırakın — süper admin (tüm şubeleri görür)"
+
+msgid "Hodimlar"
+msgstr "Çalışanlar"
+
+msgid "Tizimga kirdi"
+msgstr "Giriş yaptı"
+
+msgid "Tizimdan chiqdi"
+msgstr "Çıkış yaptı"
+
+msgid "Qo‘shdi"
+msgstr "Ekledi"
+
+msgid "Tahrirladi"
+msgstr "Düzenledi"
+
+msgid "O‘chirdi"
+msgstr "Sildi"
+
+msgid "Foydalanuvchi"
+msgstr "Kullanıcı"
+
+msgid "Amal"
+msgstr "İşlem"
+
+msgid "Tavsif"
+msgstr "Açıklama"
+
+msgid "IP manzil"
+msgstr "IP adresi"
+
+msgid "Vaqt"
+msgstr "Zaman"
+
+msgid "Faoliyat"
+msgstr "Aktivite"
+
+msgid "Oluvchi"
+msgstr "Alıcı"
+
+msgid "Kim qildi"
+msgstr "Kim yaptı"
+
+msgid "Xabar"
+msgstr "Mesaj"
+
+msgid "Havola"
+msgstr "Bağlantı"
+
+msgid "O‘qilgan"
+msgstr "Okundu"
+
+msgid "Telegramga yuborildi"
+msgstr "Telegram’a gönderildi"
+
+msgid "Bildirishnoma"
+msgstr "Bildirim"
+
+msgid "Bildirishnomalar"
+msgstr "Bildirimler"
+
+msgid "Telegram chat ID"
+msgstr "Telegram chat ID"
+
+msgid "Telegram username"
+msgstr "Telegram kullanıcı adı"
+
+msgid "Ism"
+msgstr "Ad"
+
+msgid "Til"
+msgstr "Dil"
+
+msgid "Ulangan vaqt"
+msgstr "Bağlanma zamanı"
+
+msgid "Telegram ulanish"
+msgstr "Telegram bağlantısı"
+
+msgid "Telegram ulanishlar"
+msgstr "Telegram bağlantıları"
+
+msgid "Kod"
+msgstr "Kod"
+
+msgid "Amal qilish muddati"
+msgstr "Geçerlilik süresi"
+
+msgid "Ishlatilgan"
+msgstr "Kullanıldı"
+
+msgid "Telegram kod"
+msgstr "Telegram kodu"
+
+msgid "Telegram kodlar"
+msgstr "Telegram kodları"
+
+msgid "Ism familiya"
+msgstr "Ad soyad"
+
+msgid "Lavozim"
+msgstr "Pozisyon"
+
+msgid "Oylik maosh"
+msgstr "Aylık maaş"
+
+msgid "Xodim"
+msgstr "Çalışan"
+
+msgid "Xodimlar"
+msgstr "Personel"
+
+msgid "Balans"
+msgstr "Bakiye"
+
+msgid "Tuxumlar"
+msgstr "Yumurtalar"
+
+msgid "Tovuqlar"
+msgstr "Tavuklar"
+
+msgid "Hisobot"
+msgstr "Rapor"
+
+msgid "Yordam"
+msgstr "Yardım"
+
+msgid "Buyruqlar"
+msgstr "Komutlar"
+
+msgid "moliyaviy holat"
+msgstr "mali durum"
+
+msgid "tuxum qoldig‘i"
+msgstr "yumurta stoğu"
+
+msgid "tovuq/xo‘roz soni"
+msgstr "tavuk/horoz sayısı"
+
+msgid "to‘liq kunlik hisobot"
+msgstr "tam günlük rapor"
+
+msgid "tilni o‘zgartirish"
+msgstr "dili değiştir"
+
+msgid "botni akkauntdan uzish"
+msgstr "botu bağlantıdan kes"
+
+msgid "Moliyaviy holat"
+msgstr "Mali durum"
+
+msgid "Investitsiya"
+msgstr "Yatırım"
+
+msgid "Rasxod"
+msgstr "Gider"
+
+msgid "Tushum"
+msgstr "Gelir"
+
+msgid "Sof foyda"
+msgstr "Net kâr"
+
+msgid "dona"
+msgstr "adet"
+
+msgid "Tuxum holati"
+msgstr "Yumurta durumu"
+
+msgid "Yig‘ilgan"
+msgstr "Toplanan"
+
+msgid "Sotilgan"
+msgstr "Satılan"
+
+msgid "Brak"
+msgstr "Fire"
+
+msgid "Qoldiq"
+msgstr "Kalan"
+
+msgid "Joja qoldig‘i"
+msgstr "Kümes stoğu"
+
+msgid "Tovuq"
+msgstr "Tavuk"
+
+msgid "Xo‘roz"
+msgstr "Horoz"
+
+msgid "Jami"
+msgstr "Toplam"
+
+msgid "kunlik hisobot"
+msgstr "günlük rapor"
+
+msgid "Tug‘uvchanlik"
+msgstr "Yumurtlama"
+
+msgid "Bugun kutilayotgan tuxum"
+msgstr "Bugün beklenen yumurta"
+
+msgid "O‘rtacha samaradorlik"
+msgstr "Ortalama verimlilik"
+
+msgid "Til o‘zgartirildi."
+msgstr "Dil değiştirildi."
+
+msgid "Davom etish uchun saytdan olingan bir martalik kodni yuboring."
+msgstr "Devam etmek için siteden alınan tek kullanımlık kodu gönderin."
+
+msgid "Tilni tanlang:"
+msgstr "Bir dil seçin:"
+
+msgid "muvaffaqiyatli ulandingiz!"
+msgstr "başarıyla bağlandınız!"
+
+msgid "❌ Kod noto‘g‘ri yoki muddati o‘tgan. Saytdan yangi kod oling."
+msgstr "❌ Kod geçersiz veya süresi dolmuş. Siteden yeni kod alın."
+
+msgid "🔌 Bot akkauntingizdan uzildi. Qayta ulanish uchun /start."
+msgstr "🔌 Bot hesabınızdan ayrıldı. Yeniden bağlanmak için /start."
+
+msgid "Tushunarsiz buyruq. /help — yordam."
+msgstr "Bilinmeyen komut. /help — yardım."
+
+msgid "Yangilik"
+msgstr "Güncelleme"
+
+msgid "Dollar (USD)"
+msgstr "Dolar (USD)"
+
+msgid "Yaratilgan vaqt"
+msgstr "Oluşturulma zamanı"
+
+msgid "O‘zgartirilgan vaqt"
+msgstr "Değiştirilme zamanı"
+
+msgid "Kiritgan hodim"
+msgstr "Ekleyen çalışan"
+
+msgid "Sana"
+msgstr "Tarih"
+
+msgid "Partiya"
+msgstr "Parti"
+
+msgid "Summa"
+msgstr "Tutar"
+
+msgid "Valyuta"
+msgstr "Para birimi"
+
+msgid "Izoh"
+msgstr "Not"
+
+msgid "Investitsiyalar"
+msgstr "Yatırımlar"
+
+msgid "Sabab"
+msgstr "Sebep"
+
+msgid "Sabablar"
+msgstr "Sebepler"
+
+msgid "Rasxodlar"
+msgstr "Giderler"
+
+msgid "Maosh"
+msgstr "Maaş"
+
+msgid "Maoshlar"
+msgstr "Maaşlar"
+
+msgid "Real yig‘im kiritilmagan"
+msgstr "Gerçek veri girilmedi"
+
+msgid "Hali tug‘ish yoshida emas"
+msgstr "Henüz yumurtlama yaşında değil"
+
+msgid "A’lo — standartga mos"
+msgstr "Mükemmel — standarda uygun"
+
+msgid "E’tibor bering — yem/yorug‘likni tekshiring"
+msgstr "Dikkat — yem/aydınlatmayı kontrol edin"
+
+msgid "Past — rasion, yorug‘lik yoki yoshni ko‘rib chiqing"
+msgstr "Düşük — rasyon, aydınlatma veya yaşı gözden geçirin"
+
+msgid "Qiymat 0 dan katta bo‘lishi kerak."
+msgstr "Değer 0'dan büyük olmalıdır."
+
+msgid "Qiymat manfiy bo‘lishi mumkin emas."
+msgstr "Değer negatif olamaz."
+
+msgid "Soni kamida 1 bo‘lishi kerak."
+msgstr "Adet en az 1 olmalıdır."
+
+msgid "Kimga (filial)"
+msgstr "Kime (şube)"
+
+#| msgid "Qiymat manfiy bo‘lishi mumkin emas."
+msgid "Ochilgan joja soni tuxum sonidan ko‘p bo‘lishi mumkin emas."
+msgstr "Çıkan civciv sayısı yumurta sayısından fazla olamaz."
+
+msgid "Tovuqlar bazasidan sotishda tovuq yoki xo‘rozni tanlang."
+msgstr "Tavuk tabanından satarken tavuk veya horoz seçin."
+
+msgid "Joriy parol"
+msgstr "Mevcut şifre"
+
+msgid "Yangi parol"
+msgstr "Yeni şifre"
+
+msgid "Yangi parolni tasdiqlang"
+msgstr "Yeni şifreyi onaylayın"
+
+msgid ""
+"Kamida 8 ta belgi; faqat raqamlardan yoki juda oddiy so‘zdan iborat "
+"bo‘lmasin."
+msgstr ""
+"En az 8 karakter; yalnızca rakamlardan veya çok basit bir kelimeden "
+"oluşmasın."
+
+msgid "Shaxsiy ma’lumotlaringiz saqlandi."
+msgstr "Kişisel bilgileriniz kaydedildi."
+
+msgid "Shaxsiy ma'lumotlar"
+msgstr "Kişisel bilgiler"
+
+msgid "Bu yozuvni o‘zgartirish muddati (24 soat) tugagan."
+msgstr "Bu kaydı düzenleme süresi (24 saat) doldu."
+
+msgid "Yozuv qo‘shish uchun avval yuqoridan filial tanlang."
+msgstr "Kayıt eklemek için önce yukarıdan bir şube seçin."
+
+msgid "qo‘shdi"
+msgstr "ekledi"
+
+msgid "tahrirladi"
+msgstr "düzenledi"
+
+msgid "Parol muvaffaqiyatli o‘zgartirildi."
+msgstr "Şifre başarıyla değiştirildi."
+
+msgid "Parolni o‘zgartirish"
+msgstr "Şifreyi değiştir"
+
+msgid "Bu yozuvni o‘chirish muddati (24 soat) tugagan."
+msgstr "Bu kaydı silme süresi (24 saat) doldu."
+
+msgid "Yozuv o‘chirildi."
+msgstr "Kayıt silindi."
+
+msgid "Yangi investitsiya"
+msgstr "Yeni yatırım"
+
+msgid "Investitsiyani tahrirlash"
+msgstr "Yatırımı düzenle"
+
+msgid "Kiritgan"
+msgstr "Ekleyen"
+
+msgid "Yangi rasxod"
+msgstr "Yeni gider"
+
+msgid "Rasxodni tahrirlash"
+msgstr "Gideri düzenle"
+
+msgid "Yangi maosh"
+msgstr "Yeni maaş"
+
+msgid "Maoshni tahrirlash"
+msgstr "Maaşı düzenle"
+
+msgid "Joja turi"
+msgstr "Civciv türü"
+
+msgid "Harakat turi"
+msgstr "Hareket türü"
+
+msgid "Soni"
+msgstr "Adet"
+
+msgid "Sana (hafta)"
+msgstr "Tarih (hafta)"
+
+msgid "O‘rtacha vazn"
+msgstr "Ortalama ağırlık"
+
+msgid "Dona narxi"
+msgstr "Adet fiyatı"
+
+msgid "Yangi joja haridi"
+msgstr "Yeni civciv alımı"
+
+msgid "Joja haridini tahrirlash"
+msgstr "Civciv alımını düzenle"
+
+msgid "Nobud bo‘lganini qo‘shish"
+msgstr "Ölüm ekle"
+
+msgid "Nobud yozuvini tahrirlash"
+msgstr "Ölüm kaydını düzenle"
+
+msgid "Yangi vazn yozuvi"
+msgstr "Yeni ağırlık kaydı"
+
+msgid "Vazn yozuvini tahrirlash"
+msgstr "Ağırlık kaydını düzenle"
+
+msgid "Jojalar"
+msgstr "Civcivler"
+
+#| msgid "Tuxum sotuvi"
+msgid "Tuxum soni"
+msgstr "Yumurta sayısı"
+
+#| msgid "O‘qilgan"
+msgid "Ochilgan"
+msgstr "Çıkan"
+
+msgid "Nobud"
+msgstr "Telef"
+
+#| msgid "Yangi joja haridi"
+msgid "Yangi joja (ochirish)"
+msgstr "Yeni civciv (kuluçka)"
+
+#| msgid "Joja haridini tahrirlash"
+msgid "Jojani tahrirlash"
+msgstr "Civcivi düzenle"
+
+msgid "Partiyalar"
+msgstr "Partiler"
+
+msgid "Partiya nomi"
+msgstr "Parti adı"
+
+msgid "Boshlangan sana"
+msgstr "Başlangıç tarihi"
+
+msgid "Holat"
+msgstr "Durum"
+
+msgid "Nofaol"
+msgstr "Pasif"
+
+msgid "Yangi partiya"
+msgstr "Yeni parti"
+
+msgid "Partiyani tahrirlash"
+msgstr "Partiyi düzenle"
+
+msgid "Joja sotuvi"
+msgstr "Civciv satışı"
+
+msgid "Birlik narxi"
+msgstr "Birim fiyatı"
+
+msgid "Manba"
+msgstr "Kaynak"
+
+#| msgid "Tovuqlar"
+msgid "Tovuqlar bazasi"
+msgstr "Tavuk Veritabanı"
+
+msgid "joja"
+msgstr "civciv"
+
+#| msgid "Xo‘roz"
+msgid "xo‘roz"
+msgstr "horoz"
+
+#| msgid "Tovuq"
+msgid "tovuq"
+msgstr "tavuk"
+
+#, python-format
+msgid "Qoldiq yetarli emas. Mavjud: %(n)s %(nom)s."
+msgstr "Stok yetersiz. Mevcut: %(n)s %(nom)s."
+
+msgid "Yangi joja sotuvi"
+msgstr "Yeni civciv satışı"
+
+msgid "Joja sotuvini tahrirlash"
+msgstr "Civciv satışını düzenle"
+
+msgid "Tuxum sotuvi"
+msgstr "Yumurta satışı"
+
+msgid "Sifat"
+msgstr "Kalite"
+
+msgid "Yangi tuxum sotuvi"
+msgstr "Yeni yumurta satışı"
+
+msgid "Tuxum sotuvini tahrirlash"
+msgstr "Yumurta satışını düzenle"
+
+msgid "Yangi filial"
+msgstr "Yeni şube"
+
+msgid "Filialni tahrirlash"
+msgstr "Şubeyi düzenle"
+
+msgid "Yangi xodim"
+msgstr "Yeni çalışan"
+
+msgid "Xodimni tahrirlash"
+msgstr "Çalışanı düzenle"
+
+msgid "Tuxum yig‘imi"
+msgstr "Yumurta toplama"
+
+msgid "Yig‘ilgan tuxum"
+msgstr "Toplanan yumurta"
+
+msgid "Yangi tuxum yig‘imi"
+msgstr "Yeni yumurta toplama"
+
+msgid "Tuxum yig‘imini tahrirlash"
+msgstr "Yumurta toplamayı düzenle"
+
+msgid "Yangi kod yaratildi. Uni botga yuboring (15 daqiqa amal qiladi)."
+msgstr "Yeni kod oluşturuldu. Bota gönderin (15 dakika geçerli)."
+
+msgid "Telegram ulanishi uzildi."
+msgstr "Telegram bağlantısı kaldırıldı."
+
+msgid "gram"
+msgstr "gram"
+
+msgid "kg"
+msgstr "kg"
+
+msgid "Sotib olindi"
+msgstr "Satın alındı"
+
+msgid "Nobud bo‘ldi"
+msgstr "Öldü"
+
+msgid "Soni (dona)"
+msgstr "Miktar (adet)"
+
+msgid "Faqat sotib olishda (harid)"
+msgstr "Sadece alımda"
+
+msgid "Joja harakati"
+msgstr "Civciv hareketi"
+
+msgid "Joja harakatlari"
+msgstr "Civciv hareketleri"
+
+msgid "Birlik"
+msgstr "Birim"
+
+msgid "Joja vazni"
+msgstr "Civciv ağırlığı"
+
+msgid "Joja vaznlari"
+msgstr "Civciv ağırlıkları"
+
+msgid "Brak tuxum"
+msgstr "Kusurlu yumurta"
+
+msgid "Brak tuxumlar"
+msgstr "Kusurlu yumurtalar"
+
+msgid "Yig‘ilgan tuxum (dona)"
+msgstr "Toplanan yumurta (adet)"
+
+msgid "Tuxum yig‘imlari"
+msgstr "Yumurta toplamaları"
+
+#| msgid "Soni (dona)"
+msgid "Tuxum soni (dona)"
+msgstr "Yumurta sayısı (adet)"
+
+msgid "Ochilgan joja (dona)"
+msgstr "Çıkan civciv (adet)"
+
+msgid "Joja"
+msgstr "Civciv"
+
+msgid "Tuxum"
+msgstr "Yumurta"
+
+msgid "Sifatli tuxum"
+msgstr "Kaliteli yumurta"
+
+msgid "Sifatsiz tuxum"
+msgstr "Kalitesiz yumurta"
+
+msgid "Jojalar (ochirilgan)"
+msgstr "Civcivler (kuluçka)"
+
+msgid "Sotuv turi"
+msgstr "Satış türü"
+
+msgid "Tuxum sifati"
+msgstr "Yumurta kalitesi"
+
+msgid "Faqat tuxum sotuvida tanlanadi"
+msgstr "Sadece yumurta satışında seçilir"
+
+msgid "Joja sotuvida: jojalar yoki tovuqlar bazasidan"
+msgstr "Civciv satışında: civciv veya tavuk tabanından"
+
+msgid "Tovuqlar bazasidan sotilganda: tovuq yoki xo‘roz"
+msgstr "Tavuk tabanından satarken: tavuk veya horoz"
+
+msgid "Sotuv"
+msgstr "Satış"
+
+msgid "Sotuvlar"
+msgstr "Satışlar"
+
+msgid "O‘zbekcha"
+msgstr "Özbekçe"
+
+msgid "Türkçe"
+msgstr "Türkçe"
+
+msgid "Русский"
+msgstr "Rusça"
+
+msgid "English"
+msgstr "İngilizce"
+
+msgid "Boshqaruv paneli"
+msgstr "Kontrol paneli"
+
+msgid "Asosiy"
+msgstr "Ana"
+
+msgid "Moliya"
+msgstr "Finans"
+
+msgid "Kirimlar"
+msgstr "Gelirler"
+
+msgid "Rasxod kategoriyalari"
+msgstr "Gider kategorileri"
+
+msgid "Boshqaruv"
+msgstr "Yönetim"
+
+msgid "Umumiy holat"
+msgstr "Genel durum"
+
+msgid "Tovuq qoldiq"
+msgstr "Kalan tavuk"
+
+msgid "Xo‘roz qoldiq"
+msgstr "Kalan horoz"
+
+msgid "Tahrirlash"
+msgstr "Düzenle"
+
+msgid "O‘chirish"
+msgstr "Sil"
+
+msgid "24 soat muddati tugagan"
+msgstr "24 saat doldu"
+
+msgid "Amallar"
+msgstr "İşlemler"
+
+msgid "Hozircha yozuv yo‘q"
+msgstr "Henüz kayıt yok"
+
+msgid "Aktivlik"
+msgstr "Aktivite"
+
+msgid "Tizim aktivligi"
+msgstr "Sistem aktivitesi"
+
+msgid "Hozircha aktivlik yo‘q"
+msgstr "Henüz aktivite yok"
+
+msgid "Oldingi"
+msgstr "Önceki"
+
+msgid "Keyingi"
+msgstr "Sonraki"
+
+msgid "Tuxum prognozi"
+msgstr "Yumurta tahmini"
+
+msgid "Hisobotlar"
+msgstr "Raporlar"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Foydalanuvchilar"
+msgstr "Kullanıcılar"
+
+msgid "Admin panel"
+msgstr "Yönetim paneli"
+
+msgid "Barcha filiallar"
+msgstr "Tüm şubeler"
+
+msgid "Tema"
+msgstr "Tema"
+
+msgid "Hammasini o‘qilgan"
+msgstr "Tümünü okundu"
+
+msgid "Hozircha bildirishnoma yo‘q"
+msgstr "Henüz bildirim yok"
+
+msgid "Barchasini ko‘rish"
+msgstr "Tümünü gör"
+
+msgid "Shrift"
+msgstr "Yazı tipi"
+
+msgid "Shrift o‘lchami"
+msgstr "Yazı boyutu"
+
+msgid "Qalinlik"
+msgstr "Kalınlık"
+
+msgid "Qalin matn"
+msgstr "Kalın yazı"
+
+msgid "Email"
+msgstr "E-posta"
+
+msgid "Parolni faqat super admin o‘zgartiradi."
+msgstr "Şifreyi yalnızca süper admin değiştirebilir."
+
+msgid "Chiqish"
+msgstr "Çıkış"
+
+msgid "O‘chirishni tasdiqlang"
+msgstr "Silmeyi onaylayın"
+
+msgid "Bu yozuvni o‘chirmoqchimisiz? Bu amalni qaytarib bo‘lmaydi."
+msgstr "Bu kaydı silmek istiyor musunuz? Bu işlem geri alınamaz."
+
+msgid "Bekor qilish"
+msgstr "İptal"
+
+msgid "O‘chirilmoqda"
+msgstr "Siliniyor"
+
+msgid "Tizimni boshlash uchun avval filial qo‘shing"
+msgstr "Başlamak için önce bir şube ekleyin"
+
+msgid ""
+"Filial qo‘shilgach, investitsiya, rasxod, xodim va sotuvlarni kiritish "
+"mumkin bo‘ladi."
+msgstr ""
+"Şube eklendikten sonra yatırım, gider, çalışan ve satışları girebilirsiniz."
+
+msgid "Filial qo‘shish"
+msgstr "Şube ekle"
+
+msgid "Tushum (sotuvdan)"
+msgstr "Gelir (satıştan)"
+
+msgid "Investitsiya va rasxod"
+msgstr "Yatırım ve giderler"
+
+msgid "6 oy"
+msgstr "6 ay"
+
+msgid "Sotuv tushumi"
+msgstr "Satış geliri"
+
+msgid "Ombor va sotuv"
+msgstr "Depo ve satış"
+
+msgid "Tovuq qoldiq (dona)"
+msgstr "Kalan tavuk (adet)"
+
+msgid "Xo‘roz qoldiq (dona)"
+msgstr "Kalan horoz (adet)"
+
+#| msgid "Joja qoldig‘i"
+msgid "Jojalar qoldig‘i (dona)"
+msgstr "Civciv stoğu (adet)"
+
+msgid "So‘nggi sotuvlar"
+msgstr "Son satışlar"
+
+msgid "Tur"
+msgstr "Tür"
+
+msgid "Hozircha sotuv yo‘q"
+msgstr "Henüz satış yok"
+
+msgid "So‘nggi rasxodlar"
+msgstr "Son giderler"
+
+msgid "Hammasi"
+msgstr "Tümü"
+
+msgid "Hozircha rasxod yo‘q"
+msgstr "Henüz gider yok"
+
+msgid "Tuxum tug‘uvchanlik prognozi va samaradorligi"
+msgstr "Yumurta verimi tahmini ve verimlilik"
+
+msgid ""
+"Prognoz uchun avval faol partiya va joja (tovuq) ma’lumotlarini kiriting."
+msgstr "Tahmin için önce aktif partileri ve kümes (tavuk) verilerini girin."
+
+msgid "Partiya qo‘shish"
+msgstr "Parti ekle"
+
+msgid "Bugun kutilayotgan tuxum (dona)"
+msgstr "Bugün beklenen yumurta (adet)"
+
+msgid "O‘rtacha samaradorlik (real/standart)"
+msgstr "Ortalama verimlilik (gerçek/standart)"
+
+msgid "Eng samarali partiya"
+msgstr "En verimli parti"
+
+msgid "E’tibor kerak partiya"
+msgstr "Dikkat gereken parti"
+
+#, python-format
+msgid "Tug‘uvchanlik egri chizig‘i (HDEP %%)"
+msgstr "Yumurtlama eğrisi (HDEP %%)"
+
+msgid "Zot standarti"
+msgstr "Irk standardı"
+
+msgid "Sizning real holatingiz"
+msgstr "Gerçek durumunuz"
+
+msgid "Yosh (hafta)"
+msgstr "Yaş (hafta)"
+
+msgid ""
+"Real chiziq uchun “Tuxum yig‘imi” bo‘limiga kunlik yig‘ilgan tuxumni "
+"kiriting."
+msgstr ""
+"Gerçek çizgi için günlük toplanan yumurtayı “Yumurta toplama” bölümüne "
+"girin."
+
+msgid "Partiyalar samaradorligi"
+msgstr "Parti verimliliği"
+
+msgid "Tirik tovuq"
+msgstr "Canlı tavuk"
+
+msgid "Standart HDEP"
+msgstr "Standart HDEP"
+
+msgid "Real HDEP"
+msgstr "Gerçek HDEP"
+
+msgid "Kutilgan/kun"
+msgstr "Beklenen/gün"
+
+msgid "Samaradorlik"
+msgstr "Verimlilik"
+
+msgid "Tavsiya"
+msgstr "Öneri"
+
+msgid "Faol partiya yo‘q"
+msgstr "Aktif parti yok"
+
+msgid "Kirish"
+msgstr "Giriş"
+
+msgid "Login yoki parol noto‘g‘ri. Qayta urinib ko‘ring."
+msgstr "Kullanıcı adı veya şifre yanlış. Tekrar deneyin."
+
+msgid "Kirilmoqda"
+msgstr "Giriş yapılıyor"
+
+msgid "Foydalanuvchi nomi"
+msgstr "Kullanıcı adı"
+
+msgid "Login"
+msgstr "Giriş"
+
+msgid "Parol"
+msgstr "Şifre"
+
+msgid "Saqlanmoqda"
+msgstr "Kaydediliyor"
+
+msgid "Yangi sabab"
+msgstr "Yeni sebep"
+
+msgid "Sabab nomi"
+msgstr "Sebep adı"
+
+msgid "Qo‘shish"
+msgstr "Ekle"
+
+msgid "Saqlash"
+msgstr "Kaydet"
+
+msgid "Excel"
+msgstr "Excel"
+
+msgid "Filter bo‘yicha"
+msgstr "Filtreye göre"
+
+msgid "Hammasini"
+msgstr "Tümü"
+
+msgid "Joja holati"
+msgstr "Civciv durumu"
+
+msgid "Haftalik vazn"
+msgstr "Haftalık ağırlık"
+
+msgid "Joja haridi"
+msgstr "Civciv alımı"
+
+msgid "Sotib olingan"
+msgstr "Satın alınan"
+
+msgid "Nobud bo‘lganlar"
+msgstr "Ölenler"
+
+msgid "Haftalik vaznlar"
+msgstr "Haftalık ağırlıklar"
+
+msgid "Moliyaviy hisobot"
+msgstr "Mali rapor"
+
+msgid "Rasxod (umumiy)"
+msgstr "Giderler (toplam)"
+
+msgid "Oylarni taqqoslash"
+msgstr "Ayları karşılaştır"
+
+msgid "Ko‘rsatkich"
+msgstr "Gösterge"
+
+msgid "O‘zgarish"
+msgstr "Değişim"
+
+msgid "Rasxod sabablari bo‘yicha"
+msgstr "Nedene göre giderler"
+
+msgid "Tushum taqsimoti"
+msgstr "Gelir dağılımı"
+
+msgid "PDF yuklab olish"
+msgstr "PDF indir"
+
+msgid "Jami tushum"
+msgstr "Toplam gelir"
+
+msgid "Telegram bot"
+msgstr "Telegram bot"
+
+msgid "Ulanish"
+msgstr "Bağlantı"
+
+msgid "Telegramda botni oching:"
+msgstr "Botu Telegram’da açın:"
+
+msgid "Botga"
+msgstr "Bota yazın"
+
+msgid "deb yozing"
+msgstr "yazın"
+
+msgid "Quyidagi bir martalik kodni botga yuboring"
+msgstr "Aşağıdaki tek kullanımlık kodu bota gönderin"
+
+msgid "Kod 15 daqiqa amal qiladi va bir marta ishlatiladi."
+msgstr "Kod 15 dakika geçerlidir ve bir kez kullanılır."
+
+msgid "Hali faol kod yo‘q."
+msgstr "Henüz aktif kod yok."
+
+msgid "Yangi kod yaratish"
+msgstr "Yeni kod oluştur"
+
+msgid "Ulangan akkauntlar"
+msgstr "Bağlı hesaplar"
+
+msgid "Ulangan"
+msgstr "Bağlandı"
+
+msgid "Uzish"
+msgstr "Bağlantıyı kes"
+
+msgid "Hali hech qanday Telegram akkaunt ulanmagan."
+msgstr "Henüz Telegram hesabı bağlanmadı."
+
+msgid "Bot nima qiladi?"
+msgstr "Bot ne yapar?"
+
+msgid "Tizimdagi har bir yangilikni darhol yuboradi"
+msgstr "Her sistem güncellemesini anında gönderir"
+
+msgid "Har kuni kechqurun kunlik hisobot yuboradi"
+msgstr "Her akşam günlük rapor gönderir"
+
+msgid "So‘rov: /balance, /eggs, /poultry, /report"
+msgstr "Sorgu: /balance, /eggs, /poultry, /report"
+
+msgid "Til tanlash: /language"
+msgstr "Dil: /language"
+
+msgid "January"
+msgstr "Ocak"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Ocak"
+
+msgid "February"
+msgstr "Şubat"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Şubat"
+
+msgid "March"
+msgstr "Mart"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Mart"
+
+msgid "April"
+msgstr "Nisan"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Nisan"
+
+msgid "May"
+msgstr "Mayıs"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mayıs"
+
+msgid "June"
+msgstr "Haziran"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Haziran"
+
+msgid "July"
+msgstr "Temmuz"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Temmuz"
+
+msgid "August"
+msgstr "Ağustos"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Ağustos"
+
+msgid "September"
+msgstr "Eylül"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Eylül"
+
+msgid "October"
+msgstr "Ekim"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Ekim"
+
+msgid "November"
+msgstr "Kasım"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Kasım"
+
+msgid "December"
+msgstr "Aralık"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Aralık"
+
+msgctxt "abbrev. month"
+msgid "jan"
+msgstr "Oca"
+
+msgctxt "abbrev. month"
+msgid "feb"
+msgstr "Şub"
+
+msgctxt "abbrev. month"
+msgid "mar"
+msgstr "Mar"
+
+msgctxt "abbrev. month"
+msgid "apr"
+msgstr "Nis"
+
+msgctxt "abbrev. month"
+msgid "may"
+msgstr "May"
+
+msgctxt "abbrev. month"
+msgid "jun"
+msgstr "Haz"
+
+msgctxt "abbrev. month"
+msgid "jul"
+msgstr "Tem"
+
+msgctxt "abbrev. month"
+msgid "aug"
+msgstr "Ağu"
+
+msgctxt "abbrev. month"
+msgid "sep"
+msgstr "Eyl"
+
+msgctxt "abbrev. month"
+msgid "oct"
+msgstr "Eki"
+
+msgctxt "abbrev. month"
+msgid "nov"
+msgstr "Kas"
+
+msgctxt "abbrev. month"
+msgid "dec"
+msgstr "Ara"

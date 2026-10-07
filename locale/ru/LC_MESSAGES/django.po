@@ -1,0 +1,1214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 10:08+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Oʻzbekiston"
+msgstr "Узбекистан"
+
+msgid "Tojikiston"
+msgstr "Таджикистан"
+
+msgid "Turkmaniston"
+msgstr "Туркменистан"
+
+msgid "Turkiya"
+msgstr "Турция"
+
+msgid "Filial nomi"
+msgstr "Название филиала"
+
+msgid "Davlat"
+msgstr "Страна"
+
+msgid "Manzil"
+msgstr "Адрес"
+
+msgid "Faol"
+msgstr "Активен"
+
+msgid "Yaratilgan"
+msgstr "Создан"
+
+msgid "Filial"
+msgstr "Филиал"
+
+msgid "Filiallar"
+msgstr "Филиалы"
+
+msgid "Administrator"
+msgstr "Администратор"
+
+msgid "Buxgalter"
+msgstr "Бухгалтер"
+
+msgid "Hodim"
+msgstr "Сотрудник"
+
+msgid "Rol"
+msgstr "Роль"
+
+msgid "Telefon"
+msgstr "Телефон"
+
+msgid "Rasm"
+msgstr "Фото"
+
+msgid "Bo‘sh qoldirilsa — super admin (barcha filiallarni ko‘radi)"
+msgstr "Оставьте пустым — супер-админ (видит все филиалы)"
+
+msgid "Hodimlar"
+msgstr "Сотрудники"
+
+msgid "Tizimga kirdi"
+msgstr "Вошёл в систему"
+
+msgid "Tizimdan chiqdi"
+msgstr "Вышел из системы"
+
+msgid "Qo‘shdi"
+msgstr "Добавил"
+
+msgid "Tahrirladi"
+msgstr "Изменил"
+
+msgid "O‘chirdi"
+msgstr "Удалил"
+
+msgid "Foydalanuvchi"
+msgstr "Пользователь"
+
+msgid "Amal"
+msgstr "Действие"
+
+msgid "Tavsif"
+msgstr "Описание"
+
+msgid "IP manzil"
+msgstr "IP-адрес"
+
+msgid "Vaqt"
+msgstr "Время"
+
+msgid "Faoliyat"
+msgstr "Активность"
+
+msgid "Oluvchi"
+msgstr "Получатель"
+
+msgid "Kim qildi"
+msgstr "Кто сделал"
+
+msgid "Xabar"
+msgstr "Сообщение"
+
+msgid "Havola"
+msgstr "Ссылка"
+
+msgid "O‘qilgan"
+msgstr "Прочитано"
+
+msgid "Telegramga yuborildi"
+msgstr "Отправлено в Telegram"
+
+msgid "Bildirishnoma"
+msgstr "Уведомление"
+
+msgid "Bildirishnomalar"
+msgstr "Уведомления"
+
+msgid "Telegram chat ID"
+msgstr "Telegram chat ID"
+
+msgid "Telegram username"
+msgstr "Имя пользователя Telegram"
+
+msgid "Ism"
+msgstr "Имя"
+
+msgid "Til"
+msgstr "Язык"
+
+msgid "Ulangan vaqt"
+msgstr "Время подключения"
+
+msgid "Telegram ulanish"
+msgstr "Подключение Telegram"
+
+msgid "Telegram ulanishlar"
+msgstr "Подключения Telegram"
+
+msgid "Kod"
+msgstr "Код"
+
+msgid "Amal qilish muddati"
+msgstr "Срок действия"
+
+msgid "Ishlatilgan"
+msgstr "Использован"
+
+msgid "Telegram kod"
+msgstr "Код Telegram"
+
+msgid "Telegram kodlar"
+msgstr "Коды Telegram"
+
+msgid "Ism familiya"
+msgstr "Имя фамилия"
+
+msgid "Lavozim"
+msgstr "Должность"
+
+msgid "Oylik maosh"
+msgstr "Месячная зарплата"
+
+msgid "Xodim"
+msgstr "Сотрудник"
+
+msgid "Xodimlar"
+msgstr "Персонал"
+
+msgid "Balans"
+msgstr "Баланс"
+
+msgid "Tuxumlar"
+msgstr "Яйца"
+
+msgid "Tovuqlar"
+msgstr "Куры"
+
+msgid "Hisobot"
+msgstr "Отчёт"
+
+msgid "Yordam"
+msgstr "Помощь"
+
+msgid "Buyruqlar"
+msgstr "Команды"
+
+msgid "moliyaviy holat"
+msgstr "финансовое состояние"
+
+msgid "tuxum qoldig‘i"
+msgstr "остаток яиц"
+
+msgid "tovuq/xo‘roz soni"
+msgstr "кол-во кур/петухов"
+
+msgid "to‘liq kunlik hisobot"
+msgstr "полный ежедневный отчёт"
+
+msgid "tilni o‘zgartirish"
+msgstr "сменить язык"
+
+msgid "botni akkauntdan uzish"
+msgstr "отключить бота"
+
+msgid "Moliyaviy holat"
+msgstr "Финансовое состояние"
+
+msgid "Investitsiya"
+msgstr "Инвестиция"
+
+msgid "Rasxod"
+msgstr "Расход"
+
+msgid "Tushum"
+msgstr "Выручка"
+
+msgid "Sof foyda"
+msgstr "Чистая прибыль"
+
+msgid "dona"
+msgstr "шт"
+
+msgid "Tuxum holati"
+msgstr "Состояние яиц"
+
+msgid "Yig‘ilgan"
+msgstr "Собрано"
+
+msgid "Sotilgan"
+msgstr "Продано"
+
+msgid "Brak"
+msgstr "Брак"
+
+msgid "Qoldiq"
+msgstr "Остаток"
+
+msgid "Joja qoldig‘i"
+msgstr "Остаток птицы"
+
+msgid "Tovuq"
+msgstr "Курица"
+
+msgid "Xo‘roz"
+msgstr "Петух"
+
+msgid "Jami"
+msgstr "Итого"
+
+msgid "kunlik hisobot"
+msgstr "ежедневный отчёт"
+
+msgid "Tug‘uvchanlik"
+msgstr "Яйценоскость"
+
+msgid "Bugun kutilayotgan tuxum"
+msgstr "Ожидаемые яйца сегодня"
+
+msgid "O‘rtacha samaradorlik"
+msgstr "Средняя эффективность"
+
+msgid "Til o‘zgartirildi."
+msgstr "Язык изменён."
+
+msgid "Davom etish uchun saytdan olingan bir martalik kodni yuboring."
+msgstr "Отправьте одноразовый код с сайта, чтобы продолжить."
+
+msgid "Tilni tanlang:"
+msgstr "Выберите язык:"
+
+msgid "muvaffaqiyatli ulandingiz!"
+msgstr "успешно подключились!"
+
+msgid "❌ Kod noto‘g‘ri yoki muddati o‘tgan. Saytdan yangi kod oling."
+msgstr "❌ Неверный или просроченный код. Получите новый код на сайте."
+
+msgid "🔌 Bot akkauntingizdan uzildi. Qayta ulanish uchun /start."
+msgstr "🔌 Бот отключён от вашего аккаунта. Для повторного подключения /start."
+
+msgid "Tushunarsiz buyruq. /help — yordam."
+msgstr "Неизвестная команда. /help — помощь."
+
+msgid "Yangilik"
+msgstr "Обновление"
+
+msgid "Dollar (USD)"
+msgstr "Доллар (USD)"
+
+msgid "Yaratilgan vaqt"
+msgstr "Время создания"
+
+msgid "O‘zgartirilgan vaqt"
+msgstr "Время изменения"
+
+msgid "Kiritgan hodim"
+msgstr "Кто внёс"
+
+msgid "Sana"
+msgstr "Дата"
+
+msgid "Partiya"
+msgstr "Партия"
+
+msgid "Summa"
+msgstr "Сумма"
+
+msgid "Valyuta"
+msgstr "Валюта"
+
+msgid "Izoh"
+msgstr "Примечание"
+
+msgid "Investitsiyalar"
+msgstr "Инвестиции"
+
+msgid "Sabab"
+msgstr "Причина"
+
+msgid "Sabablar"
+msgstr "Причины"
+
+msgid "Rasxodlar"
+msgstr "Расходы"
+
+msgid "Maosh"
+msgstr "Зарплата"
+
+msgid "Maoshlar"
+msgstr "Зарплаты"
+
+msgid "Real yig‘im kiritilmagan"
+msgstr "Фактические данные не внесены"
+
+msgid "Hali tug‘ish yoshida emas"
+msgstr "Ещё не в возрасте яйцекладки"
+
+msgid "A’lo — standartga mos"
+msgstr "Отлично — соответствует стандарту"
+
+msgid "E’tibor bering — yem/yorug‘likni tekshiring"
+msgstr "Внимание — проверьте корм/освещение"
+
+msgid "Past — rasion, yorug‘lik yoki yoshni ko‘rib chiqing"
+msgstr "Низко — проверьте рацион, освещение или возраст"
+
+msgid "Qiymat 0 dan katta bo‘lishi kerak."
+msgstr "Значение должно быть больше 0."
+
+msgid "Qiymat manfiy bo‘lishi mumkin emas."
+msgstr "Значение не может быть отрицательным."
+
+msgid "Soni kamida 1 bo‘lishi kerak."
+msgstr "Количество должно быть не менее 1."
+
+msgid "Kimga (filial)"
+msgstr "Кому (филиал)"
+
+#| msgid "Qiymat manfiy bo‘lishi mumkin emas."
+msgid "Ochilgan joja soni tuxum sonidan ko‘p bo‘lishi mumkin emas."
+msgstr "Вылупившихся цыплят не может быть больше, чем яиц."
+
+msgid "Tovuqlar bazasidan sotishda tovuq yoki xo‘rozni tanlang."
+msgstr "При продаже из базы кур выберите курицу или петуха."
+
+msgid "Joriy parol"
+msgstr "Текущий пароль"
+
+msgid "Yangi parol"
+msgstr "Новый пароль"
+
+msgid "Yangi parolni tasdiqlang"
+msgstr "Подтвердите новый пароль"
+
+msgid ""
+"Kamida 8 ta belgi; faqat raqamlardan yoki juda oddiy so‘zdan iborat "
+"bo‘lmasin."
+msgstr "Не менее 8 символов; не только цифры и не слишком простое слово."
+
+msgid "Shaxsiy ma’lumotlaringiz saqlandi."
+msgstr "Ваши личные данные сохранены."
+
+msgid "Shaxsiy ma'lumotlar"
+msgstr "Личные данные"
+
+msgid "Bu yozuvni o‘zgartirish muddati (24 soat) tugagan."
+msgstr "Срок изменения этой записи (24 часа) истёк."
+
+msgid "Yozuv qo‘shish uchun avval yuqoridan filial tanlang."
+msgstr "Сначала выберите филиал вверху, чтобы добавить запись."
+
+msgid "qo‘shdi"
+msgstr "добавил"
+
+msgid "tahrirladi"
+msgstr "изменил"
+
+msgid "Parol muvaffaqiyatli o‘zgartirildi."
+msgstr "Пароль успешно изменён."
+
+msgid "Parolni o‘zgartirish"
+msgstr "Изменить пароль"
+
+msgid "Bu yozuvni o‘chirish muddati (24 soat) tugagan."
+msgstr "Срок удаления этой записи (24 часа) истёк."
+
+msgid "Yozuv o‘chirildi."
+msgstr "Запись удалена."
+
+msgid "Yangi investitsiya"
+msgstr "Новая инвестиция"
+
+msgid "Investitsiyani tahrirlash"
+msgstr "Редактировать инвестицию"
+
+msgid "Kiritgan"
+msgstr "Кто внёс"
+
+msgid "Yangi rasxod"
+msgstr "Новый расход"
+
+msgid "Rasxodni tahrirlash"
+msgstr "Редактировать расход"
+
+msgid "Yangi maosh"
+msgstr "Новая зарплата"
+
+msgid "Maoshni tahrirlash"
+msgstr "Редактировать зарплату"
+
+msgid "Joja turi"
+msgstr "Тип цыплёнка"
+
+msgid "Harakat turi"
+msgstr "Тип движения"
+
+msgid "Soni"
+msgstr "Кол-во"
+
+msgid "Sana (hafta)"
+msgstr "Дата (неделя)"
+
+msgid "O‘rtacha vazn"
+msgstr "Средний вес"
+
+msgid "Dona narxi"
+msgstr "Цена за штуку"
+
+msgid "Yangi joja haridi"
+msgstr "Новая закупка цыплят"
+
+msgid "Joja haridini tahrirlash"
+msgstr "Редактировать закупку цыплят"
+
+msgid "Nobud bo‘lganini qo‘shish"
+msgstr "Добавить падёж"
+
+msgid "Nobud yozuvini tahrirlash"
+msgstr "Редактировать запись падежа"
+
+msgid "Yangi vazn yozuvi"
+msgstr "Новая запись веса"
+
+msgid "Vazn yozuvini tahrirlash"
+msgstr "Редактировать запись веса"
+
+msgid "Jojalar"
+msgstr "Цыплята"
+
+#| msgid "Tuxum sotuvi"
+msgid "Tuxum soni"
+msgstr "Кол-во яиц"
+
+#| msgid "O‘qilgan"
+msgid "Ochilgan"
+msgstr "Вылупилось"
+
+msgid "Nobud"
+msgstr "Погибло"
+
+#| msgid "Yangi joja haridi"
+msgid "Yangi joja (ochirish)"
+msgstr "Новый вывод цыплят"
+
+#| msgid "Joja haridini tahrirlash"
+msgid "Jojani tahrirlash"
+msgstr "Изменить вывод"
+
+msgid "Partiyalar"
+msgstr "Партии"
+
+msgid "Partiya nomi"
+msgstr "Название партии"
+
+msgid "Boshlangan sana"
+msgstr "Дата начала"
+
+msgid "Holat"
+msgstr "Статус"
+
+msgid "Nofaol"
+msgstr "Неактивен"
+
+msgid "Yangi partiya"
+msgstr "Новая партия"
+
+msgid "Partiyani tahrirlash"
+msgstr "Редактировать партию"
+
+msgid "Joja sotuvi"
+msgstr "Продажа цыплят"
+
+msgid "Birlik narxi"
+msgstr "Цена за единицу"
+
+msgid "Manba"
+msgstr "Источник"
+
+#| msgid "Tovuqlar"
+msgid "Tovuqlar bazasi"
+msgstr "База кур"
+
+msgid "joja"
+msgstr "цыплят"
+
+#| msgid "Xo‘roz"
+msgid "xo‘roz"
+msgstr "петухов"
+
+#| msgid "Tovuq"
+msgid "tovuq"
+msgstr "кур"
+
+#, python-format
+msgid "Qoldiq yetarli emas. Mavjud: %(n)s %(nom)s."
+msgstr "Недостаточно остатка. Доступно: %(n)s %(nom)s."
+
+msgid "Yangi joja sotuvi"
+msgstr "Новая продажа цыплят"
+
+msgid "Joja sotuvini tahrirlash"
+msgstr "Редактировать продажу цыплят"
+
+msgid "Tuxum sotuvi"
+msgstr "Продажа яиц"
+
+msgid "Sifat"
+msgstr "Качество"
+
+msgid "Yangi tuxum sotuvi"
+msgstr "Новая продажа яиц"
+
+msgid "Tuxum sotuvini tahrirlash"
+msgstr "Редактировать продажу яиц"
+
+msgid "Yangi filial"
+msgstr "Новый филиал"
+
+msgid "Filialni tahrirlash"
+msgstr "Редактировать филиал"
+
+msgid "Yangi xodim"
+msgstr "Новый сотрудник"
+
+msgid "Xodimni tahrirlash"
+msgstr "Редактировать сотрудника"
+
+msgid "Tuxum yig‘imi"
+msgstr "Сбор яиц"
+
+msgid "Yig‘ilgan tuxum"
+msgstr "Собранные яйца"
+
+msgid "Yangi tuxum yig‘imi"
+msgstr "Новый сбор яиц"
+
+msgid "Tuxum yig‘imini tahrirlash"
+msgstr "Изменить сбор яиц"
+
+msgid "Yangi kod yaratildi. Uni botga yuboring (15 daqiqa amal qiladi)."
+msgstr "Создан новый код. Отправьте его боту (действует 15 минут)."
+
+msgid "Telegram ulanishi uzildi."
+msgstr "Подключение Telegram отключено."
+
+msgid "gram"
+msgstr "грамм"
+
+msgid "kg"
+msgstr "кг"
+
+msgid "Sotib olindi"
+msgstr "Куплено"
+
+msgid "Nobud bo‘ldi"
+msgstr "Падёж"
+
+msgid "Soni (dona)"
+msgstr "Количество (шт)"
+
+msgid "Faqat sotib olishda (harid)"
+msgstr "Только при закупке"
+
+msgid "Joja harakati"
+msgstr "Движение цыплят"
+
+msgid "Joja harakatlari"
+msgstr "Движения цыплят"
+
+msgid "Birlik"
+msgstr "Единица"
+
+msgid "Joja vazni"
+msgstr "Вес цыплёнка"
+
+msgid "Joja vaznlari"
+msgstr "Веса цыплят"
+
+msgid "Brak tuxum"
+msgstr "Бракованное яйцо"
+
+msgid "Brak tuxumlar"
+msgstr "Бракованные яйца"
+
+msgid "Yig‘ilgan tuxum (dona)"
+msgstr "Собранные яйца (шт)"
+
+msgid "Tuxum yig‘imlari"
+msgstr "Сборы яиц"
+
+#| msgid "Soni (dona)"
+msgid "Tuxum soni (dona)"
+msgstr "Кол-во яиц (шт)"
+
+msgid "Ochilgan joja (dona)"
+msgstr "Вылупилось цыплят (шт)"
+
+msgid "Joja"
+msgstr "Цыплёнок"
+
+msgid "Tuxum"
+msgstr "Яйцо"
+
+msgid "Sifatli tuxum"
+msgstr "Качественное яйцо"
+
+msgid "Sifatsiz tuxum"
+msgstr "Некачественное яйцо"
+
+msgid "Jojalar (ochirilgan)"
+msgstr "Цыплята (выведенные)"
+
+msgid "Sotuv turi"
+msgstr "Тип продажи"
+
+msgid "Tuxum sifati"
+msgstr "Качество яйца"
+
+msgid "Faqat tuxum sotuvida tanlanadi"
+msgstr "Выбирается только при продаже яиц"
+
+msgid "Joja sotuvida: jojalar yoki tovuqlar bazasidan"
+msgstr "В продаже цыплят: из цыплят или базы кур"
+
+msgid "Tovuqlar bazasidan sotilganda: tovuq yoki xo‘roz"
+msgstr "При продаже из базы кур: курица или петух"
+
+msgid "Sotuv"
+msgstr "Продажа"
+
+msgid "Sotuvlar"
+msgstr "Продажи"
+
+msgid "O‘zbekcha"
+msgstr "Узбекский"
+
+msgid "Türkçe"
+msgstr "Турецкий"
+
+msgid "Русский"
+msgstr "Русский"
+
+msgid "English"
+msgstr "Английский"
+
+msgid "Boshqaruv paneli"
+msgstr "Панель управления"
+
+msgid "Asosiy"
+msgstr "Основное"
+
+msgid "Moliya"
+msgstr "Финансы"
+
+msgid "Kirimlar"
+msgstr "Доходы"
+
+msgid "Rasxod kategoriyalari"
+msgstr "Категории расходов"
+
+msgid "Boshqaruv"
+msgstr "Управление"
+
+msgid "Umumiy holat"
+msgstr "Общее состояние"
+
+msgid "Tovuq qoldiq"
+msgstr "Остаток кур"
+
+msgid "Xo‘roz qoldiq"
+msgstr "Остаток петухов"
+
+msgid "Tahrirlash"
+msgstr "Редактировать"
+
+msgid "O‘chirish"
+msgstr "Удалить"
+
+msgid "24 soat muddati tugagan"
+msgstr "24 часа истекли"
+
+msgid "Amallar"
+msgstr "Действия"
+
+msgid "Hozircha yozuv yo‘q"
+msgstr "Записей пока нет"
+
+msgid "Aktivlik"
+msgstr "Активность"
+
+msgid "Tizim aktivligi"
+msgstr "Активность системы"
+
+msgid "Hozircha aktivlik yo‘q"
+msgstr "Активности пока нет"
+
+msgid "Oldingi"
+msgstr "Назад"
+
+msgid "Keyingi"
+msgstr "Вперёд"
+
+msgid "Tuxum prognozi"
+msgstr "Прогноз яиц"
+
+msgid "Hisobotlar"
+msgstr "Отчёты"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Foydalanuvchilar"
+msgstr "Пользователи"
+
+msgid "Admin panel"
+msgstr "Админ-панель"
+
+msgid "Barcha filiallar"
+msgstr "Все филиалы"
+
+msgid "Tema"
+msgstr "Тема"
+
+msgid "Hammasini o‘qilgan"
+msgstr "Отметить все"
+
+msgid "Hozircha bildirishnoma yo‘q"
+msgstr "Пока нет уведомлений"
+
+msgid "Barchasini ko‘rish"
+msgstr "Показать все"
+
+msgid "Shrift"
+msgstr "Шрифт"
+
+msgid "Shrift o‘lchami"
+msgstr "Размер шрифта"
+
+msgid "Qalinlik"
+msgstr "Насыщенность"
+
+msgid "Qalin matn"
+msgstr "Жирный текст"
+
+msgid "Email"
+msgstr "Эл. почта"
+
+msgid "Parolni faqat super admin o‘zgartiradi."
+msgstr "Пароль меняет только супер-админ."
+
+msgid "Chiqish"
+msgstr "Выйти"
+
+msgid "O‘chirishni tasdiqlang"
+msgstr "Подтвердите удаление"
+
+msgid "Bu yozuvni o‘chirmoqchimisiz? Bu amalni qaytarib bo‘lmaydi."
+msgstr "Удалить эту запись? Это действие нельзя отменить."
+
+msgid "Bekor qilish"
+msgstr "Отмена"
+
+msgid "O‘chirilmoqda"
+msgstr "Удаление"
+
+msgid "Tizimni boshlash uchun avval filial qo‘shing"
+msgstr "Для начала сначала добавьте филиал"
+
+msgid ""
+"Filial qo‘shilgach, investitsiya, rasxod, xodim va sotuvlarni kiritish "
+"mumkin bo‘ladi."
+msgstr ""
+"После добавления филиала можно вносить инвестиции, расходы, сотрудников и "
+"продажи."
+
+msgid "Filial qo‘shish"
+msgstr "Добавить филиал"
+
+msgid "Tushum (sotuvdan)"
+msgstr "Выручка (от продаж)"
+
+msgid "Investitsiya va rasxod"
+msgstr "Инвестиции и расходы"
+
+msgid "6 oy"
+msgstr "6 месяцев"
+
+msgid "Sotuv tushumi"
+msgstr "Выручка от продаж"
+
+msgid "Ombor va sotuv"
+msgstr "Склад и продажи"
+
+msgid "Tovuq qoldiq (dona)"
+msgstr "Остаток кур (шт)"
+
+msgid "Xo‘roz qoldiq (dona)"
+msgstr "Остаток петухов (шт)"
+
+#| msgid "Joja qoldig‘i"
+msgid "Jojalar qoldig‘i (dona)"
+msgstr "Остаток цыплят (шт)"
+
+msgid "So‘nggi sotuvlar"
+msgstr "Последние продажи"
+
+msgid "Tur"
+msgstr "Тип"
+
+msgid "Hozircha sotuv yo‘q"
+msgstr "Продаж пока нет"
+
+msgid "So‘nggi rasxodlar"
+msgstr "Последние расходы"
+
+msgid "Hammasi"
+msgstr "Все"
+
+msgid "Hozircha rasxod yo‘q"
+msgstr "Расходов пока нет"
+
+msgid "Tuxum tug‘uvchanlik prognozi va samaradorligi"
+msgstr "Прогноз и эффективность яйценоскости"
+
+msgid ""
+"Prognoz uchun avval faol partiya va joja (tovuq) ma’lumotlarini kiriting."
+msgstr ""
+"Для прогноза сначала добавьте активные партии и данные о птице (курах)."
+
+msgid "Partiya qo‘shish"
+msgstr "Добавить партию"
+
+msgid "Bugun kutilayotgan tuxum (dona)"
+msgstr "Ожидаемые яйца сегодня (шт)"
+
+msgid "O‘rtacha samaradorlik (real/standart)"
+msgstr "Средняя эффективность (факт/стандарт)"
+
+msgid "Eng samarali partiya"
+msgstr "Самая эффективная партия"
+
+msgid "E’tibor kerak partiya"
+msgstr "Партия, требующая внимания"
+
+#, python-format
+msgid "Tug‘uvchanlik egri chizig‘i (HDEP %%)"
+msgstr "Кривая яйценоскости (HDEP %%)"
+
+msgid "Zot standarti"
+msgstr "Стандарт породы"
+
+msgid "Sizning real holatingiz"
+msgstr "Ваш фактический результат"
+
+msgid "Yosh (hafta)"
+msgstr "Возраст (недели)"
+
+msgid ""
+"Real chiziq uchun “Tuxum yig‘imi” bo‘limiga kunlik yig‘ilgan tuxumni "
+"kiriting."
+msgstr ""
+"Для фактической линии вносите ежедневный сбор яиц в разделе «Сбор яиц»."
+
+msgid "Partiyalar samaradorligi"
+msgstr "Эффективность партий"
+
+msgid "Tirik tovuq"
+msgstr "Живые куры"
+
+msgid "Standart HDEP"
+msgstr "Стандартный HDEP"
+
+msgid "Real HDEP"
+msgstr "Фактический HDEP"
+
+msgid "Kutilgan/kun"
+msgstr "Ожидается/день"
+
+msgid "Samaradorlik"
+msgstr "Эффективность"
+
+msgid "Tavsiya"
+msgstr "Рекомендация"
+
+msgid "Faol partiya yo‘q"
+msgstr "Нет активных партий"
+
+msgid "Kirish"
+msgstr "Войти"
+
+msgid "Login yoki parol noto‘g‘ri. Qayta urinib ko‘ring."
+msgstr "Неверный логин или пароль. Попробуйте снова."
+
+msgid "Kirilmoqda"
+msgstr "Вход"
+
+msgid "Foydalanuvchi nomi"
+msgstr "Имя пользователя"
+
+msgid "Login"
+msgstr "Логин"
+
+msgid "Parol"
+msgstr "Пароль"
+
+msgid "Saqlanmoqda"
+msgstr "Сохранение"
+
+msgid "Yangi sabab"
+msgstr "Новая причина"
+
+msgid "Sabab nomi"
+msgstr "Название причины"
+
+msgid "Qo‘shish"
+msgstr "Добавить"
+
+msgid "Saqlash"
+msgstr "Сохранить"
+
+msgid "Excel"
+msgstr "Excel"
+
+msgid "Filter bo‘yicha"
+msgstr "По фильтру"
+
+msgid "Hammasini"
+msgstr "Все"
+
+msgid "Joja holati"
+msgstr "Состояние цыплят"
+
+msgid "Haftalik vazn"
+msgstr "Еженедельный вес"
+
+msgid "Joja haridi"
+msgstr "Закупка цыплят"
+
+msgid "Sotib olingan"
+msgstr "Куплено"
+
+msgid "Nobud bo‘lganlar"
+msgstr "Падёж"
+
+msgid "Haftalik vaznlar"
+msgstr "Еженедельные веса"
+
+msgid "Moliyaviy hisobot"
+msgstr "Финансовый отчёт"
+
+msgid "Rasxod (umumiy)"
+msgstr "Расходы (всего)"
+
+msgid "Oylarni taqqoslash"
+msgstr "Сравнение месяцев"
+
+msgid "Ko‘rsatkich"
+msgstr "Показатель"
+
+msgid "O‘zgarish"
+msgstr "Изменение"
+
+msgid "Rasxod sabablari bo‘yicha"
+msgstr "Расходы по причинам"
+
+msgid "Tushum taqsimoti"
+msgstr "Распределение выручки"
+
+msgid "PDF yuklab olish"
+msgstr "Скачать PDF"
+
+msgid "Jami tushum"
+msgstr "Итого выручка"
+
+msgid "Telegram bot"
+msgstr "Telegram-бот"
+
+msgid "Ulanish"
+msgstr "Подключение"
+
+msgid "Telegramda botni oching:"
+msgstr "Откройте бота в Telegram:"
+
+msgid "Botga"
+msgstr "Боту напишите"
+
+msgid "deb yozing"
+msgstr "команду"
+
+msgid "Quyidagi bir martalik kodni botga yuboring"
+msgstr "Отправьте боту одноразовый код ниже"
+
+msgid "Kod 15 daqiqa amal qiladi va bir marta ishlatiladi."
+msgstr "Код действует 15 минут и используется один раз."
+
+msgid "Hali faol kod yo‘q."
+msgstr "Пока нет активного кода."
+
+msgid "Yangi kod yaratish"
+msgstr "Создать новый код"
+
+msgid "Ulangan akkauntlar"
+msgstr "Подключённые аккаунты"
+
+msgid "Ulangan"
+msgstr "Подключён"
+
+msgid "Uzish"
+msgstr "Отключить"
+
+msgid "Hali hech qanday Telegram akkaunt ulanmagan."
+msgstr "Пока не подключён ни один аккаунт Telegram."
+
+msgid "Bot nima qiladi?"
+msgstr "Что делает бот?"
+
+msgid "Tizimdagi har bir yangilikni darhol yuboradi"
+msgstr "Мгновенно отправляет каждое обновление"
+
+msgid "Har kuni kechqurun kunlik hisobot yuboradi"
+msgstr "Каждый вечер отправляет ежедневный отчёт"
+
+msgid "So‘rov: /balance, /eggs, /poultry, /report"
+msgstr "Запрос: /balance, /eggs, /poultry, /report"
+
+msgid "Til tanlash: /language"
+msgstr "Язык: /language"
+
+msgid "January"
+msgstr "Январь"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "января"
+
+msgid "February"
+msgstr "Февраль"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "февраля"
+
+msgid "March"
+msgstr "Март"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "марта"
+
+msgid "April"
+msgstr "Апрель"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "апреля"
+
+msgid "May"
+msgstr "Май"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "мая"
+
+msgid "June"
+msgstr "Июнь"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "июня"
+
+msgid "July"
+msgstr "Июль"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "июля"
+
+msgid "August"
+msgstr "Август"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "августа"
+
+msgid "September"
+msgstr "Сентябрь"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "сентября"
+
+msgid "October"
+msgstr "Октябрь"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "октября"
+
+msgid "November"
+msgstr "Ноябрь"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "ноября"
+
+msgid "December"
+msgstr "Декабрь"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "декабря"
+
+msgctxt "abbrev. month"
+msgid "jan"
+msgstr "Янв."
+
+msgctxt "abbrev. month"
+msgid "feb"
+msgstr "Фев."
+
+msgctxt "abbrev. month"
+msgid "mar"
+msgstr "Мар."
+
+msgctxt "abbrev. month"
+msgid "apr"
+msgstr "Апр."
+
+msgctxt "abbrev. month"
+msgid "may"
+msgstr "Май"
+
+msgctxt "abbrev. month"
+msgid "jun"
+msgstr "Июн."
+
+msgctxt "abbrev. month"
+msgid "jul"
+msgstr "Июл."
+
+msgctxt "abbrev. month"
+msgid "aug"
+msgstr "Авг."
+
+msgctxt "abbrev. month"
+msgid "sep"
+msgstr "Сен."
+
+msgctxt "abbrev. month"
+msgid "oct"
+msgstr "Окт."
+
+msgctxt "abbrev. month"
+msgid "nov"
+msgstr "Ноя."
+
+msgctxt "abbrev. month"
+msgid "dec"
+msgstr "Дек."

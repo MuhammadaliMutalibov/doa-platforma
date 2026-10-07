@@ -1,0 +1,98 @@
+{% extends 'frontend/base.html' %}
+{% load i18n %}
+
+{% block title %}{{ page_title }} · DOA Nutrition{% endblock %}
+{% block page_title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width:640px">
+  <form method="post" enctype="multipart/form-data" novalidate data-loading="{% trans 'Saqlanmoqda' %}">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+      <div class="alert">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    <div class="form-grid">
+      {% for field in form %}
+      <div class="field {% if field.name == 'izoh' %}col-2{% endif %}" id="fld-{{ field.name }}">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.name == 'kategoriya' %}
+        <div class="inline-add" data-url="{% url 'sabab_qoshish' %}" data-target="{{ field.id_for_label }}">
+          <button type="button" class="add-mini" onclick="sababToggle(this)">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            {% trans "Yangi sabab" %}
+          </button>
+          <div class="add-mini-row" style="display:none">
+            <input type="text" class="input add-mini-input" placeholder="{% trans 'Sabab nomi' %}">
+            <button type="button" class="btn-add" onclick="sababSave(this)">{% trans "Qo‘shish" %}</button>
+          </div>
+        </div>
+        {% endif %}
+        {% if field.help_text %}<div class="hint">{{ field.help_text }}</div>{% endif %}
+        {% if field.errors %}<div class="err">{{ field.errors|striptags }}</div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="form-actions">
+      <a href="{{ cancel_url }}" class="btn-ghost">{% trans "Bekor qilish" %}</a>
+      <button type="submit" class="btn" style="width:auto;padding-left:26px;padding-right:26px">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        {% trans "Saqlash" %}
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Sotuv formasi: "tuxum" tanlansagina "tuxum sifati" ko'rinadi
+(function () {
+  var tur = document.querySelector('[name="tur"]');
+  var sifat = document.getElementById('fld-tuxum_sifati');
+  if (!tur || !sifat) return;
+  function upd() { sifat.style.display = (tur.value === 'tuxum') ? '' : 'none'; }
+  tur.addEventListener('change', upd);
+  upd();
+})();
+
+// Joja sotuvi formasi: "Tovuqlar bazasi" tanlansagina "jins" (tovuq/xo'roz) ko'rinadi
+(function () {
+  var manba = document.querySelector('[name="manba"]');
+  var jins = document.getElementById('fld-jins');
+  if (!manba || !jins) return;
+  function upd() { jins.style.display = (manba.value === 'tovuqbaza') ? '' : 'none'; }
+  manba.addEventListener('change', upd);
+  upd();
+})();
+
+// Rasxod formasi: inline yangi "sabab" qo'shish
+function sababToggle(btn) {
+  var row = btn.parentElement.querySelector('.add-mini-row');
+  var show = row.style.display === 'none';
+  row.style.display = show ? 'flex' : 'none';
+  if (show) row.querySelector('input').focus();
+}
+function sababSave(btn) {
+  var box = btn.closest('.inline-add');
+  var input = box.querySelector('.add-mini-input');
+  var nomi = input.value.trim();
+  if (!nomi) return;
+  var sel = document.getElementById(box.dataset.target);
+  var csrf = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  var fd = new FormData();
+  fd.append('nomi', nomi);
+  fetch(box.dataset.url, { method: 'POST', body: fd, headers: { 'X-CSRFToken': csrf } })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (!d.id) return;
+      var exists = Array.from(sel.options).some(function (o) { return o.value == d.id; });
+      if (!exists) { sel.add(new Option(d.nomi, d.id, true, true)); }
+      else { sel.value = d.id; }
+      input.value = '';
+      box.querySelector('.add-mini-row').style.display = 'none';
+    });
+}
+</script>
+{% endblock %}

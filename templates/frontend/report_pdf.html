@@ -1,0 +1,83 @@
+{% load i18n frontend_extras %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: 'DejaVu'; src: url("{{ font_regular }}"); }
+  @font-face { font-family: 'DejaVu'; font-weight: bold; src: url("{{ font_bold }}"); }
+  @page { size: a4; margin: 1.5cm; }
+  body, table, th, td, h2, .brand, .sub, .big, .foot { font-family: 'DejaVu', sans-serif; }
+  body { color: #1a2420; font-size: 10pt; }
+  .head { border-bottom: 2.5pt solid #0c4a34; padding-bottom: 8pt; margin-bottom: 14pt; }
+  .brand { font-size: 17pt; font-weight: bold; color: #0c4a34; }
+  .sub { color: #667; font-size: 9pt; margin-top: 2pt; }
+  h2 { font-size: 11pt; color: #0c4a34; margin: 16pt 0 6pt; border-left: 3pt solid #10b981; padding-left: 6pt; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 6pt; }
+  th { background: #0c4a34; color: #fff; text-align: left; padding: 5pt 7pt; font-size: 8.5pt; }
+  td { padding: 5pt 7pt; border-bottom: 0.5pt solid #e2e8e5; font-size: 9pt; }
+  .r { text-align: right; }
+  .sum td { border: none; }
+  .sum .big { font-size: 13pt; font-weight: bold; }
+  .pos { color: #0e7a52; } .neg { color: #c0392b; }
+  .foot { margin-top: 20pt; color: #99a; font-size: 8pt; text-align: center; border-top: 0.5pt solid #e2e8e5; padding-top: 6pt; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="brand">DOA Nutrition</div>
+    <div class="sub">{% trans "Moliyaviy hisobot" %} · {% if filial %}{{ filial.nomi }}{% else %}{% trans "Barcha filiallar" %}{% endif %} · {{ sana }}</div>
+  </div>
+
+  <table class="sum">
+    <tr>
+      <td>{% trans "Investitsiya" %}<br><span class="big pos">{{ inv_jami|pul }}</span></td>
+      <td>{% trans "Rasxod (umumiy)" %}<br><span class="big neg">{{ rasxod_umumiy|pul }}</span></td>
+      <td>{% trans "Tushum" %}<br><span class="big pos">{{ tushum_jami|pul }}</span></td>
+      <td>{% trans "Sof foyda" %}<br><span class="big {% if sof_foyda < 0 %}neg{% else %}pos{% endif %}">{{ sof_foyda|pul }}</span></td>
+      <td>{% trans "Balans" %}<br><span class="big">{{ balans|pul }}</span></td>
+    </tr>
+  </table>
+
+  <h2>{% trans "Oylarni taqqoslash" %}</h2>
+  <table>
+    <tr>
+      <th>{% trans "Ko‘rsatkich" %}</th>
+      <th class="r">{{ d1_sana|date:"F Y" }}</th>
+      <th class="r">{{ d2_sana|date:"F Y" }}</th>
+      <th class="r">{% trans "O‘zgarish" %}</th>
+    </tr>
+    {% for s in taqq_satrlar %}
+    <tr>
+      <td>{{ s.nom }}</td>
+      <td class="r">{{ s.v1|pul }}</td>
+      <td class="r">{{ s.v2|pul }}</td>
+      <td class="r {% if s.teng %}{% elif s.ijobiy %}pos{% else %}neg{% endif %}">{% if s.teng %}0%{% else %}{% if s.up %}+{% else %}-{% endif %}{{ s.foiz }}%{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h2>{% trans "Rasxod sabablari bo‘yicha" %}</h2>
+  <table>
+    <tr><th>{% trans "Sabab" %}</th><th class="r">{% trans "Jami" %}</th></tr>
+    {% for s in sabablar %}<tr><td>{{ s.kategoriya__nomi }}</td><td class="r">{{ s.jami|pul }}</td></tr>{% endfor %}
+    <tr><td><b>{% trans "Maoshlar" %}</b></td><td class="r"><b>{{ maosh_jami|pul }}</b></td></tr>
+  </table>
+
+  <h2>{% trans "Tushum taqsimoti" %}</h2>
+  <table>
+    <tr><th>{% trans "Tur" %}</th><th class="r">{% trans "Jami" %}</th></tr>
+    <tr><td>{% trans "Joja sotuvi" %}</td><td class="r">{{ joja_t|pul }}</td></tr>
+    <tr><td>{% trans "Tuxum sotuvi" %}</td><td class="r">{{ tuxum_t|pul }}</td></tr>
+    <tr><td><b>{% trans "Jami" %}</b></td><td class="r"><b>{{ tushum_jami|pul }}</b></td></tr>
+  </table>
+
+  <h2>{% trans "Investitsiyalar" %}</h2>
+  <table>
+    <tr><th>{% trans "Sana" %}</th><th>{% trans "Filial" %}</th><th>{% trans "Partiya" %}</th><th class="r">{% trans "Summa" %}</th></tr>
+    {% for k in kirimlar %}<tr><td>{{ k.sana }}</td><td>{{ k.filial.nomi|default:'-' }}</td><td>{{ k.partiya|default:'-' }}</td><td class="r">{{ k.summa|pul }}</td></tr>{% endfor %}
+  </table>
+
+  <div class="foot">DOA Nutrition · {{ sana }}</div>
+</body>
+</html>

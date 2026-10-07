@@ -1,0 +1,1083 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-07 10:08+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Oʻzbekiston"
+msgstr "Uzbekistan"
+
+msgid "Tojikiston"
+msgstr "Tajikistan"
+
+msgid "Turkmaniston"
+msgstr "Turkmenistan"
+
+msgid "Turkiya"
+msgstr "Turkey"
+
+msgid "Filial nomi"
+msgstr "Branch name"
+
+msgid "Davlat"
+msgstr "Country"
+
+msgid "Manzil"
+msgstr "Address"
+
+msgid "Faol"
+msgstr "Active"
+
+msgid "Yaratilgan"
+msgstr "Created"
+
+msgid "Filial"
+msgstr "Branch"
+
+msgid "Filiallar"
+msgstr "Branches"
+
+msgid "Administrator"
+msgstr "Administrator"
+
+msgid "Buxgalter"
+msgstr "Accountant"
+
+msgid "Hodim"
+msgstr "Employee"
+
+msgid "Rol"
+msgstr "Role"
+
+msgid "Telefon"
+msgstr "Phone"
+
+msgid "Rasm"
+msgstr "Photo"
+
+msgid "Bo‘sh qoldirilsa — super admin (barcha filiallarni ko‘radi)"
+msgstr "Leave empty — super admin (sees all branches)"
+
+msgid "Hodimlar"
+msgstr "Employees"
+
+msgid "Tizimga kirdi"
+msgstr "Logged in"
+
+msgid "Tizimdan chiqdi"
+msgstr "Logged out"
+
+msgid "Qo‘shdi"
+msgstr "Added"
+
+msgid "Tahrirladi"
+msgstr "Edited"
+
+msgid "O‘chirdi"
+msgstr "Deleted"
+
+msgid "Foydalanuvchi"
+msgstr "User"
+
+msgid "Amal"
+msgstr "Action"
+
+msgid "Tavsif"
+msgstr "Description"
+
+msgid "IP manzil"
+msgstr "IP address"
+
+msgid "Vaqt"
+msgstr "Time"
+
+msgid "Faoliyat"
+msgstr "Activity"
+
+msgid "Oluvchi"
+msgstr "Recipient"
+
+msgid "Kim qildi"
+msgstr "Actor"
+
+msgid "Xabar"
+msgstr "Message"
+
+msgid "Havola"
+msgstr "Link"
+
+msgid "O‘qilgan"
+msgstr "Read"
+
+msgid "Telegramga yuborildi"
+msgstr "Sent to Telegram"
+
+msgid "Bildirishnoma"
+msgstr "Notification"
+
+msgid "Bildirishnomalar"
+msgstr "Notifications"
+
+msgid "Telegram chat ID"
+msgstr "Telegram chat ID"
+
+msgid "Telegram username"
+msgstr "Telegram username"
+
+msgid "Ism"
+msgstr "Name"
+
+msgid "Til"
+msgstr "Language"
+
+msgid "Ulangan vaqt"
+msgstr "Connected at"
+
+msgid "Telegram ulanish"
+msgstr "Telegram connection"
+
+msgid "Telegram ulanishlar"
+msgstr "Telegram connections"
+
+msgid "Kod"
+msgstr "Code"
+
+msgid "Amal qilish muddati"
+msgstr "Expiry"
+
+msgid "Ishlatilgan"
+msgstr "Used"
+
+msgid "Telegram kod"
+msgstr "Telegram code"
+
+msgid "Telegram kodlar"
+msgstr "Telegram codes"
+
+msgid "Ism familiya"
+msgstr "Full name"
+
+msgid "Lavozim"
+msgstr "Position"
+
+msgid "Oylik maosh"
+msgstr "Monthly salary"
+
+msgid "Xodim"
+msgstr "Employee"
+
+msgid "Xodimlar"
+msgstr "Staff"
+
+msgid "Balans"
+msgstr "Balance"
+
+msgid "Tuxumlar"
+msgstr "Eggs"
+
+msgid "Tovuqlar"
+msgstr "Chickens"
+
+msgid "Hisobot"
+msgstr "Report"
+
+msgid "Yordam"
+msgstr "Help"
+
+msgid "Buyruqlar"
+msgstr "Commands"
+
+msgid "moliyaviy holat"
+msgstr "financial status"
+
+msgid "tuxum qoldig‘i"
+msgstr "egg stock"
+
+msgid "tovuq/xo‘roz soni"
+msgstr "hens/roosters count"
+
+msgid "to‘liq kunlik hisobot"
+msgstr "full daily report"
+
+msgid "tilni o‘zgartirish"
+msgstr "change language"
+
+msgid "botni akkauntdan uzish"
+msgstr "disconnect the bot"
+
+msgid "Moliyaviy holat"
+msgstr "Financial status"
+
+msgid "Investitsiya"
+msgstr "Investment"
+
+msgid "Rasxod"
+msgstr "Expense"
+
+msgid "Tushum"
+msgstr "Revenue"
+
+msgid "Sof foyda"
+msgstr "Net profit"
+
+msgid "dona"
+msgstr "pcs"
+
+msgid "Tuxum holati"
+msgstr "Egg status"
+
+msgid "Yig‘ilgan"
+msgstr "Collected"
+
+msgid "Sotilgan"
+msgstr "Sold"
+
+msgid "Brak"
+msgstr "Defective"
+
+msgid "Qoldiq"
+msgstr "Remaining"
+
+msgid "Joja qoldig‘i"
+msgstr "Poultry stock"
+
+msgid "Tovuq"
+msgstr "Chicken"
+
+msgid "Xo‘roz"
+msgstr "Rooster"
+
+msgid "Jami"
+msgstr "Total"
+
+msgid "kunlik hisobot"
+msgstr "daily report"
+
+msgid "Tug‘uvchanlik"
+msgstr "Laying"
+
+msgid "Bugun kutilayotgan tuxum"
+msgstr "Expected eggs today"
+
+msgid "O‘rtacha samaradorlik"
+msgstr "Average efficiency"
+
+msgid "Til o‘zgartirildi."
+msgstr "Language changed."
+
+msgid "Davom etish uchun saytdan olingan bir martalik kodni yuboring."
+msgstr "Send the one-time code from the site to continue."
+
+msgid "Tilni tanlang:"
+msgstr "Choose a language:"
+
+msgid "muvaffaqiyatli ulandingiz!"
+msgstr "successfully connected!"
+
+msgid "❌ Kod noto‘g‘ri yoki muddati o‘tgan. Saytdan yangi kod oling."
+msgstr "❌ Invalid or expired code. Get a new code from the site."
+
+msgid "🔌 Bot akkauntingizdan uzildi. Qayta ulanish uchun /start."
+msgstr ""
+"🔌 The bot has been disconnected from your account. Use /start to reconnect."
+
+msgid "Tushunarsiz buyruq. /help — yordam."
+msgstr "Unknown command. /help for help."
+
+msgid "Yangilik"
+msgstr "Update"
+
+msgid "Dollar (USD)"
+msgstr "Dollar (USD)"
+
+msgid "Yaratilgan vaqt"
+msgstr "Created at"
+
+msgid "O‘zgartirilgan vaqt"
+msgstr "Updated at"
+
+msgid "Kiritgan hodim"
+msgstr "Created by"
+
+msgid "Sana"
+msgstr "Date"
+
+msgid "Partiya"
+msgstr "Batch"
+
+msgid "Summa"
+msgstr "Amount"
+
+msgid "Valyuta"
+msgstr "Currency"
+
+msgid "Izoh"
+msgstr "Note"
+
+msgid "Investitsiyalar"
+msgstr "Investments"
+
+msgid "Sabab"
+msgstr "Reason"
+
+msgid "Sabablar"
+msgstr "Reasons"
+
+msgid "Rasxodlar"
+msgstr "Expenses"
+
+msgid "Maosh"
+msgstr "Salary"
+
+msgid "Maoshlar"
+msgstr "Salaries"
+
+msgid "Real yig‘im kiritilmagan"
+msgstr "No actual data entered"
+
+msgid "Hali tug‘ish yoshida emas"
+msgstr "Not yet in laying age"
+
+msgid "A’lo — standartga mos"
+msgstr "Excellent — matches standard"
+
+msgid "E’tibor bering — yem/yorug‘likni tekshiring"
+msgstr "Attention — check feed/lighting"
+
+msgid "Past — rasion, yorug‘lik yoki yoshni ko‘rib chiqing"
+msgstr "Low — review ration, lighting or age"
+
+msgid "Qiymat 0 dan katta bo‘lishi kerak."
+msgstr "Value must be greater than 0."
+
+msgid "Qiymat manfiy bo‘lishi mumkin emas."
+msgstr "Value cannot be negative."
+
+msgid "Soni kamida 1 bo‘lishi kerak."
+msgstr "Quantity must be at least 1."
+
+msgid "Kimga (filial)"
+msgstr "To whom (branch)"
+
+#| msgid "Qiymat manfiy bo‘lishi mumkin emas."
+msgid "Ochilgan joja soni tuxum sonidan ko‘p bo‘lishi mumkin emas."
+msgstr "Hatched chicks cannot exceed the number of eggs."
+
+msgid "Tovuqlar bazasidan sotishda tovuq yoki xo‘rozni tanlang."
+msgstr "When selling from the chicken database, choose hen or rooster."
+
+msgid "Joriy parol"
+msgstr "Current password"
+
+msgid "Yangi parol"
+msgstr "New password"
+
+msgid "Yangi parolni tasdiqlang"
+msgstr "Confirm new password"
+
+msgid ""
+"Kamida 8 ta belgi; faqat raqamlardan yoki juda oddiy so‘zdan iborat "
+"bo‘lmasin."
+msgstr "At least 8 characters; not only numbers or a too-common word."
+
+msgid "Shaxsiy ma’lumotlaringiz saqlandi."
+msgstr "Your personal details have been saved."
+
+msgid "Shaxsiy ma'lumotlar"
+msgstr "Personal details"
+
+msgid "Bu yozuvni o‘zgartirish muddati (24 soat) tugagan."
+msgstr "The time window (24 hours) to edit this record has expired."
+
+msgid "Yozuv qo‘shish uchun avval yuqoridan filial tanlang."
+msgstr "Select a branch above first to add a record."
+
+msgid "qo‘shdi"
+msgstr "added"
+
+msgid "tahrirladi"
+msgstr "edited"
+
+msgid "Parol muvaffaqiyatli o‘zgartirildi."
+msgstr "Password changed successfully."
+
+msgid "Parolni o‘zgartirish"
+msgstr "Change password"
+
+msgid "Bu yozuvni o‘chirish muddati (24 soat) tugagan."
+msgstr "The time window (24 hours) to delete this record has expired."
+
+msgid "Yozuv o‘chirildi."
+msgstr "Record deleted."
+
+msgid "Yangi investitsiya"
+msgstr "New investment"
+
+msgid "Investitsiyani tahrirlash"
+msgstr "Edit investment"
+
+msgid "Kiritgan"
+msgstr "Created by"
+
+msgid "Yangi rasxod"
+msgstr "New expense"
+
+msgid "Rasxodni tahrirlash"
+msgstr "Edit expense"
+
+msgid "Yangi maosh"
+msgstr "New salary"
+
+msgid "Maoshni tahrirlash"
+msgstr "Edit salary"
+
+msgid "Joja turi"
+msgstr "Chick type"
+
+msgid "Harakat turi"
+msgstr "Movement type"
+
+msgid "Soni"
+msgstr "Count"
+
+msgid "Sana (hafta)"
+msgstr "Date (week)"
+
+msgid "O‘rtacha vazn"
+msgstr "Average weight"
+
+msgid "Dona narxi"
+msgstr "Unit price"
+
+msgid "Yangi joja haridi"
+msgstr "New chick purchase"
+
+msgid "Joja haridini tahrirlash"
+msgstr "Edit chick purchase"
+
+msgid "Nobud bo‘lganini qo‘shish"
+msgstr "Add a loss"
+
+msgid "Nobud yozuvini tahrirlash"
+msgstr "Edit loss record"
+
+msgid "Yangi vazn yozuvi"
+msgstr "New weight record"
+
+msgid "Vazn yozuvini tahrirlash"
+msgstr "Edit weight record"
+
+msgid "Jojalar"
+msgstr "Chicks"
+
+#| msgid "Tuxum sotuvi"
+msgid "Tuxum soni"
+msgstr "Egg count"
+
+#| msgid "O‘qilgan"
+msgid "Ochilgan"
+msgstr "Hatched"
+
+msgid "Nobud"
+msgstr "Lost"
+
+#| msgid "Yangi joja haridi"
+msgid "Yangi joja (ochirish)"
+msgstr "New chicks (hatching)"
+
+#| msgid "Joja haridini tahrirlash"
+msgid "Jojani tahrirlash"
+msgstr "Edit chicks"
+
+msgid "Partiyalar"
+msgstr "Batches"
+
+msgid "Partiya nomi"
+msgstr "Batch name"
+
+msgid "Boshlangan sana"
+msgstr "Start date"
+
+msgid "Holat"
+msgstr "Status"
+
+msgid "Nofaol"
+msgstr "Inactive"
+
+msgid "Yangi partiya"
+msgstr "New batch"
+
+msgid "Partiyani tahrirlash"
+msgstr "Edit batch"
+
+msgid "Joja sotuvi"
+msgstr "Chick sales"
+
+msgid "Birlik narxi"
+msgstr "Unit price"
+
+msgid "Manba"
+msgstr "Source"
+
+#| msgid "Tovuqlar"
+msgid "Tovuqlar bazasi"
+msgstr "Chicken database"
+
+msgid "joja"
+msgstr "chicks"
+
+#| msgid "Xo‘roz"
+msgid "xo‘roz"
+msgstr "roosters"
+
+#| msgid "Tovuq"
+msgid "tovuq"
+msgstr "hens"
+
+#, python-format
+msgid "Qoldiq yetarli emas. Mavjud: %(n)s %(nom)s."
+msgstr "Not enough stock. Available: %(n)s %(nom)s."
+
+msgid "Yangi joja sotuvi"
+msgstr "New chick sale"
+
+msgid "Joja sotuvini tahrirlash"
+msgstr "Edit chick sale"
+
+msgid "Tuxum sotuvi"
+msgstr "Egg sales"
+
+msgid "Sifat"
+msgstr "Quality"
+
+msgid "Yangi tuxum sotuvi"
+msgstr "New egg sale"
+
+msgid "Tuxum sotuvini tahrirlash"
+msgstr "Edit egg sale"
+
+msgid "Yangi filial"
+msgstr "New branch"
+
+msgid "Filialni tahrirlash"
+msgstr "Edit branch"
+
+msgid "Yangi xodim"
+msgstr "New employee"
+
+msgid "Xodimni tahrirlash"
+msgstr "Edit employee"
+
+msgid "Tuxum yig‘imi"
+msgstr "Egg collection"
+
+msgid "Yig‘ilgan tuxum"
+msgstr "Collected eggs"
+
+msgid "Yangi tuxum yig‘imi"
+msgstr "New egg collection"
+
+msgid "Tuxum yig‘imini tahrirlash"
+msgstr "Edit egg collection"
+
+msgid "Yangi kod yaratildi. Uni botga yuboring (15 daqiqa amal qiladi)."
+msgstr "New code generated. Send it to the bot (valid for 15 minutes)."
+
+msgid "Telegram ulanishi uzildi."
+msgstr "Telegram connection removed."
+
+msgid "gram"
+msgstr "gram"
+
+msgid "kg"
+msgstr "kg"
+
+msgid "Sotib olindi"
+msgstr "Purchased"
+
+msgid "Nobud bo‘ldi"
+msgstr "Died"
+
+msgid "Soni (dona)"
+msgstr "Count (pcs)"
+
+msgid "Faqat sotib olishda (harid)"
+msgstr "Only when purchasing"
+
+msgid "Joja harakati"
+msgstr "Chick movement"
+
+msgid "Joja harakatlari"
+msgstr "Chick movements"
+
+msgid "Birlik"
+msgstr "Unit"
+
+msgid "Joja vazni"
+msgstr "Chick weight"
+
+msgid "Joja vaznlari"
+msgstr "Chick weights"
+
+msgid "Brak tuxum"
+msgstr "Defective egg"
+
+msgid "Brak tuxumlar"
+msgstr "Defective eggs"
+
+msgid "Yig‘ilgan tuxum (dona)"
+msgstr "Collected eggs (pcs)"
+
+msgid "Tuxum yig‘imlari"
+msgstr "Egg collections"
+
+#| msgid "Soni (dona)"
+msgid "Tuxum soni (dona)"
+msgstr "Egg count (pcs)"
+
+msgid "Ochilgan joja (dona)"
+msgstr "Hatched chicks (pcs)"
+
+msgid "Joja"
+msgstr "Chick"
+
+msgid "Tuxum"
+msgstr "Egg"
+
+msgid "Sifatli tuxum"
+msgstr "Quality egg"
+
+msgid "Sifatsiz tuxum"
+msgstr "Low-quality egg"
+
+msgid "Jojalar (ochirilgan)"
+msgstr "Chicks (hatched)"
+
+msgid "Sotuv turi"
+msgstr "Sale type"
+
+msgid "Tuxum sifati"
+msgstr "Egg quality"
+
+msgid "Faqat tuxum sotuvida tanlanadi"
+msgstr "Selected only for egg sales"
+
+msgid "Joja sotuvida: jojalar yoki tovuqlar bazasidan"
+msgstr "In chick sales: from chicks or the chicken database"
+
+msgid "Tovuqlar bazasidan sotilganda: tovuq yoki xo‘roz"
+msgstr "When selling from the chicken database: hen or rooster"
+
+msgid "Sotuv"
+msgstr "Sale"
+
+msgid "Sotuvlar"
+msgstr "Sales"
+
+msgid "O‘zbekcha"
+msgstr "Uzbek"
+
+msgid "Türkçe"
+msgstr "Turkish"
+
+msgid "Русский"
+msgstr "Russian"
+
+msgid "English"
+msgstr "English"
+
+msgid "Boshqaruv paneli"
+msgstr "Dashboard"
+
+msgid "Asosiy"
+msgstr "Main"
+
+msgid "Moliya"
+msgstr "Finance"
+
+msgid "Kirimlar"
+msgstr "Income"
+
+msgid "Rasxod kategoriyalari"
+msgstr "Expense categories"
+
+msgid "Boshqaruv"
+msgstr "Management"
+
+msgid "Umumiy holat"
+msgstr "Overview"
+
+msgid "Tovuq qoldiq"
+msgstr "Hens remaining"
+
+msgid "Xo‘roz qoldiq"
+msgstr "Roosters remaining"
+
+msgid "Tahrirlash"
+msgstr "Edit"
+
+msgid "O‘chirish"
+msgstr "Delete"
+
+msgid "24 soat muddati tugagan"
+msgstr "24-hour window expired"
+
+msgid "Amallar"
+msgstr "Actions"
+
+msgid "Hozircha yozuv yo‘q"
+msgstr "No records yet"
+
+msgid "Aktivlik"
+msgstr "Activity"
+
+msgid "Tizim aktivligi"
+msgstr "System activity"
+
+msgid "Hozircha aktivlik yo‘q"
+msgstr "No activity yet"
+
+msgid "Oldingi"
+msgstr "Previous"
+
+msgid "Keyingi"
+msgstr "Next"
+
+msgid "Tuxum prognozi"
+msgstr "Egg forecast"
+
+msgid "Hisobotlar"
+msgstr "Reports"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Foydalanuvchilar"
+msgstr "Users"
+
+msgid "Admin panel"
+msgstr "Admin panel"
+
+msgid "Barcha filiallar"
+msgstr "All branches"
+
+msgid "Tema"
+msgstr "Theme"
+
+msgid "Hammasini o‘qilgan"
+msgstr "Mark all read"
+
+msgid "Hozircha bildirishnoma yo‘q"
+msgstr "No notifications yet"
+
+msgid "Barchasini ko‘rish"
+msgstr "View all"
+
+msgid "Shrift"
+msgstr "Font"
+
+msgid "Shrift o‘lchami"
+msgstr "Font size"
+
+msgid "Qalinlik"
+msgstr "Weight"
+
+msgid "Qalin matn"
+msgstr "Bold text"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Parolni faqat super admin o‘zgartiradi."
+msgstr "Only the super admin can change the password."
+
+msgid "Chiqish"
+msgstr "Log out"
+
+msgid "O‘chirishni tasdiqlang"
+msgstr "Confirm deletion"
+
+msgid "Bu yozuvni o‘chirmoqchimisiz? Bu amalni qaytarib bo‘lmaydi."
+msgstr "Delete this record? This action cannot be undone."
+
+msgid "Bekor qilish"
+msgstr "Cancel"
+
+msgid "O‘chirilmoqda"
+msgstr "Deleting"
+
+msgid "Tizimni boshlash uchun avval filial qo‘shing"
+msgstr "To get started, add a branch first"
+
+msgid ""
+"Filial qo‘shilgach, investitsiya, rasxod, xodim va sotuvlarni kiritish "
+"mumkin bo‘ladi."
+msgstr ""
+"Once a branch is added, you can enter investments, expenses, employees and "
+"sales."
+
+msgid "Filial qo‘shish"
+msgstr "Add branch"
+
+msgid "Tushum (sotuvdan)"
+msgstr "Revenue (from sales)"
+
+msgid "Investitsiya va rasxod"
+msgstr "Investment and expenses"
+
+msgid "6 oy"
+msgstr "6 months"
+
+msgid "Sotuv tushumi"
+msgstr "Sales revenue"
+
+msgid "Ombor va sotuv"
+msgstr "Inventory & sales"
+
+msgid "Tovuq qoldiq (dona)"
+msgstr "Chickens remaining (pcs)"
+
+msgid "Xo‘roz qoldiq (dona)"
+msgstr "Roosters remaining (pcs)"
+
+#| msgid "Joja qoldig‘i"
+msgid "Jojalar qoldig‘i (dona)"
+msgstr "Chicks in stock (pcs)"
+
+msgid "So‘nggi sotuvlar"
+msgstr "Recent sales"
+
+msgid "Tur"
+msgstr "Type"
+
+msgid "Hozircha sotuv yo‘q"
+msgstr "No sales yet"
+
+msgid "So‘nggi rasxodlar"
+msgstr "Recent expenses"
+
+msgid "Hammasi"
+msgstr "All"
+
+msgid "Hozircha rasxod yo‘q"
+msgstr "No expenses yet"
+
+msgid "Tuxum tug‘uvchanlik prognozi va samaradorligi"
+msgstr "Egg production forecast & efficiency"
+
+msgid ""
+"Prognoz uchun avval faol partiya va joja (tovuq) ma’lumotlarini kiriting."
+msgstr "To forecast, first add active batches and poultry (hen) data."
+
+msgid "Partiya qo‘shish"
+msgstr "Add batch"
+
+msgid "Bugun kutilayotgan tuxum (dona)"
+msgstr "Expected eggs today (pcs)"
+
+msgid "O‘rtacha samaradorlik (real/standart)"
+msgstr "Average efficiency (real/standard)"
+
+msgid "Eng samarali partiya"
+msgstr "Most efficient batch"
+
+msgid "E’tibor kerak partiya"
+msgstr "Batch needing attention"
+
+#, python-format
+msgid "Tug‘uvchanlik egri chizig‘i (HDEP %%)"
+msgstr "Laying curve (HDEP %%)"
+
+msgid "Zot standarti"
+msgstr "Breed standard"
+
+msgid "Sizning real holatingiz"
+msgstr "Your actual result"
+
+msgid "Yosh (hafta)"
+msgstr "Age (weeks)"
+
+msgid ""
+"Real chiziq uchun “Tuxum yig‘imi” bo‘limiga kunlik yig‘ilgan tuxumni "
+"kiriting."
+msgstr ""
+"For the actual line, enter daily collected eggs in the “Egg collection” "
+"section."
+
+msgid "Partiyalar samaradorligi"
+msgstr "Batch efficiency"
+
+msgid "Tirik tovuq"
+msgstr "Live hens"
+
+msgid "Standart HDEP"
+msgstr "Standard HDEP"
+
+msgid "Real HDEP"
+msgstr "Actual HDEP"
+
+msgid "Kutilgan/kun"
+msgstr "Expected/day"
+
+msgid "Samaradorlik"
+msgstr "Efficiency"
+
+msgid "Tavsiya"
+msgstr "Recommendation"
+
+msgid "Faol partiya yo‘q"
+msgstr "No active batches"
+
+msgid "Kirish"
+msgstr "Log in"
+
+msgid "Login yoki parol noto‘g‘ri. Qayta urinib ko‘ring."
+msgstr "Incorrect username or password. Please try again."
+
+msgid "Kirilmoqda"
+msgstr "Signing in"
+
+msgid "Foydalanuvchi nomi"
+msgstr "Username"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Parol"
+msgstr "Password"
+
+msgid "Saqlanmoqda"
+msgstr "Saving"
+
+msgid "Yangi sabab"
+msgstr "New reason"
+
+msgid "Sabab nomi"
+msgstr "Reason name"
+
+msgid "Qo‘shish"
+msgstr "Add"
+
+msgid "Saqlash"
+msgstr "Save"
+
+msgid "Excel"
+msgstr "Excel"
+
+msgid "Filter bo‘yicha"
+msgstr "Filtered"
+
+msgid "Hammasini"
+msgstr "All"
+
+msgid "Joja holati"
+msgstr "Chick status"
+
+msgid "Haftalik vazn"
+msgstr "Weekly weight"
+
+msgid "Joja haridi"
+msgstr "Chick purchase"
+
+msgid "Sotib olingan"
+msgstr "Purchased"
+
+msgid "Nobud bo‘lganlar"
+msgstr "Losses"
+
+msgid "Haftalik vaznlar"
+msgstr "Weekly weights"
+
+msgid "Moliyaviy hisobot"
+msgstr "Financial report"
+
+msgid "Rasxod (umumiy)"
+msgstr "Expenses (total)"
+
+msgid "Oylarni taqqoslash"
+msgstr "Compare months"
+
+msgid "Ko‘rsatkich"
+msgstr "Metric"
+
+msgid "O‘zgarish"
+msgstr "Change"
+
+msgid "Rasxod sabablari bo‘yicha"
+msgstr "Expenses by reason"
+
+msgid "Tushum taqsimoti"
+msgstr "Revenue breakdown"
+
+msgid "PDF yuklab olish"
+msgstr "Download PDF"
+
+msgid "Jami tushum"
+msgstr "Total revenue"
+
+msgid "Telegram bot"
+msgstr "Telegram bot"
+
+msgid "Ulanish"
+msgstr "Connection"
+
+msgid "Telegramda botni oching:"
+msgstr "Open the bot in Telegram:"
+
+msgid "Botga"
+msgstr "To the bot, type"
+
+msgid "deb yozing"
+msgstr "command"
+
+msgid "Quyidagi bir martalik kodni botga yuboring"
+msgstr "Send the one-time code below to the bot"
+
+msgid "Kod 15 daqiqa amal qiladi va bir marta ishlatiladi."
+msgstr "The code is valid for 15 minutes and used once."
+
+msgid "Hali faol kod yo‘q."
+msgstr "No active code yet."
+
+msgid "Yangi kod yaratish"
+msgstr "Generate new code"
+
+msgid "Ulangan akkauntlar"
+msgstr "Connected accounts"
+
+msgid "Ulangan"
+msgstr "Connected"
+
+msgid "Uzish"
+msgstr "Disconnect"
+
+msgid "Hali hech qanday Telegram akkaunt ulanmagan."
+msgstr "No Telegram account connected yet."
+
+msgid "Bot nima qiladi?"
+msgstr "What does the bot do?"
+
+msgid "Tizimdagi har bir yangilikni darhol yuboradi"
+msgstr "Sends every system update instantly"
+
+msgid "Har kuni kechqurun kunlik hisobot yuboradi"
+msgstr "Sends a daily report every evening"
+
+msgid "So‘rov: /balance, /eggs, /poultry, /report"
+msgstr "Query: /balance, /eggs, /poultry, /report"
+
+msgid "Til tanlash: /language"
+msgstr "Language: /language"

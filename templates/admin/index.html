@@ -1,0 +1,54 @@
+{% extends "admin/index.html" %}
+{% load i18n humanize frontend_extras %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="font-semibold text-font-important-light dark:text-font-important-dark text-xl mb-6">
+        {% trans "Umumiy holat" %}
+    </h1>
+
+    {# Balans (USD) #}
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 mb-6">
+        <div class="bg-white border border-base-200 rounded-default shadow-sm dark:bg-base-900 dark:border-base-800 p-5">
+            <div class="text-sm text-font-subtle-light dark:text-font-subtle-dark flex items-center gap-2 mb-2">
+                <span class="material-symbols-outlined text-green-500">trending_up</span>{% trans "Investitsiya" %}
+            </div>
+            <div class="text-2xl font-bold text-green-600 dark:text-green-400">{{ doa_kirim|pul }}</div>
+        </div>
+        <div class="bg-white border border-base-200 rounded-default shadow-sm dark:bg-base-900 dark:border-base-800 p-5">
+            <div class="text-sm text-font-subtle-light dark:text-font-subtle-dark flex items-center gap-2 mb-2">
+                <span class="material-symbols-outlined text-red-500">trending_down</span>{% trans "Rasxod" %}
+            </div>
+            <div class="text-2xl font-bold text-red-600 dark:text-red-400">{{ doa_rasxod|pul }}</div>
+        </div>
+        <div class="bg-white border border-base-200 rounded-default shadow-sm dark:bg-base-900 dark:border-base-800 p-5">
+            <div class="text-sm text-font-subtle-light dark:text-font-subtle-dark flex items-center gap-2 mb-2">
+                <span class="material-symbols-outlined text-primary-500">account_balance_wallet</span>{% trans "Balans" %}
+            </div>
+            <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">{{ doa_balans|pul }}</div>
+        </div>
+    </div>
+
+    {# Sanoqlar #}
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="bg-white border border-base-200 rounded-default shadow-sm dark:bg-base-900 dark:border-base-800 p-5 flex items-center gap-4">
+            <span class="material-symbols-outlined text-amber-500 text-3xl">raven</span>
+            <div><div class="text-2xl font-bold text-font-important-light dark:text-font-important-dark">{{ doa_tovuq_qoldiq|intcomma }}</div><div class="text-sm text-font-subtle-light dark:text-font-subtle-dark">{% trans "Tovuq qoldiq" %}</div></div>
+        </div>
+        <div class="bg-white border border-base-200 rounded-default shadow-sm dark:bg-base-900 dark:border-base-800 p-5 flex items-center gap-4">
+            <span class="material-symbols-outlined text-orange-500 text-3xl">raven</span>
+            <div><div class="text-2xl font-bold text-font-important-light dark:text-font-important-dark">{{ doa_xoroz_qoldiq|intcomma }}</div><div class="text-sm text-font-subtle-light dark:text-font-subtle-dark">{% trans "Xo‘roz qoldiq" %}</div></div>
+        </div>
+        <div class="bg-white border border-base-200 rounded-default shadow-sm dark:bg-base-900 dark:border-base-800 p-5 flex items-center gap-4">
+            <span class="material-symbols-outlined text-primary-500 text-3xl">shopping_cart</span>
+            <div><div class="text-2xl font-bold text-font-important-light dark:text-font-important-dark">{{ doa_joja_sotuv|intcomma }}</div><div class="text-sm text-font-subtle-light dark:text-font-subtle-dark">{% trans "Joja sotuvi" %}</div></div>
+        </div>
+        <div class="bg-white border border-base-200 rounded-default shadow-sm dark:bg-base-900 dark:border-base-800 p-5 flex items-center gap-4">
+            <span class="material-symbols-outlined text-amber-500 text-3xl">egg</span>
+            <div><div class="text-2xl font-bold text-font-important-light dark:text-font-important-dark">{{ doa_tuxum_sotuv|intcomma }}</div><div class="text-sm text-font-subtle-light dark:text-font-subtle-dark">{% trans "Tuxum sotuvi" %}</div></div>
+        </div>
+    </div>
+</div>
+
+{{ block.super }}
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'frontend/base.html' %}
+{% load i18n %}
+
+{% block title %}{{ page_title }} · DOA Nutrition{% endblock %}
+{% block page_title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+{% block before_list %}{% endblock %}
+<div class="card">
+  <div class="panel-head" style="margin-bottom:14px">
+    <h3>{{ page_title }}</h3>
+    <div class="ph-actions">
+      {% if eksport %}
+      <div class="dropdown" id="expDrop">
+        <button type="button" class="btn-exp" onclick="toggleDrop('expDrop', event)">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          {% trans "Excel" %}
+          <svg class="chev" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dd-menu dd-right">
+          <button type="button" class="dd-item" onclick="exportXlsx('filter')">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            {% trans "Filter bo‘yicha" %}
+          </button>
+          <button type="button" class="dd-item" onclick="exportXlsx('all')">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            {% trans "Hammasini" %}
+          </button>
+        </div>
+      </div>
+      {% endif %}
+      {% if add_url %}
+      <a href="{{ add_url }}" class="btn-add">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        {% trans "Qo‘shish" %}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="table-scroll">
+  <table class="ftable">
+    <thead>
+      <tr>
+        {% for h in headers %}<th>{{ h }}</th>{% endfor %}
+        <th class="nofilter" style="width:80px;text-align:right">{% trans "Amallar" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        {% for cell in row.cells %}<td>{{ cell }}</td>{% endfor %}
+        {% include 'frontend/_actions.html' with row=row %}
+      </tr>
+      {% empty %}
+      <tr><td colspan="{{ headers|length|add:1 }}" class="empty">{% trans "Hozircha yozuv yo‘q" %}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+
+  {% if is_paginated %}
+  <div class="pager">
+    {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">‹ {% trans "Oldingi" %}</a>{% endif %}
+    <span>{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+    {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}">{% trans "Keyingi" %} ›</a>{% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% load i18n %}
+<div class="table-scroll">
+<table class="ftable">
+  <thead><tr>{% for h in headers %}<th>{{ h }}</th>{% endfor %}<th class="nofilter" style="width:80px;text-align:right">{% trans "Amallar" %}</th></tr></thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      {% for cell in row.cells %}<td>{{ cell }}</td>{% endfor %}
+      {% include 'frontend/_actions.html' with row=row %}
+    </tr>
+    {% empty %}
+    <tr><td colspan="{{ headers|length|add:1 }}" class="empty">{% trans "Hozircha yozuv yo‘q" %}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
