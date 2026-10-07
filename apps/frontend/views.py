@@ -3,7 +3,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.db.models import F, Sum
+from django.db.models import F, Sum, ProtectedError
 from django.http import Http404, HttpResponse, HttpResponseNotAllowed, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
@@ -54,7 +54,10 @@ def set_filial(request):
     if request.method == 'POST' and request.user.super_admin:
         val = request.POST.get('filial')
         if val and val != 'all':
-            request.session[SESSION_KEY] = int(val)
+            try:
+                request.session[SESSION_KEY] = int(val)
+            except ValueError:
+                pass
         else:
             request.session.pop(SESSION_KEY, None)
     return redirect(request.META.get('HTTP_REFERER') or '/')
@@ -174,12 +177,19 @@ class FrontListView(LoginRequiredMixin, ListView):
         ctx = super().get_context_data(**kwargs)
         ctx['headers'] = self.headers
         rows = []
+        reg = _delete_registry()
         for o in ctx['object_list']:
             ok = tahrirlash_mumkin(self.request.user, o)
+            can_delete = False
+            if self.del_model and ok and self.del_model in reg:
+                _, faqat_super = reg[self.del_model]
+                if not faqat_super or self.request.user.super_admin:
+                    can_delete = True
+
             rows.append({
                 'cells': self.cells(o),
                 'edit_url': reverse(self.edit_url, args=[o.pk]) if (self.edit_url and ok) else None,
-                'del_url': reverse('ochirish', args=[self.del_model, o.pk]) if (self.del_model and ok) else None,
+                'del_url': reverse('ochirish', args=[self.del_model, o.pk]) if can_delete else None,
             })
         ctx['rows'] = rows
         ctx['page_title'] = self.page_title
@@ -328,12 +338,15 @@ def ochirish(request, model, pk):
             nom = f'{vn}: {obj}'
             fil = obj.filial if getattr(obj, 'filial_id', None) else None
             kim = request.user.get_full_name() or request.user.username
-            obj.delete()
-            log_faoliyat(request, Faoliyat.Amal.OCHIRISH, nom)
-            notify(request, Faoliyat.Amal.OCHIRISH,
-                   f'{kim} — {vn} o‘chirdi: {nom.split(": ",1)[-1]}',
-                   havola=request.META.get('HTTP_REFERER', '') or '', filial=fil)
-            messages.success(request, _('Yozuv o‘chirildi.'))
+            try:
+                obj.delete()
+                log_faoliyat(request, Faoliyat.Amal.OCHIRISH, nom)
+                notify(request, Faoliyat.Amal.OCHIRISH,
+                       f'{kim} — {vn} o‘chirdi: {nom.split(": ",1)[-1]}',
+                       havola=request.META.get('HTTP_REFERER', '') or '', filial=fil)
+                messages.success(request, _('Yozuv o‘chirildi.'))
+            except ProtectedError:
+                messages.error(request, _('Bu yozuvga boshqa ma‘lumotlar bog‘langanligi sababli o‘chirib bo‘lmaydi.'))
     return redirect(request.META.get('HTTP_REFERER') or '/')
 
 
@@ -807,6 +820,16 @@ class TuxumSotuvCreate(FrontFormMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.tur = Sotuv.Tur.TUXUM
+        from . import stock
+        fil = active_filial(self.request)
+        mavjud = stock.tuxum_qoldiq(fil)
+        soni = form.cleaned_data.get('soni') or 0
+        eski = getattr(self, 'object', None)
+        if eski and eski.pk:
+            mavjud += eski.soni
+        if soni > mavjud:
+            form.add_error('soni', _('Qoldiq yetarli emas. Mavjud: %s dona.') % mavjud)
+            return self.form_invalid(form)
         return super().form_valid(form)
 
 
@@ -820,6 +843,20 @@ class TuxumSotuvUpdate(FrontFormMixin, UpdateView):
 
     def get_queryset(self):
         return super().get_queryset().filter(tur=Sotuv.Tur.TUXUM)
+    
+    def form_valid(self, form):
+        form.instance.tur = Sotuv.Tur.TUXUM
+        from . import stock
+        fil = active_filial(self.request)
+        mavjud = stock.tuxum_qoldiq(fil)
+        soni = form.cleaned_data.get('soni') or 0
+        eski = getattr(self, 'object', None)
+        if eski and eski.pk:
+            mavjud += eski.soni
+        if soni > mavjud:
+            form.add_error('soni', _('Qoldiq yetarli emas. Mavjud: %s dona.') % mavjud)
+            return self.form_invalid(form)
+        return super().form_valid(form)
 
 
 # ============================================================

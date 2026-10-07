@@ -36,6 +36,6 @@ class RasxodAdmin(BazaAdmin):
 class MaoshAdmin(BazaAdmin):
     list_display = ('hodim', 'sana', 'summa', 'kiritgan')
     list_filter = ('sana',)
-    search_fields = ('hodim__username', 'hodim__first_name', 'hodim__last_name')
+    search_fields = ('hodim__ism',)
     autocomplete_fields = ('hodim',)
     readonly_fields = ('kiritgan', 'yaratilgan', 'ozgartirilgan')

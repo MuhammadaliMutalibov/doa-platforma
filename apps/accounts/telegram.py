@@ -175,37 +175,37 @@ def balance_text():
 def egg_stock_text():
     from django.db.models import Sum
 
-    from apps.inventory.models import TuxumBrak, TuxumYigim
+    from apps.inventory.models import TuxumYigim
     from apps.sales.models import Sotuv
 
     def s(qs):
         return qs.aggregate(x=Sum('soni'))['x'] or 0
     yig = s(TuxumYigim.objects.all())
     sot = s(Sotuv.objects.filter(tur=Sotuv.Tur.TUXUM))
-    brak = s(TuxumBrak.objects.all())
-    qoldiq = max(0, yig - sot - brak)
+    qoldiq = max(0, yig - sot)
     dona = _('dona')
     return (
         f'🥚 <b>{_("Tuxum holati")}</b>\n\n'
         f'{_("Yig‘ilgan")}: <b>{yig:,}</b> {dona}\n'
         f'{_("Sotilgan")}: <b>{sot:,}</b> {dona}\n'
-        f'{_("Brak")}: <b>{brak:,}</b> {dona}\n'
         f'━━━━━━━━━━━━━━\n'
         f'📦 {_("Qoldiq")}: <b>{qoldiq:,}</b> {dona}'
     )
 
 
 def poultry_text():
-    from apps.inventory.models import Jins, JojaHarakat
-    tovuq = JojaHarakat.qoldiq(Jins.TOVUQ)
-    xoroz = JojaHarakat.qoldiq(Jins.XOROZ)
+    from apps.frontend import stock
+    tovuq = stock.tovuq_qoldiq(None)
+    xoroz = stock.xoroz_qoldiq(None)
+    joja = stock.joja_qoldiq(None)
     dona = _('dona')
     return (
-        f'🐔 <b>{_("Joja qoldig‘i")}</b>\n\n'
+        f'🐔 <b>{_("Parranda qoldig‘i")}</b>\n\n'
         f'{_("Tovuq")}: <b>{tovuq:,}</b> {dona}\n'
         f'{_("Xo‘roz")}: <b>{xoroz:,}</b> {dona}\n'
+        f'{_("Jo‘ja")}: <b>{joja:,}</b> {dona}\n'
         f'━━━━━━━━━━━━━━\n'
-        f'{_("Jami")}: <b>{tovuq + xoroz:,}</b> {dona}'
+        f'{_("Jami")}: <b>{tovuq + xoroz + joja:,}</b> {dona}'
     )
 
 

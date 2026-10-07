@@ -59,9 +59,12 @@ def oylar_royxati(n=12):
 def _parse(val, default):
     try:
         y, m = val.split('-')
-        return int(y), int(m)
+        y, m = int(y), int(m)
+        if 1 <= m <= 12 and 2000 <= y <= 2100:
+            return y, m
     except (AttributeError, ValueError):
-        return default
+        pass
+    return default
 
 
 def taqqoslash(filial, d1_val=None, d2_val=None):

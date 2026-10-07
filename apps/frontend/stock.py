@@ -48,3 +48,16 @@ def mavjud_qoldiq(filial, manba, jins=None):
             return xoroz_qoldiq(filial)
         return tovuq_qoldiq(filial)
     return 0
+
+def tuxum_qoldiq(filial=None):
+    from apps.inventory.models import TuxumYigim
+    from apps.sales.models import Sotuv
+    qs_yigim = TuxumYigim.objects.all()
+    qs_sotuv = Sotuv.objects.filter(tur=Sotuv.Tur.TUXUM)
+    if filial is not None:
+        qs_yigim = qs_yigim.filter(partiya__filial=filial)
+        qs_sotuv = qs_sotuv.filter(filial=filial)
+    yigim = qs_yigim.aggregate(s=Sum('soni'))['s'] or 0
+    sotuv = qs_sotuv.aggregate(s=Sum('soni'))['s'] or 0
+    return yigim - sotuv
+
