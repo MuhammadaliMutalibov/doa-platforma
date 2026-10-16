@@ -18,3 +18,8 @@ db.sqlite3-journal
 .DS_Store
 .idea/
 .vscode/
+
+# Mahalliy dizayn/tahlil fayllari (repo'ga kerak emas)
+/dizayn_template/
+/original-*.webp
+/Civciv Takip.xlsx

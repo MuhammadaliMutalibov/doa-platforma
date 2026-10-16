@@ -1,0 +1,43 @@
+# Render.com Blueprint — DOA Nutrition
+# Render dashboard'da: New + → Blueprint → bu repo'ni ulang.
+# Bepul web xizmati + bepul PostgreSQL avtomatik yaratiladi.
+
+databases:
+  - name: doa-db
+    databaseName: doanut
+    user: doanut
+    plan: free
+    region: frankfurt
+
+services:
+  - type: web
+    name: doa-nutrition
+    runtime: python
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn config.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: doa-db
+          property: connectionString
+      - key: DJANGO_SECRET_KEY
+        generateValue: true          # Render avtomatik xavfsiz kalit yaratadi
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: SECURE_SSL
+        value: "True"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://*.onrender.com"
+      - key: DJANGO_SUPERUSER_USERNAME
+        value: admin
+      - key: DJANGO_SUPERUSER_EMAIL
+        value: admin@doa.local
+      - key: DJANGO_SUPERUSER_PASSWORD
+        sync: false                   # parolni Render dashboard'da o'zingiz kiritasiz

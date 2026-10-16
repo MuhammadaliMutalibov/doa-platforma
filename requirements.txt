@@ -43,3 +43,4 @@ xhtml2pdf==0.2.21
 yarl==1.25.1
 psycopg[binary]==3.3.6
 openpyxl==3.1.5
+gunicorn==23.0.0

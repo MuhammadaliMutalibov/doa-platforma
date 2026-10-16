@@ -3,7 +3,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.db.models import F, Sum, ProtectedError
+from django.db.models import Count, F, Sum, ProtectedError
 from django.http import Http404, HttpResponse, HttpResponseNotAllowed, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
@@ -11,15 +11,16 @@ from django.utils import timezone
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, ListView, TemplateView, UpdateView
+from decimal import Decimal
 
 from apps.accounts.models import Faoliyat, Filial, Xodim
 from apps.common.utils import pul as _pul
 from apps.finance.models import Kirim, Maosh, Rasxod
-from apps.inventory.models import (Jins, JojaHarakat, JojaOchirish, JojaVazn,
-                                    Partiya, TuxumYigim)
+from apps.inventory.models import (Emlash, Jins, JojaHarakat, JojaOchirish, JojaVazn,
+                                    KunlikLog, Partiya, TuxumYigim)
 from apps.sales.models import Sotuv
 
-from . import compare, egg_kpi, forms
+from . import compare, egg_kpi, feed_kpi, forms
 from .stats import dashboard_stats
 from .tenancy import SESSION_KEY, active_filial, scope_qs
 from .utils import log_faoliyat, notify, tahrirlash_mumkin
@@ -309,6 +310,8 @@ def _delete_registry():
         'jojaharakat': (JojaHarakat, False),
         'jojavazn': (JojaVazn, False),
         'jojaochirish': (JojaOchirish, False),
+        'kunliklog': (KunlikLog, False),
+        'emlash': (Emlash, False),
         'tuxumyigim': (TuxumYigim, False),
         'sotuv': (Sotuv, False),
         'xodim': (Xodim, False),      # filial admini o'z xodimini o'chira oladi (scope_qs cheklaydi)
@@ -450,6 +453,50 @@ def sabab_qoshish(request):
             obj, _created = RasxodKategoriya.objects.get_or_create(nomi=nomi)
             return JsonResponse({'id': obj.id, 'nomi': obj.nomi})
     return JsonResponse({'xato': 'nomi kerak'}, status=400)
+
+
+@login_required
+def sabab_royhat(request):
+    """Barcha sabablar (kategoriyalar) + har biri nechta rasxodda ishlatilgani."""
+    from apps.finance.models import RasxodKategoriya
+    qs = RasxodKategoriya.objects.annotate(soni=Count('rasxodlar')).order_by('nomi')
+    return JsonResponse({
+        'sabablar': [{'id': o.id, 'nomi': o.nomi, 'soni': o.soni} for o in qs],
+    })
+
+
+@login_required
+def sabab_tahrirlash(request, pk):
+    """Sabab nomini o'zgartirish (inline, JSON)."""
+    from apps.finance.models import RasxodKategoriya
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(['POST'])
+    nomi = (request.POST.get('nomi') or '').strip()
+    if not nomi:
+        return JsonResponse({'xato': _('Sabab nomi kerak.')}, status=400)
+    obj = get_object_or_404(RasxodKategoriya, pk=pk)
+    if RasxodKategoriya.objects.filter(nomi__iexact=nomi).exclude(pk=pk).exists():
+        return JsonResponse({'xato': _('Bunday sabab allaqachon mavjud.')}, status=400)
+    obj.nomi = nomi
+    obj.save(update_fields=['nomi'])
+    return JsonResponse({'id': obj.id, 'nomi': obj.nomi})
+
+
+@login_required
+def sabab_ochirish(request, pk):
+    """Sababni o'chirish (agar birorta rasxodda ishlatilmagan bo'lsa)."""
+    from apps.finance.models import RasxodKategoriya
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(['POST'])
+    obj = get_object_or_404(RasxodKategoriya, pk=pk)
+    try:
+        obj.delete()
+    except ProtectedError:
+        return JsonResponse(
+            {'xato': _('Bu sabab rasxodlarda ishlatilgan, o‘chirib bo‘lmaydi.')},
+            status=400,
+        )
+    return JsonResponse({'ok': True})
 
 
 # ============================================================
@@ -673,6 +720,125 @@ class JojaOchirishUpdate(FrontFormMixin, UpdateView):
 
 
 # ============================================================
+#  KUNLIK LOG — partiya kunlik kuzatuvi (yem, suv, o'lim)
+# ============================================================
+class KunlikLogList(FrontListView):
+    model = KunlikLog
+    sahifa = 'kunlik_log'
+    page_title = _('Kunlik kuzatuv')
+    template_name = 'frontend/kunlik_log.html'
+    headers = [_('Sana'), _('Partiya'), _('Tirik'), _('Nobud'), _('Yem (kg)'),
+               _('Yem/bosh (g)'), _('Standart yem (g)'), _('Suv (lt)'), _('Suv/bosh (lt)'),
+               _('O‘rt. og‘irlik'), _('Harorat (°C)'), _('Yorug‘lik')]
+    add_url = 'kunlik_log_add'
+    edit_url = 'kunlik_log_edit'
+    del_model = 'kunliklog'
+    eksport = True
+    select_related = ('partiya',)
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        pid = self.request.GET.get('partiya')
+        if pid and pid.isdigit():
+            qs = qs.filter(partiya_id=pid)
+        return qs
+
+    def cells(self, o):
+        olim = format_html('<span class="tag {}">{}</span>',
+                           'tag-out' if o.nobud else 'tag-in',
+                           f'{o.nobud:,} ({o.olim_foiz:.2f}%)')
+        std = feed_kpi.standart_yem(feed_kpi.yosh_hafta(o.partiya, o.sana))
+        if std:
+            rang = 'tag-in' if 0.9 <= (o.yem_bosh / std) <= 1.15 else 'tag-egg'
+            std_cell = format_html('<span class="tag {}">{}</span>', rang, f'{std:g}')
+        else:
+            std_cell = '—'
+        vazn = f'{o.ortacha_vazn:g} g' if o.ortacha_vazn is not None else '—'
+        harorat = f'{o.harorat:g}' if o.harorat is not None else '—'
+        if o.yoruglik_lux is not None or o.yoruglik_soat is not None:
+            yoru = f'{o.yoruglik_lux or 0} lk · {o.yoruglik_soat or 0:g} s'
+        else:
+            yoru = '—'
+        return [o.sana, o.partiya, f'{o.tirik_soni:,}', olim, f'{o.yem_berilgan:g}',
+                f'{o.yem_bosh:.0f}', std_cell, f'{o.suv_berilgan:g}', f'{o.suv_bosh:.3f}',
+                vazn, harorat, yoru]
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        f = active_filial(self.request)
+        ctx['yem_qoldiq'] = KunlikLog.yem_silo_qoldiq(f)
+        pqs = Partiya.objects.filter(faol=True)
+        if f is not None:
+            pqs = pqs.filter(filial=f)
+        partiyalar = list(pqs)
+        pid = self.request.GET.get('partiya')
+        tanlangan = next((p for p in partiyalar if str(p.pk) == pid), None) if pid else None
+        if tanlangan is None and partiyalar:
+            tanlangan = partiyalar[0]
+        ctx['partiyalar'] = partiyalar
+        ctx['tanlangan'] = tanlangan
+        ctx['grafik'] = feed_kpi.grafik_svg(feed_kpi.yem_grafik(tanlangan)) if tanlangan else None
+        return ctx
+
+
+class KunlikLogCreate(FrontFormMixin, CreateView):
+    model = KunlikLog
+    form_class = forms.KunlikLogForm
+    success_url = reverse_lazy('kunlik_log_list')
+    cancel_url = 'kunlik_log_list'
+    sahifa = 'kunlik_log'
+    page_title = _('Yangi kunlik yozuv')
+
+
+class KunlikLogUpdate(FrontFormMixin, UpdateView):
+    model = KunlikLog
+    form_class = forms.KunlikLogForm
+    success_url = reverse_lazy('kunlik_log_list')
+    cancel_url = 'kunlik_log_list'
+    sahifa = 'kunlik_log'
+    page_title = _('Kunlik yozuvni tahrirlash')
+
+
+# ============================================================
+#  SALOMATLIK JURNALI — emlash / dori / muolaja
+# ============================================================
+class EmlashList(FrontListView):
+    model = Emlash
+    sahifa = 'emlash'
+    page_title = _('Salomatlik jurnali')
+    headers = [_('Sana'), _('Partiya'), _('Turi'), _('Nomi'), _('Usuli'), _('Doza'), _('Izoh')]
+    add_url = 'emlash_add'
+    edit_url = 'emlash_edit'
+    del_model = 'emlash'
+    eksport = True
+    select_related = ('partiya',)
+
+    def cells(self, o):
+        rang = 'tag-in' if o.tur == Emlash.Tur.EMLASH else 'tag-egg'
+        tur = format_html('<span class="tag {}">{}</span>', rang, o.get_tur_display())
+        return [o.sana, o.partiya, tur, o.nomi,
+                o.get_usul_display() if o.usul else '—', o.doza or '—', o.izoh or '—']
+
+
+class EmlashCreate(FrontFormMixin, CreateView):
+    model = Emlash
+    form_class = forms.EmlashForm
+    success_url = reverse_lazy('emlash_list')
+    cancel_url = 'emlash_list'
+    sahifa = 'emlash'
+    page_title = _('Yangi yozuv (emlash/dori)')
+
+
+class EmlashUpdate(FrontFormMixin, UpdateView):
+    model = Emlash
+    form_class = forms.EmlashForm
+    success_url = reverse_lazy('emlash_list')
+    cancel_url = 'emlash_list'
+    sahifa = 'emlash'
+    page_title = _('Yozuvni tahrirlash')
+
+
+# ============================================================
 #  PARTIYALAR
 # ============================================================
 class PartiyaList(SuperAdminRequiredMixin, FrontListView):
@@ -738,6 +904,14 @@ class JojaSotuvList(FrontListView):
         else:
             manba = '—'
         return [o.sana, manba, f'{o.soni:,}', _pul(o.birlik_narxi), _pul(o.jami)]
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        qs = self.get_queryset()
+        jami_soni = qs.aggregate(s=Sum('soni'))['s'] or 0
+        jami_summa = qs.aggregate(s=Sum(F('soni') * F('birlik_narxi')))['s'] or Decimal('0')
+        ctx['totals'] = [_('Jami:'), '', f'{jami_soni:,}', '', _pul(jami_summa)]
+        return ctx
 
 
 class JojaSotuvMixin(FrontFormMixin):
@@ -808,6 +982,14 @@ class TuxumSotuvList(FrontListView):
     def cells(self, o):
         sifat = o.get_tuxum_sifati_display() if o.tuxum_sifati else '—'
         return [o.sana, sifat, f'{o.soni:,}', _pul(o.birlik_narxi), _pul(o.jami)]
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        qs = self.get_queryset()
+        jami_soni = qs.aggregate(s=Sum('soni'))['s'] or 0
+        jami_summa = qs.aggregate(s=Sum(F('soni') * F('birlik_narxi')))['s'] or Decimal('0')
+        ctx['totals'] = [_('Jami:'), '', f'{jami_soni:,}', '', _pul(jami_summa)]
+        return ctx
 
 
 class TuxumSotuvCreate(FrontFormMixin, CreateView):
@@ -1116,14 +1298,20 @@ class TuxumYigimList(FrontListView):
     model = TuxumYigim
     sahifa = 'tuxum_yigim'
     page_title = _('Tuxum yig‘imi')
-    headers = [_('Sana'), _('Partiya'), _('Yig‘ilgan tuxum'), _('Kiritgan')]
+    headers = [_('Sana'), _('Partiya'), _('Yig‘ilgan tuxum'), _('A-sifat'),
+               _('Randıman'), _('O‘rt. og‘irlik'), _('Kiritgan')]
     add_url = 'tuxum_yigim_add'
     edit_url = 'tuxum_yigim_edit'
     del_model = 'tuxumyigim'
+    eksport = True
     select_related = ('partiya', 'kiritgan')
 
     def cells(self, o):
-        return [o.sana, o.partiya or '—', f'{o.soni} {_("dona")}', o.kiritgan or '—']
+        rnd = format_html('<span class="tag {}">{}</span>',
+                          'tag-in' if o.randiman >= 90 else 'tag-egg', f'{o.randiman:.1f}%')
+        vazn = f'{o.ortacha_vazn:g} g' if o.ortacha_vazn is not None else '—'
+        return [o.sana, o.partiya or '—', f'{o.soni:,}', f'{o.a_sifat:,}', rnd, vazn,
+                o.kiritgan or '—']
 
 
 class TuxumYigimCreate(FrontFormMixin, CreateView):

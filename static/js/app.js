@@ -1,11 +1,31 @@
 // DOA Nutrition — umumiy JS
 
 function toggleSidebar() {
-  var s = document.getElementById('sidebar');
-  var b = document.getElementById('backdrop');
-  if (s) s.classList.toggle('open');
-  if (b) b.classList.toggle('show');
+  // Mobil (<=860px): sidebar ustidan ochiladi (overlay)
+  if (window.matchMedia('(max-width: 860px)').matches) {
+    var s = document.getElementById('sidebar');
+    var b = document.getElementById('backdrop');
+    if (s) s.classList.toggle('open');
+    if (b) b.classList.toggle('show');
+    return;
+  }
+  // Kompyuter: sidebar ichkariga kirib/chiqib yopiladi-ochiladi
+  var el = document.documentElement;
+  var collapsed = el.getAttribute('data-nav') === 'collapsed';
+  if (collapsed) el.removeAttribute('data-nav');
+  else el.setAttribute('data-nav', 'collapsed');
+  try { localStorage.setItem('doa-nav', collapsed ? '' : 'collapsed'); } catch (e) {}
 }
+
+// Sayt yaqinlashib (zoom) ketmasligi uchun: pinch / ctrl+scroll / klaviatura zoom'ni to'xtatish
+document.addEventListener('wheel', function (e) {
+  if (e.ctrlKey) e.preventDefault();
+}, { passive: false });
+document.addEventListener('keydown', function (e) {
+  if ((e.ctrlKey || e.metaKey) && ['+', '-', '=', '_', '0'].indexOf(e.key) !== -1) {
+    e.preventDefault();
+  }
+});
 
 // Dropdown (til / shrift / akkount)
 function toggleDrop(id, ev) {
@@ -373,4 +393,48 @@ document.addEventListener('DOMContentLoaded', function () {
     if (g.querySelector('.nav-item.active')) { g.classList.add('open'); return; }
     if (closed.indexOf(g.getAttribute('data-g')) > -1) { g.classList.remove('open'); }
   });
+});
+
+// ============================================================
+//  Toast bildirishnomalar — browser alert o'rniga chiroyli oyna
+// ============================================================
+function closeToast(el) {
+  var t = (el && el.classList && el.classList.contains('toast')) ? el : (el ? el.closest('.toast') : null);
+  if (!t) return;
+  t.classList.remove('show');
+  t.classList.add('hide');
+  setTimeout(function () { t.remove(); }, 450);
+}
+function _toastActivate(t) {
+  requestAnimationFrame(function () { t.offsetWidth; t.classList.add('show'); });
+  var ms = t.classList.contains('toast-error') ? 7000 : 4500;
+  var timer = setTimeout(function () { closeToast(t); }, ms);
+  t.addEventListener('mouseenter', function () { clearTimeout(timer); });
+}
+function showToast(msg, type) {
+  var wrap = document.getElementById('toastWrap');
+  if (!wrap) {
+    wrap = document.createElement('div');
+    wrap.className = 'toast-wrap'; wrap.id = 'toastWrap';
+    var c = document.querySelector('.content') || document.body;
+    c.appendChild(wrap);
+  }
+  var ICO = {
+    success: '<polyline points="20 6 9 17 4 12"/>',
+    error: '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
+    warning: '<line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>'
+  };
+  type = type || 'info';
+  var ico = ICO[type] || ICO.warning;
+  var t = document.createElement('div');
+  t.className = 'toast toast-' + type;
+  t.innerHTML = '<span class="toast-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + ico + '</svg></span>' +
+    '<span class="toast-msg"></span>' +
+    '<button type="button" class="toast-x" onclick="closeToast(this)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';
+  t.querySelector('.toast-msg').textContent = msg;
+  wrap.appendChild(t);
+  _toastActivate(t);
+}
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('#toastWrap .toast').forEach(_toastActivate);
 });

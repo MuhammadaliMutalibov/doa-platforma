@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 10:08+0500\n"
+"POT-Creation-Date: 2026-10-16 14:41+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,376 +17,589 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: apps/accounts/models.py:10
 msgid "Oʻzbekiston"
 msgstr "Özbekistan"
 
+#: apps/accounts/models.py:11
 msgid "Tojikiston"
 msgstr "Tacikistan"
 
+#: apps/accounts/models.py:12
 msgid "Turkmaniston"
 msgstr "Türkmenistan"
 
+#: apps/accounts/models.py:13
 msgid "Turkiya"
 msgstr "Türkiye"
 
+#: apps/accounts/models.py:15 apps/frontend/views.py:1054
 msgid "Filial nomi"
 msgstr "Şube adı"
 
+#: apps/accounts/models.py:16 apps/frontend/views.py:1054
 msgid "Davlat"
 msgstr "Ülke"
 
+#: apps/accounts/models.py:17 apps/frontend/views.py:1054
 msgid "Manzil"
 msgstr "Adres"
 
+#: apps/accounts/models.py:18 apps/accounts/models.py:128
+#: apps/accounts/models.py:176 apps/frontend/views.py:857
+#: apps/frontend/views.py:1060 apps/frontend/views.py:1115
+#: apps/inventory/models.py:30
 msgid "Faol"
 msgstr "Aktif"
 
+#: apps/accounts/models.py:19 apps/accounts/models.py:148
 msgid "Yaratilgan"
 msgstr "Oluşturuldu"
 
+#: apps/accounts/models.py:22 apps/accounts/models.py:42
+#: apps/accounts/models.py:169 apps/common/models.py:17
+#: apps/frontend/views.py:848 apps/frontend/views.py:1106
+#: apps/inventory/models.py:26 apps/inventory/models.py:99
+#: templates/frontend/base.html:283 templates/frontend/report_pdf.html:77
+#: templates/frontend/reports.html:115
 msgid "Filial"
 msgstr "Şube"
 
+#: apps/accounts/models.py:23 apps/frontend/views.py:1066
+#: config/settings.py:292 templates/frontend/base.html:119
 msgid "Filiallar"
 msgstr "Şubeler"
 
+#: apps/accounts/models.py:34
 msgid "Administrator"
 msgstr "Yönetici"
 
+#: apps/accounts/models.py:35
 msgid "Buxgalter"
 msgstr "Muhasebeci"
 
+#: apps/accounts/models.py:36 apps/accounts/models.py:48
+#: apps/frontend/views.py:509
 msgid "Hodim"
 msgstr "Çalışan"
 
+#: apps/accounts/models.py:38 templates/frontend/base.html:282
 msgid "Rol"
 msgstr "Rol"
 
+#: apps/accounts/models.py:39 apps/accounts/models.py:175
+#: templates/frontend/base.html:284
 msgid "Telefon"
 msgstr "Telefon"
 
+#: apps/accounts/models.py:40
 msgid "Rasm"
 msgstr "Fotoğraf"
 
+#: apps/accounts/models.py:44
 msgid "Bo‘sh qoldirilsa — super admin (barcha filiallarni ko‘radi)"
 msgstr "Boş bırakın — süper admin (tüm şubeleri görür)"
 
+#: apps/accounts/models.py:49 apps/frontend/views.py:1054
+#: config/settings.py:297
 msgid "Hodimlar"
 msgstr "Çalışanlar"
 
+#: apps/accounts/models.py:65
 msgid "Tizimga kirdi"
 msgstr "Giriş yaptı"
 
+#: apps/accounts/models.py:66
 msgid "Tizimdan chiqdi"
 msgstr "Çıkış yaptı"
 
+#: apps/accounts/models.py:67
 msgid "Qo‘shdi"
 msgstr "Ekledi"
 
+#: apps/accounts/models.py:68
 msgid "Tahrirladi"
 msgstr "Düzenledi"
 
+#: apps/accounts/models.py:69
 msgid "O‘chirdi"
 msgstr "Sildi"
 
+#: apps/accounts/models.py:72 apps/accounts/models.py:121
+#: apps/accounts/models.py:144 templates/frontend/activity.html:13
 msgid "Foydalanuvchi"
 msgstr "Kullanıcı"
 
+#: apps/accounts/models.py:75 apps/accounts/models.py:101
+#: templates/frontend/activity.html:13
 msgid "Amal"
 msgstr "İşlem"
 
+#: apps/accounts/models.py:76 templates/frontend/activity.html:14
 msgid "Tavsif"
 msgstr "Açıklama"
 
+#: apps/accounts/models.py:77 templates/frontend/activity.html:14
 msgid "IP manzil"
 msgstr "IP adresi"
 
+#: apps/accounts/models.py:78 apps/accounts/models.py:106
+#: templates/frontend/activity.html:13
 msgid "Vaqt"
 msgstr "Zaman"
 
+#: apps/accounts/models.py:81 apps/accounts/models.py:82
 msgid "Faoliyat"
 msgstr "Aktivite"
 
+#: apps/accounts/models.py:94
 msgid "Oluvchi"
 msgstr "Alıcı"
 
+#: apps/accounts/models.py:98
 msgid "Kim qildi"
 msgstr "Kim yaptı"
 
+#: apps/accounts/models.py:102
 msgid "Xabar"
 msgstr "Mesaj"
 
+#: apps/accounts/models.py:103
 msgid "Havola"
 msgstr "Bağlantı"
 
+#: apps/accounts/models.py:104
 msgid "O‘qilgan"
 msgstr "Okundu"
 
+#: apps/accounts/models.py:105
 msgid "Telegramga yuborildi"
 msgstr "Telegram’a gönderildi"
 
+#: apps/accounts/models.py:109
 msgid "Bildirishnoma"
 msgstr "Bildirim"
 
+#: apps/accounts/models.py:110 apps/frontend/views.py:1290
+#: templates/frontend/base.html:192 templates/frontend/base.html:198
+#: templates/frontend/notifications.html:4
+#: templates/frontend/notifications.html:5
+#: templates/frontend/notifications.html:10
 msgid "Bildirishnomalar"
 msgstr "Bildirimler"
 
+#: apps/accounts/models.py:124
 msgid "Telegram chat ID"
 msgstr "Telegram chat ID"
 
+#: apps/accounts/models.py:125
 msgid "Telegram username"
 msgstr "Telegram kullanıcı adı"
 
+#: apps/accounts/models.py:126
 msgid "Ism"
 msgstr "Ad"
 
+#: apps/accounts/models.py:127 apps/accounts/telegram.py:41
 msgid "Til"
 msgstr "Dil"
 
+#: apps/accounts/models.py:129
 msgid "Ulangan vaqt"
 msgstr "Bağlanma zamanı"
 
+#: apps/accounts/models.py:132
 msgid "Telegram ulanish"
 msgstr "Telegram bağlantısı"
 
+#: apps/accounts/models.py:133
 msgid "Telegram ulanishlar"
 msgstr "Telegram bağlantıları"
 
+#: apps/accounts/models.py:147
 msgid "Kod"
 msgstr "Kod"
 
+#: apps/accounts/models.py:149
 msgid "Amal qilish muddati"
 msgstr "Geçerlilik süresi"
 
+#: apps/accounts/models.py:150
 msgid "Ishlatilgan"
 msgstr "Kullanıldı"
 
+#: apps/accounts/models.py:153
 msgid "Telegram kod"
 msgstr "Telegram kodu"
 
+#: apps/accounts/models.py:154
 msgid "Telegram kodlar"
 msgstr "Telegram kodları"
 
+#: apps/accounts/models.py:172 apps/frontend/views.py:1106
 msgid "Ism familiya"
 msgstr "Ad soyad"
 
+#: apps/accounts/models.py:173 apps/frontend/views.py:1106
 msgid "Lavozim"
 msgstr "Pozisyon"
 
+#: apps/accounts/models.py:174 apps/frontend/views.py:1106
 msgid "Oylik maosh"
 msgstr "Aylık maaş"
 
+#: apps/accounts/models.py:179 apps/finance/models.py:75
 msgid "Xodim"
 msgstr "Çalışan"
 
+#: apps/accounts/models.py:180 apps/frontend/views.py:1105
+#: templates/frontend/base.html:61
 msgid "Xodimlar"
 msgstr "Personel"
 
+#: apps/accounts/telegram.py:41 apps/accounts/telegram.py:171
+#: templates/admin/index.html:26 templates/frontend/dashboard.html:64
+#: templates/frontend/report_pdf.html:38 templates/frontend/reports.html:25
 msgid "Balans"
 msgstr "Bakiye"
 
+#: apps/accounts/telegram.py:41
 msgid "Tuxumlar"
 msgstr "Yumurtalar"
 
+#: apps/accounts/telegram.py:41
 msgid "Tovuqlar"
 msgstr "Tavuklar"
 
+#: apps/accounts/telegram.py:41
 msgid "Hisobot"
 msgstr "Rapor"
 
+#: apps/accounts/telegram.py:41
 msgid "Yordam"
 msgstr "Yardım"
 
+#: apps/accounts/telegram.py:151
 msgid "Buyruqlar"
 msgstr "Komutlar"
 
+#: apps/accounts/telegram.py:152
 msgid "moliyaviy holat"
 msgstr "mali durum"
 
+#: apps/accounts/telegram.py:153
 msgid "tuxum qoldig‘i"
 msgstr "yumurta stoğu"
 
+#: apps/accounts/telegram.py:154
 msgid "tovuq/xo‘roz soni"
 msgstr "tavuk/horoz sayısı"
 
+#: apps/accounts/telegram.py:155
 msgid "to‘liq kunlik hisobot"
 msgstr "tam günlük rapor"
 
+#: apps/accounts/telegram.py:156
 msgid "tilni o‘zgartirish"
 msgstr "dili değiştir"
 
+#: apps/accounts/telegram.py:157
 msgid "botni akkauntdan uzish"
 msgstr "botu bağlantıdan kes"
 
+#: apps/accounts/telegram.py:165
 msgid "Moliyaviy holat"
 msgstr "Mali durum"
 
+#: apps/accounts/telegram.py:166 apps/finance/models.py:25
+#: apps/frontend/compare.py:13 templates/admin/index.html:14
+#: templates/frontend/base.html:49 templates/frontend/dashboard.html:32
+#: templates/frontend/dashboard.html:74 templates/frontend/report_pdf.html:34
+#: templates/frontend/reports.html:21
 msgid "Investitsiya"
 msgstr "Yatırım"
 
+#: apps/accounts/telegram.py:167 apps/finance/models.py:63
+#: apps/frontend/compare.py:14 templates/admin/index.html:20
+#: templates/frontend/dashboard.html:40 templates/frontend/dashboard.html:75
 msgid "Rasxod"
 msgstr "Gider"
 
+#: apps/accounts/telegram.py:168 apps/frontend/compare.py:15
+#: templates/frontend/report_pdf.html:36 templates/frontend/reports.html:23
 msgid "Tushum"
 msgstr "Gelir"
 
+#: apps/accounts/telegram.py:169 apps/frontend/compare.py:16
+#: templates/frontend/dashboard.html:56 templates/frontend/report_pdf.html:37
+#: templates/frontend/reports.html:24
 msgid "Sof foyda"
 msgstr "Net kâr"
 
+#: apps/accounts/telegram.py:186 apps/accounts/telegram.py:201
+#: apps/accounts/telegram.py:223
 msgid "dona"
 msgstr "adet"
 
+#: apps/accounts/telegram.py:188
 msgid "Tuxum holati"
 msgstr "Yumurta durumu"
 
+#: apps/accounts/telegram.py:189
 msgid "Yig‘ilgan"
 msgstr "Toplanan"
 
+#: apps/accounts/telegram.py:190
 msgid "Sotilgan"
 msgstr "Satılan"
 
-msgid "Brak"
-msgstr "Fire"
-
+#: apps/accounts/telegram.py:192 templates/frontend/poultry.html:24
 msgid "Qoldiq"
 msgstr "Kalan"
 
-msgid "Joja qoldig‘i"
+#: apps/accounts/telegram.py:203
+msgid "Parranda qoldig‘i"
 msgstr "Kümes stoğu"
 
+#: apps/accounts/telegram.py:204 apps/inventory/models.py:11
+#: apps/sales/models.py:25
 msgid "Tovuq"
 msgstr "Tavuk"
 
+#: apps/accounts/telegram.py:205 apps/inventory/models.py:12
+#: apps/sales/models.py:26
 msgid "Xo‘roz"
 msgstr "Horoz"
 
+#: apps/accounts/telegram.py:206
+msgid "Jo‘ja"
+msgstr "Civciv"
+
+#: apps/accounts/telegram.py:208 apps/frontend/views.py:591
+#: apps/frontend/views.py:888 apps/frontend/views.py:894
+#: apps/frontend/views.py:973 apps/sales/admin.py:17
+#: templates/frontend/dashboard.html:97 templates/frontend/dashboard.html:140
+#: templates/frontend/report_pdf.html:62 templates/frontend/report_pdf.html:69
+#: templates/frontend/report_pdf.html:72 templates/frontend/reports.html:89
+#: templates/frontend/reports.html:101
 msgid "Jami"
 msgstr "Toplam"
 
+#: apps/accounts/telegram.py:218
 msgid "kunlik hisobot"
 msgstr "günlük rapor"
 
+#: apps/accounts/telegram.py:222
 msgid "Tug‘uvchanlik"
 msgstr "Yumurtlama"
 
+#: apps/accounts/telegram.py:223
 msgid "Bugun kutilayotgan tuxum"
 msgstr "Bugün beklenen yumurta"
 
+#: apps/accounts/telegram.py:224
 msgid "O‘rtacha samaradorlik"
 msgstr "Ortalama verimlilik"
 
+#: apps/accounts/telegram.py:292
 msgid "Til o‘zgartirildi."
 msgstr "Dil değiştirildi."
 
+#: apps/accounts/telegram.py:296 apps/accounts/telegram.py:317
 msgid "Davom etish uchun saytdan olingan bir martalik kodni yuboring."
 msgstr "Devam etmek için siteden alınan tek kullanımlık kodu gönderin."
 
+#: apps/accounts/telegram.py:308 apps/accounts/telegram.py:315
 msgid "Tilni tanlang:"
 msgstr "Bir dil seçin:"
 
+#: apps/accounts/telegram.py:320
+msgid "Juda ko‘p noto‘g‘ri urinish. 15 daqiqadan keyin qayta urinib ko‘ring."
+msgstr "Çok fazla hatalı deneme. 15 dakika sonra tekrar deneyin."
+
+#: apps/accounts/telegram.py:328
 msgid "muvaffaqiyatli ulandingiz!"
 msgstr "başarıyla bağlandınız!"
 
+#: apps/accounts/telegram.py:332
 msgid "❌ Kod noto‘g‘ri yoki muddati o‘tgan. Saytdan yangi kod oling."
 msgstr "❌ Kod geçersiz veya süresi dolmuş. Siteden yeni kod alın."
 
+#: apps/accounts/telegram.py:339
 msgid "🔌 Bot akkauntingizdan uzildi. Qayta ulanish uchun /start."
 msgstr "🔌 Bot hesabınızdan ayrıldı. Yeniden bağlanmak için /start."
 
+#: apps/accounts/telegram.py:351
 msgid "Tushunarsiz buyruq. /help — yordam."
 msgstr "Bilinmeyen komut. /help — yardım."
 
+#: apps/accounts/telegram.py:373
 msgid "Yangilik"
 msgstr "Güncelleme"
 
+#: apps/common/models.py:9
 msgid "Dollar (USD)"
 msgstr "Dolar (USD)"
 
+#: apps/common/models.py:23 apps/inventory/models.py:111
 msgid "Yaratilgan vaqt"
 msgstr "Oluşturulma zamanı"
 
+#: apps/common/models.py:24
 msgid "O‘zgartirilgan vaqt"
 msgstr "Değiştirilme zamanı"
 
+#: apps/common/models.py:27 apps/inventory/models.py:108
 msgid "Kiritgan hodim"
 msgstr "Ekleyen çalışan"
 
+#: apps/finance/models.py:12 apps/finance/models.py:50
+#: apps/finance/models.py:78 apps/frontend/views.py:372
+#: apps/frontend/views.py:373 apps/frontend/views.py:417
+#: apps/frontend/views.py:509 apps/frontend/views.py:569
+#: apps/frontend/views.py:591 apps/frontend/views.py:685
+#: apps/frontend/views.py:730 apps/frontend/views.py:809
+#: apps/frontend/views.py:888 apps/frontend/views.py:894
+#: apps/frontend/views.py:973 apps/frontend/views.py:1301
+#: apps/inventory/models.py:52 apps/inventory/models.py:128
+#: apps/inventory/models.py:151 apps/inventory/models.py:184
+#: apps/inventory/models.py:218 apps/inventory/models.py:300
+#: apps/sales/models.py:28 templates/frontend/dashboard.html:140
+#: templates/frontend/dashboard.html:157 templates/frontend/report_pdf.html:77
+#: templates/frontend/reports.html:115
 msgid "Sana"
 msgstr "Tarih"
 
+#: apps/finance/models.py:14 apps/frontend/views.py:372
+#: apps/frontend/views.py:373 apps/frontend/views.py:569
+#: apps/frontend/views.py:591 apps/frontend/views.py:730
+#: apps/frontend/views.py:809 apps/frontend/views.py:1301
+#: apps/inventory/models.py:34 apps/inventory/models.py:61
+#: apps/inventory/models.py:153 apps/inventory/models.py:215
+#: apps/inventory/models.py:297 templates/frontend/egg_forecast.html:84
+#: templates/frontend/report_pdf.html:77 templates/frontend/reports.html:115
 msgid "Partiya"
 msgstr "Parti"
 
+#: apps/finance/models.py:17 apps/finance/models.py:55
+#: apps/finance/models.py:79 apps/frontend/views.py:372
+#: apps/frontend/views.py:373 apps/frontend/views.py:417
+#: apps/frontend/views.py:509 templates/frontend/dashboard.html:157
+#: templates/frontend/report_pdf.html:77 templates/frontend/reports.html:115
 msgid "Summa"
 msgstr "Tutar"
 
+#: apps/finance/models.py:19 apps/finance/models.py:57
+#: apps/finance/models.py:81 apps/sales/models.py:45
 msgid "Valyuta"
 msgstr "Para birimi"
 
+#: apps/finance/models.py:21 apps/finance/models.py:59
+#: apps/finance/models.py:83 apps/frontend/views.py:581
+#: apps/frontend/views.py:809 apps/inventory/models.py:31
+#: apps/inventory/models.py:64 apps/inventory/models.py:106
+#: apps/inventory/models.py:131 apps/inventory/models.py:160
+#: apps/inventory/models.py:187 apps/inventory/models.py:234
+#: apps/inventory/models.py:305 apps/sales/models.py:47
 msgid "Izoh"
 msgstr "Not"
 
+#: apps/finance/models.py:26 apps/frontend/views.py:362
+#: templates/frontend/report_pdf.html:75 templates/frontend/reports.html:113
 msgid "Investitsiyalar"
 msgstr "Yatırımlar"
 
+#: apps/finance/models.py:36 apps/finance/models.py:39
+#: apps/finance/models.py:52 apps/frontend/views.py:417
+#: apps/inventory/models.py:130 templates/frontend/dashboard.html:157
+#: templates/frontend/report_pdf.html:62 templates/frontend/reports.html:89
 msgid "Sabab"
 msgstr "Sebep"
 
+#: apps/finance/models.py:40
 msgid "Sabablar"
 msgstr "Sebepler"
 
+#: apps/finance/models.py:64 apps/frontend/views.py:416 config/settings.py:239
+#: templates/frontend/base.html:53
 msgid "Rasxodlar"
 msgstr "Giderler"
 
+#: apps/finance/models.py:87
 msgid "Maosh"
 msgstr "Maaş"
 
+#: apps/finance/models.py:88 apps/frontend/views.py:508 config/settings.py:244
+#: templates/frontend/base.html:57 templates/frontend/report_pdf.html:64
+#: templates/frontend/reports.html:93
 msgid "Maoshlar"
 msgstr "Maaşlar"
 
+#: apps/frontend/egg_kpi.py:98
 msgid "Real yig‘im kiritilmagan"
 msgstr "Gerçek veri girilmedi"
 
+#: apps/frontend/egg_kpi.py:100
 msgid "Hali tug‘ish yoshida emas"
 msgstr "Henüz yumurtlama yaşında değil"
 
+#: apps/frontend/egg_kpi.py:103
 msgid "A’lo — standartga mos"
 msgstr "Mükemmel — standarda uygun"
 
+#: apps/frontend/egg_kpi.py:105
 msgid "E’tibor bering — yem/yorug‘likni tekshiring"
 msgstr "Dikkat — yem/aydınlatmayı kontrol edin"
 
+#: apps/frontend/egg_kpi.py:106
 msgid "Past — rasion, yorug‘lik yoki yoshni ko‘rib chiqing"
 msgstr "Düşük — rasyon, aydınlatma veya yaşı gözden geçirin"
 
+#: apps/frontend/forms.py:36
 msgid "Qiymat 0 dan katta bo‘lishi kerak."
 msgstr "Değer 0'dan büyük olmalıdır."
 
+#: apps/frontend/forms.py:41
 msgid "Qiymat manfiy bo‘lishi mumkin emas."
 msgstr "Değer negatif olamaz."
 
+#: apps/frontend/forms.py:46
 msgid "Soni kamida 1 bo‘lishi kerak."
 msgstr "Adet en az 1 olmalıdır."
 
+#: apps/frontend/forms.py:71 apps/frontend/views.py:372
 msgid "Kimga (filial)"
 msgstr "Kime (şube)"
 
-#| msgid "Qiymat manfiy bo‘lishi mumkin emas."
+#: apps/frontend/forms.py:143
 msgid "Ochilgan joja soni tuxum sonidan ko‘p bo‘lishi mumkin emas."
 msgstr "Çıkan civciv sayısı yumurta sayısından fazla olamaz."
 
+#: apps/frontend/forms.py:162
 msgid "Tovuqlar bazasidan sotishda tovuq yoki xo‘rozni tanlang."
 msgstr "Tavuk tabanından satarken tavuk veya horoz seçin."
 
+#: apps/frontend/forms.py:187
+msgid "A-sifat tuxum soni yig‘ilgan jami tuxumdan ko‘p bo‘lishi mumkin emas."
+msgstr "A kalite yumurta toplam yumurtadan fazla olamaz."
+
+#: apps/frontend/forms.py:208
+msgid "Nobud soni tirik qush sonidan ko‘p bo‘lishi mumkin emas."
+msgstr "Telef sayısı canlı kümes sayısından fazla olamaz."
+
+#: apps/frontend/forms.py:255
 msgid "Joriy parol"
 msgstr "Mevcut şifre"
 
+#: apps/frontend/forms.py:256
 msgid "Yangi parol"
 msgstr "Yeni şifre"
 
+#: apps/frontend/forms.py:257
 msgid "Yangi parolni tasdiqlang"
 msgstr "Yeni şifreyi onaylayın"
 
+#: apps/frontend/forms.py:259
 msgid ""
 "Kamida 8 ta belgi; faqat raqamlardan yoki juda oddiy so‘zdan iborat "
 "bo‘lmasin."
@@ -394,522 +607,934 @@ msgstr ""
 "En az 8 karakter; yalnızca rakamlardan veya çok basit bir kelimeden "
 "oluşmasın."
 
+#: apps/frontend/views.py:78
 msgid "Shaxsiy ma’lumotlaringiz saqlandi."
 msgstr "Kişisel bilgileriniz kaydedildi."
 
+#: apps/frontend/views.py:83 templates/frontend/base.html:289
 msgid "Shaxsiy ma'lumotlar"
 msgstr "Kişisel bilgiler"
 
+#: apps/frontend/views.py:215
 msgid "Bu yozuvni o‘zgartirish muddati (24 soat) tugagan."
 msgstr "Bu kaydı düzenleme süresi (24 saat) doldu."
 
+#: apps/frontend/views.py:220
 msgid "Yozuv qo‘shish uchun avval yuqoridan filial tanlang."
 msgstr "Kayıt eklemek için önce yukarıdan bir şube seçin."
 
+#: apps/frontend/views.py:259
 msgid "qo‘shdi"
 msgstr "ekledi"
 
+#: apps/frontend/views.py:259
 msgid "tahrirladi"
 msgstr "düzenledi"
 
+#: apps/frontend/views.py:289
 msgid "Parol muvaffaqiyatli o‘zgartirildi."
 msgstr "Şifre başarıyla değiştirildi."
 
+#: apps/frontend/views.py:296 templates/frontend/base.html:294
+#: templates/frontend/password_change.html:10
 msgid "Parolni o‘zgartirish"
 msgstr "Şifreyi değiştir"
 
+#: apps/frontend/views.py:338
 msgid "Bu yozuvni o‘chirish muddati (24 soat) tugagan."
 msgstr "Bu kaydı silme süresi (24 saat) doldu."
 
+#: apps/frontend/views.py:350
 msgid "Yozuv o‘chirildi."
 msgstr "Kayıt silindi."
 
+#: apps/frontend/views.py:352
+msgid ""
+"Bu yozuvga boshqa ma‘lumotlar bog‘langanligi sababli o‘chirib bo‘lmaydi."
+msgstr "Bu kayıt silinemiyor çünkü ona bağlı başka veriler var."
+
+#: apps/frontend/views.py:396
 msgid "Yangi investitsiya"
 msgstr "Yeni yatırım"
 
+#: apps/frontend/views.py:406
 msgid "Investitsiyani tahrirlash"
 msgstr "Yatırımı düzenle"
 
+#: apps/frontend/views.py:417 apps/frontend/views.py:509
+#: apps/frontend/views.py:685 apps/frontend/views.py:1302
 msgid "Kiritgan"
 msgstr "Ekleyen"
 
+#: apps/frontend/views.py:434
 msgid "Yangi rasxod"
 msgstr "Yeni gider"
 
+#: apps/frontend/views.py:443
 msgid "Rasxodni tahrirlash"
 msgstr "Gideri düzenle"
 
+#: apps/frontend/views.py:476
+#| msgid "Sabab nomi"
+msgid "Sabab nomi kerak."
+msgstr "Neden adı gerekli."
+
+#: apps/frontend/views.py:479
+msgid "Bunday sabab allaqachon mavjud."
+msgstr "Bu neden zaten var."
+
+#: apps/frontend/views.py:496
+#| msgid ""
+#| "Bu yozuvga boshqa ma‘lumotlar bog‘langanligi sababli o‘chirib bo‘lmaydi."
+msgid "Bu sabab rasxodlarda ishlatilgan, o‘chirib bo‘lmaydi."
+msgstr "Bu neden giderlerde kullanılıyor, silinemez."
+
+#: apps/frontend/views.py:526
 msgid "Yangi maosh"
 msgstr "Yeni maaş"
 
+#: apps/frontend/views.py:535
 msgid "Maoshni tahrirlash"
 msgstr "Maaşı düzenle"
 
+#: apps/frontend/views.py:569 apps/frontend/views.py:581
+#: apps/frontend/views.py:591 apps/inventory/models.py:53
+#: apps/inventory/models.py:103 apps/sales/models.py:39
 msgid "Joja turi"
 msgstr "Civciv türü"
 
+#: apps/frontend/views.py:569 apps/inventory/models.py:54
 msgid "Harakat turi"
 msgstr "Hareket türü"
 
+#: apps/frontend/views.py:569 apps/frontend/views.py:591
+#: apps/frontend/views.py:888 apps/frontend/views.py:894
+#: apps/frontend/views.py:973 templates/frontend/dashboard.html:140
 msgid "Soni"
 msgstr "Adet"
 
+#: apps/frontend/views.py:581 apps/inventory/models.py:102
 msgid "Sana (hafta)"
 msgstr "Tarih (hafta)"
 
+#: apps/frontend/views.py:581 apps/inventory/models.py:104
 msgid "O‘rtacha vazn"
 msgstr "Ortalama ağırlık"
 
+#: apps/frontend/views.py:591 apps/inventory/models.py:57
 msgid "Dona narxi"
 msgstr "Adet fiyatı"
 
+#: apps/frontend/views.py:623
 msgid "Yangi joja haridi"
 msgstr "Yeni civciv alımı"
 
+#: apps/frontend/views.py:634
 msgid "Joja haridini tahrirlash"
 msgstr "Civciv alımını düzenle"
 
+#: apps/frontend/views.py:645
 msgid "Nobud bo‘lganini qo‘shish"
 msgstr "Ölüm ekle"
 
+#: apps/frontend/views.py:656
 msgid "Nobud yozuvini tahrirlash"
 msgstr "Ölüm kaydını düzenle"
 
+#: apps/frontend/views.py:667
 msgid "Yangi vazn yozuvi"
 msgstr "Yeni ağırlık kaydı"
 
+#: apps/frontend/views.py:674
 msgid "Vazn yozuvini tahrirlash"
 msgstr "Ağırlık kaydını düzenle"
 
+#: apps/frontend/views.py:683 apps/frontend/views.py:903
+#: apps/inventory/models.py:192 templates/frontend/base.html:77
 msgid "Jojalar"
 msgstr "Civcivler"
 
-#| msgid "Tuxum sotuvi"
+#: apps/frontend/views.py:685
 msgid "Tuxum soni"
 msgstr "Yumurta sayısı"
 
-#| msgid "O‘qilgan"
+#: apps/frontend/views.py:685
 msgid "Ochilgan"
 msgstr "Çıkan"
 
+#: apps/frontend/views.py:685 apps/frontend/views.py:730
 msgid "Nobud"
 msgstr "Telef"
 
-#| msgid "Yangi joja haridi"
+#: apps/frontend/views.py:710
 msgid "Yangi joja (ochirish)"
 msgstr "Yeni civciv (kuluçka)"
 
-#| msgid "Joja haridini tahrirlash"
+#: apps/frontend/views.py:719
 msgid "Jojani tahrirlash"
 msgstr "Civcivi düzenle"
 
+#: apps/frontend/views.py:728 templates/frontend/base.html:81
+msgid "Kunlik kuzatuv"
+msgstr "Günlük takip"
+
+#: apps/frontend/views.py:730
+msgid "Tirik"
+msgstr "Canlı"
+
+#: apps/frontend/views.py:730
+msgid "Yem (kg)"
+msgstr "Yem (kg)"
+
+#: apps/frontend/views.py:731
+msgid "Yem/bosh (g)"
+msgstr "Yem/baş (g)"
+
+#: apps/frontend/views.py:731
+msgid "Standart yem (g)"
+msgstr "Standart yem (g)"
+
+#: apps/frontend/views.py:731
+msgid "Suv (lt)"
+msgstr "Su (lt)"
+
+#: apps/frontend/views.py:731
+msgid "Suv/bosh (lt)"
+msgstr "Su/baş (lt)"
+
+#: apps/frontend/views.py:732 apps/frontend/views.py:1302
+msgid "O‘rt. og‘irlik"
+msgstr "Ort. ağırlık"
+
+#: apps/frontend/views.py:732 apps/inventory/models.py:230
+msgid "Harorat (°C)"
+msgstr "Sıcaklık (°C)"
+
+#: apps/frontend/views.py:732
+msgid "Yorug‘lik"
+msgstr "Işık"
+
+#: apps/frontend/views.py:790
+msgid "Yangi kunlik yozuv"
+msgstr "Yeni günlük kayıt"
+
+#: apps/frontend/views.py:799
+msgid "Kunlik yozuvni tahrirlash"
+msgstr "Günlük kaydı düzenle"
+
+#: apps/frontend/views.py:808 apps/inventory/models.py:310
+#: templates/frontend/base.html:85
+msgid "Salomatlik jurnali"
+msgstr "Sağlık kaydı"
+
+#: apps/frontend/views.py:809 apps/inventory/models.py:301
+msgid "Turi"
+msgstr "Türü"
+
+#: apps/frontend/views.py:809
+msgid "Nomi"
+msgstr "Adı"
+
+#: apps/frontend/views.py:809 apps/inventory/models.py:303
+msgid "Usuli"
+msgstr "Yöntem"
+
+#: apps/frontend/views.py:809 apps/inventory/models.py:304
+msgid "Doza"
+msgstr "Doz"
+
+#: apps/frontend/views.py:829
+msgid "Yangi yozuv (emlash/dori)"
+msgstr "Yeni kayıt (aşı/ilaç)"
+
+#: apps/frontend/views.py:838
+msgid "Yozuvni tahrirlash"
+msgstr "Kaydı düzenle"
+
+#: apps/frontend/views.py:847 apps/inventory/models.py:35
+#: config/settings.py:260 templates/frontend/base.html:123
 msgid "Partiyalar"
 msgstr "Partiler"
 
+#: apps/frontend/views.py:848 apps/inventory/models.py:24
 msgid "Partiya nomi"
 msgstr "Parti adı"
 
+#: apps/frontend/views.py:848 apps/inventory/models.py:29
 msgid "Boshlangan sana"
 msgstr "Başlangıç tarihi"
 
+#: apps/frontend/views.py:848 apps/frontend/views.py:1054
+#: apps/frontend/views.py:1106
 msgid "Holat"
 msgstr "Durum"
 
+#: apps/frontend/views.py:857 apps/frontend/views.py:1060
+#: apps/frontend/views.py:1115
 msgid "Nofaol"
 msgstr "Pasif"
 
+#: apps/frontend/views.py:867
 msgid "Yangi partiya"
 msgstr "Yeni parti"
 
+#: apps/frontend/views.py:877
 msgid "Partiyani tahrirlash"
 msgstr "Partiyi düzenle"
 
+#: apps/frontend/views.py:887 templates/admin/index.html:44
+#: templates/frontend/base.html:97 templates/frontend/dashboard.html:124
+#: templates/frontend/dashboard.html:137 templates/frontend/report_pdf.html:70
+#: templates/frontend/reports.html:103
 msgid "Joja sotuvi"
 msgstr "Civciv satışı"
 
+#: apps/frontend/views.py:888 apps/frontend/views.py:894
+#: apps/frontend/views.py:973 apps/sales/models.py:43
 msgid "Birlik narxi"
 msgstr "Birim fiyatı"
 
+#: apps/frontend/views.py:894 apps/sales/models.py:35
 msgid "Manba"
 msgstr "Kaynak"
 
-#| msgid "Tovuqlar"
+#: apps/frontend/views.py:901 apps/sales/models.py:22
+#: templates/frontend/base.html:73 templates/frontend/poultry.html:4
+#: templates/frontend/poultry.html:5
 msgid "Tovuqlar bazasi"
 msgstr "Tavuk Veritabanı"
 
+#: apps/frontend/views.py:913 apps/frontend/views.py:991
+msgid "Jami:"
+msgstr "Toplam:"
+
+#: apps/frontend/views.py:934
 msgid "joja"
 msgstr "civciv"
 
-#| msgid "Xo‘roz"
+#: apps/frontend/views.py:936
 msgid "xo‘roz"
 msgstr "horoz"
 
-#| msgid "Tovuq"
+#: apps/frontend/views.py:938
 msgid "tovuq"
 msgstr "tavuk"
 
+#: apps/frontend/views.py:939
 #, python-format
 msgid "Qoldiq yetarli emas. Mavjud: %(n)s %(nom)s."
 msgstr "Stok yetersiz. Mevcut: %(n)s %(nom)s."
 
+#: apps/frontend/views.py:951
 msgid "Yangi joja sotuvi"
 msgstr "Yeni civciv satışı"
 
+#: apps/frontend/views.py:960
 msgid "Joja sotuvini tahrirlash"
 msgstr "Civciv satışını düzenle"
 
+#: apps/frontend/views.py:972 templates/admin/index.html:48
+#: templates/frontend/base.html:101 templates/frontend/dashboard.html:128
+#: templates/frontend/report_pdf.html:71 templates/frontend/reports.html:104
 msgid "Tuxum sotuvi"
 msgstr "Yumurta satışı"
 
+#: apps/frontend/views.py:973
 msgid "Sifat"
 msgstr "Kalite"
 
+#: apps/frontend/views.py:1001
 msgid "Yangi tuxum sotuvi"
 msgstr "Yeni yumurta satışı"
 
+#: apps/frontend/views.py:1013 apps/frontend/views.py:1039
+#, python-format
+msgid "Qoldiq yetarli emas. Mavjud: %s dona."
+msgstr "Stok yetersiz. Mevcut: %s adet."
+
+#: apps/frontend/views.py:1024
 msgid "Tuxum sotuvini tahrirlash"
 msgstr "Yumurta satışını düzenle"
 
+#: apps/frontend/views.py:1080
 msgid "Yangi filial"
 msgstr "Yeni şube"
 
+#: apps/frontend/views.py:1093
 msgid "Filialni tahrirlash"
 msgstr "Şubeyi düzenle"
 
+#: apps/frontend/views.py:1141
 msgid "Yangi xodim"
 msgstr "Yeni çalışan"
 
+#: apps/frontend/views.py:1150
 msgid "Xodimni tahrirlash"
 msgstr "Çalışanı düzenle"
 
+#: apps/frontend/views.py:1300 apps/inventory/models.py:164
+#: templates/frontend/base.html:105
 msgid "Tuxum yig‘imi"
 msgstr "Yumurta toplama"
 
+#: apps/frontend/views.py:1301
 msgid "Yig‘ilgan tuxum"
 msgstr "Toplanan yumurta"
 
+#: apps/frontend/views.py:1301
+msgid "A-sifat"
+msgstr "A kalite"
+
+#: apps/frontend/views.py:1302
+msgid "Randıman"
+msgstr "Randıman"
+
+#: apps/frontend/views.py:1323
 msgid "Yangi tuxum yig‘imi"
 msgstr "Yeni yumurta toplama"
 
+#: apps/frontend/views.py:1332
 msgid "Tuxum yig‘imini tahrirlash"
 msgstr "Yumurta toplamayı düzenle"
 
+#: apps/frontend/views.py:1396
 msgid "Yangi kod yaratildi. Uni botga yuboring (15 daqiqa amal qiladi)."
 msgstr "Yeni kod oluşturuldu. Bota gönderin (15 dakika geçerli)."
 
+#: apps/frontend/views.py:1409
 msgid "Telegram ulanishi uzildi."
 msgstr "Telegram bağlantısı kaldırıldı."
 
+#: apps/inventory/models.py:17
 msgid "gram"
 msgstr "gram"
 
+#: apps/inventory/models.py:18
 msgid "kg"
 msgstr "kg"
 
+#: apps/inventory/models.py:49
 msgid "Sotib olindi"
 msgstr "Satın alındı"
 
+#: apps/inventory/models.py:50 templates/frontend/poultry.html:23
 msgid "Nobud bo‘ldi"
 msgstr "Öldü"
 
+#: apps/inventory/models.py:55 apps/inventory/models.py:129
+#: apps/sales/models.py:42
 msgid "Soni (dona)"
 msgstr "Miktar (adet)"
 
+#: apps/inventory/models.py:58
 msgid "Faqat sotib olishda (harid)"
 msgstr "Sadece alımda"
 
+#: apps/inventory/models.py:68
 msgid "Joja harakati"
 msgstr "Civciv hareketi"
 
+#: apps/inventory/models.py:69 config/settings.py:265
 msgid "Joja harakatlari"
 msgstr "Civciv hareketleri"
 
+#: apps/inventory/models.py:105
 msgid "Birlik"
 msgstr "Birim"
 
+#: apps/inventory/models.py:114
 msgid "Joja vazni"
 msgstr "Civciv ağırlığı"
 
+#: apps/inventory/models.py:115 config/settings.py:270
 msgid "Joja vaznlari"
 msgstr "Civciv ağırlıkları"
 
+#: apps/inventory/models.py:135
 msgid "Brak tuxum"
 msgstr "Kusurlu yumurta"
 
+#: apps/inventory/models.py:136
 msgid "Brak tuxumlar"
 msgstr "Kusurlu yumurtalar"
 
+#: apps/inventory/models.py:156
 msgid "Yig‘ilgan tuxum (dona)"
 msgstr "Toplanan yumurta (adet)"
 
+#: apps/inventory/models.py:157
+msgid "A-sifat tuxum (dona)"
+msgstr "A kalite yumurta (adet)"
+
+#: apps/inventory/models.py:159
+msgid "O‘rtacha tuxum og‘irligi (g)"
+msgstr "Ortalama yumurta ağırlığı (g)"
+
+#: apps/inventory/models.py:165
 msgid "Tuxum yig‘imlari"
 msgstr "Yumurta toplamaları"
 
-#| msgid "Soni (dona)"
+#: apps/inventory/models.py:185
 msgid "Tuxum soni (dona)"
 msgstr "Yumurta sayısı (adet)"
 
+#: apps/inventory/models.py:186
 msgid "Ochilgan joja (dona)"
 msgstr "Çıkan civciv (adet)"
 
+#: apps/inventory/models.py:191 apps/sales/models.py:14 config/settings.py:256
+#: templates/frontend/base.html:67 templates/frontend/dashboard.html:101
 msgid "Joja"
 msgstr "Civciv"
 
+#: apps/inventory/models.py:219
+msgid "Tirik qush soni"
+msgstr "Canlı kümes sayısı"
+
+#: apps/inventory/models.py:220
+msgid "Nobud (dona)"
+msgstr "Telef (adet)"
+
+#: apps/inventory/models.py:221
+msgid "Berilgan yem (kg)"
+msgstr "Verilen yem (kg)"
+
+#: apps/inventory/models.py:223
+msgid "Omborga kelgan yem (kg)"
+msgstr "Gelen yem (kg)"
+
+#: apps/inventory/models.py:224
+msgid "Faqat yem yetkazib berilgan kunda"
+msgstr "Yalnızca yem teslim gününde"
+
+#: apps/inventory/models.py:226
+msgid "Berilgan suv (litr)"
+msgstr "Verilen su (litre)"
+
+#: apps/inventory/models.py:228
+msgid "O‘rtacha og‘irlik (g)"
+msgstr "Ortalama ağırlık (g)"
+
+#: apps/inventory/models.py:231
+msgid "Yorug‘lik kuchi (lk)"
+msgstr "Işık şiddeti (lx)"
+
+#: apps/inventory/models.py:233
+msgid "Yorug‘lik davomiyligi (soat)"
+msgstr "Işık süresi (saat)"
+
+#: apps/inventory/models.py:238
+msgid "Kunlik log"
+msgstr "Günlük kayıt"
+
+#: apps/inventory/models.py:239
+msgid "Kunlik loglar"
+msgstr "Günlük kayıtlar"
+
+#: apps/inventory/models.py:282
+msgid "Emlash (vaksina)"
+msgstr "Aşılama"
+
+#: apps/inventory/models.py:283
+msgid "Dori"
+msgstr "İlaç"
+
+#: apps/inventory/models.py:284
+msgid "Vitamin"
+msgstr "Vitamin"
+
+#: apps/inventory/models.py:285
+msgid "Dezinfeksiya"
+msgstr "Dezenfeksiyon"
+
+#: apps/inventory/models.py:286 apps/inventory/models.py:294
+msgid "Boshqa"
+msgstr "Diğer"
+
+#: apps/inventory/models.py:289
+msgid "Suv orqali"
+msgstr "Suyla"
+
+#: apps/inventory/models.py:290
+msgid "Purkash"
+msgstr "Püskürtme"
+
+#: apps/inventory/models.py:291
+msgid "In’ektsiya"
+msgstr "Enjeksiyon"
+
+#: apps/inventory/models.py:292
+msgid "Yem orqali"
+msgstr "Yemle"
+
+#: apps/inventory/models.py:293
+msgid "Ko‘zga tomizish"
+msgstr "Göze damla"
+
+#: apps/inventory/models.py:302
+msgid "Nomi (vaksina/dori)"
+msgstr "Adı (aşı/ilaç)"
+
+#: apps/inventory/models.py:309
+msgid "Emlash/dori"
+msgstr "Aşı/ilaç"
+
+#: apps/sales/models.py:13 templates/frontend/dashboard.html:102
 msgid "Tuxum"
 msgstr "Yumurta"
 
+#: apps/sales/models.py:17
 msgid "Sifatli tuxum"
 msgstr "Kaliteli yumurta"
 
+#: apps/sales/models.py:18
 msgid "Sifatsiz tuxum"
 msgstr "Kalitesiz yumurta"
 
+#: apps/sales/models.py:21
 msgid "Jojalar (ochirilgan)"
 msgstr "Civcivler (kuluçka)"
 
+#: apps/sales/models.py:29
 msgid "Sotuv turi"
 msgstr "Satış türü"
 
+#: apps/sales/models.py:31
 msgid "Tuxum sifati"
 msgstr "Yumurta kalitesi"
 
+#: apps/sales/models.py:32
 msgid "Faqat tuxum sotuvida tanlanadi"
 msgstr "Sadece yumurta satışında seçilir"
 
+#: apps/sales/models.py:36
 msgid "Joja sotuvida: jojalar yoki tovuqlar bazasidan"
 msgstr "Civciv satışında: civciv veya tavuk tabanından"
 
+#: apps/sales/models.py:40
 msgid "Tovuqlar bazasidan sotilganda: tovuq yoki xo‘roz"
 msgstr "Tavuk tabanından satarken: tavuk veya horoz"
 
+#: apps/sales/models.py:51 config/settings.py:277
+#: templates/frontend/base.html:91
 msgid "Sotuv"
 msgstr "Satış"
 
+#: apps/sales/models.py:52 config/settings.py:281
 msgid "Sotuvlar"
 msgstr "Satışlar"
 
+#: config/settings.py:151
 msgid "O‘zbekcha"
 msgstr "Özbekçe"
 
+#: config/settings.py:152
 msgid "Türkçe"
 msgstr "Türkçe"
 
+#: config/settings.py:153
 msgid "Русский"
 msgstr "Rusça"
 
+#: config/settings.py:154
 msgid "English"
 msgstr "İngilizce"
 
+#: config/settings.py:201 config/settings.py:223
+#: templates/frontend/base.html:26 templates/frontend/base.html:37
+#: templates/frontend/base.html:165 templates/frontend/dashboard.html:4
+#: templates/frontend/dashboard.html:5 templates/frontend/login.html:23
 msgid "Boshqaruv paneli"
 msgstr "Kontrol paneli"
 
+#: config/settings.py:219 templates/frontend/base.html:31
 msgid "Asosiy"
 msgstr "Ana"
 
+#: config/settings.py:230 templates/frontend/base.html:43
 msgid "Moliya"
 msgstr "Finans"
 
+#: config/settings.py:234
 msgid "Kirimlar"
 msgstr "Gelirler"
 
+#: config/settings.py:249
 msgid "Rasxod kategoriyalari"
 msgstr "Gider kategorileri"
 
+#: config/settings.py:288 templates/frontend/base.html:112
 msgid "Boshqaruv"
 msgstr "Yönetim"
 
+#: templates/admin/index.html:7
 msgid "Umumiy holat"
 msgstr "Genel durum"
 
+#: templates/admin/index.html:36
 msgid "Tovuq qoldiq"
 msgstr "Kalan tavuk"
 
+#: templates/admin/index.html:40
 msgid "Xo‘roz qoldiq"
 msgstr "Kalan horoz"
 
+#: templates/frontend/_actions.html:4
 msgid "Tahrirlash"
 msgstr "Düzenle"
 
+#: templates/frontend/_actions.html:9 templates/frontend/base.html:349
+#: templates/frontend/object_form.html:136
 msgid "O‘chirish"
 msgstr "Sil"
 
+#: templates/frontend/_actions.html:14
 msgid "24 soat muddati tugagan"
 msgstr "24 saat doldu"
 
+#: templates/frontend/_poultry_table.html:4
+#: templates/frontend/object_list.html:46
 msgid "Amallar"
 msgstr "İşlemler"
 
+#: templates/frontend/_poultry_table.html:12
+#: templates/frontend/object_list.html:56
 msgid "Hozircha yozuv yo‘q"
 msgstr "Henüz kayıt yok"
 
+#: templates/frontend/activity.html:4 templates/frontend/activity.html:5
+#: templates/frontend/base.html:135
 msgid "Aktivlik"
 msgstr "Aktivite"
 
+#: templates/frontend/activity.html:9
 msgid "Tizim aktivligi"
 msgstr "Sistem aktivitesi"
 
+#: templates/frontend/activity.html:31
 msgid "Hozircha aktivlik yo‘q"
 msgstr "Henüz aktivite yok"
 
+#: templates/frontend/activity.html:39
+#: templates/frontend/notifications.html:29
+#: templates/frontend/object_list.html:72
 msgid "Oldingi"
 msgstr "Önceki"
 
+#: templates/frontend/activity.html:41
+#: templates/frontend/notifications.html:31
+#: templates/frontend/object_list.html:74
 msgid "Keyingi"
 msgstr "Sonraki"
 
+#: templates/frontend/base.html:127 templates/frontend/egg_forecast.html:4
 msgid "Tuxum prognozi"
 msgstr "Yumurta tahmini"
 
+#: templates/frontend/base.html:131 templates/frontend/reports.html:4
+#: templates/frontend/reports.html:5
 msgid "Hisobotlar"
 msgstr "Raporlar"
 
+#: templates/frontend/base.html:139 templates/frontend/telegram.html:4
 msgid "Telegram"
 msgstr "Telegram"
 
+#: templates/frontend/base.html:145
 msgid "Foydalanuvchilar"
 msgstr "Kullanıcılar"
 
+#: templates/frontend/base.html:149
 msgid "Admin panel"
 msgstr "Yönetim paneli"
 
+#: templates/frontend/base.html:173 templates/frontend/report_pdf.html:29
+#: templates/frontend/reports.html:11
 msgid "Barcha filiallar"
 msgstr "Tüm şubeler"
 
+#: templates/frontend/base.html:186 templates/frontend/login.html:49
 msgid "Tema"
 msgstr "Tema"
 
+#: templates/frontend/base.html:200 templates/frontend/notifications.html:12
 msgid "Hammasini o‘qilgan"
 msgstr "Tümünü okundu"
 
+#: templates/frontend/base.html:210 templates/frontend/notifications.html:23
 msgid "Hozircha bildirishnoma yo‘q"
 msgstr "Henüz bildirim yok"
 
+#: templates/frontend/base.html:213
 msgid "Barchasini ko‘rish"
 msgstr "Tümünü gör"
 
+#: templates/frontend/base.html:218
 msgid "Shrift"
 msgstr "Yazı tipi"
 
+#: templates/frontend/base.html:220
 msgid "Shrift o‘lchami"
 msgstr "Yazı boyutu"
 
+#: templates/frontend/base.html:227
 msgid "Qalinlik"
 msgstr "Kalınlık"
 
+#: templates/frontend/base.html:230
 msgid "Qalin matn"
 msgstr "Kalın yazı"
 
+#: templates/frontend/base.html:285
 msgid "Email"
 msgstr "E-posta"
 
+#: templates/frontend/base.html:297
 msgid "Parolni faqat super admin o‘zgartiradi."
 msgstr "Şifreyi yalnızca süper admin değiştirebilir."
 
+#: templates/frontend/base.html:303
 msgid "Chiqish"
 msgstr "Çıkış"
 
+#: templates/frontend/base.html:343
 msgid "O‘chirishni tasdiqlang"
 msgstr "Silmeyi onaylayın"
 
+#: templates/frontend/base.html:344
 msgid "Bu yozuvni o‘chirmoqchimisiz? Bu amalni qaytarib bo‘lmaydi."
 msgstr "Bu kaydı silmek istiyor musunuz? Bu işlem geri alınamaz."
 
+#: templates/frontend/base.html:346 templates/frontend/object_form.html:50
+#: templates/frontend/password_change.html:32
 msgid "Bekor qilish"
 msgstr "İptal"
 
+#: templates/frontend/base.html:347
 msgid "O‘chirilmoqda"
 msgstr "Siliniyor"
 
+#: templates/frontend/dashboard.html:15
 msgid "Tizimni boshlash uchun avval filial qo‘shing"
 msgstr "Başlamak için önce bir şube ekleyin"
 
+#: templates/frontend/dashboard.html:16
 msgid ""
 "Filial qo‘shilgach, investitsiya, rasxod, xodim va sotuvlarni kiritish "
 "mumkin bo‘ladi."
 msgstr ""
 "Şube eklendikten sonra yatırım, gider, çalışan ve satışları girebilirsiniz."
 
+#: templates/frontend/dashboard.html:18
 msgid "Filial qo‘shish"
 msgstr "Şube ekle"
 
+#: templates/frontend/dashboard.html:48
 msgid "Tushum (sotuvdan)"
 msgstr "Gelir (satıştan)"
 
+#: templates/frontend/dashboard.html:72
 msgid "Investitsiya va rasxod"
 msgstr "Yatırım ve giderler"
 
+#: templates/frontend/dashboard.html:72
 msgid "6 oy"
 msgstr "6 ay"
 
+#: templates/frontend/dashboard.html:92
 msgid "Sotuv tushumi"
 msgstr "Satış geliri"
 
+#: templates/frontend/dashboard.html:108
 msgid "Ombor va sotuv"
 msgstr "Depo ve satış"
 
+#: templates/frontend/dashboard.html:112
 msgid "Tovuq qoldiq (dona)"
 msgstr "Kalan tavuk (adet)"
 
+#: templates/frontend/dashboard.html:116
 msgid "Xo‘roz qoldiq (dona)"
 msgstr "Kalan horoz (adet)"
 
-#| msgid "Joja qoldig‘i"
+#: templates/frontend/dashboard.html:120 templates/frontend/jojalar.html:11
 msgid "Jojalar qoldig‘i (dona)"
 msgstr "Civciv stoğu (adet)"
 
+#: templates/frontend/dashboard.html:136
 msgid "So‘nggi sotuvlar"
 msgstr "Son satışlar"
 
+#: templates/frontend/dashboard.html:140 templates/frontend/report_pdf.html:69
+#: templates/frontend/reports.html:101
 msgid "Tur"
 msgstr "Tür"
 
+#: templates/frontend/dashboard.html:145
 msgid "Hozircha sotuv yo‘q"
 msgstr "Henüz satış yok"
 
+#: templates/frontend/dashboard.html:153
 msgid "So‘nggi rasxodlar"
 msgstr "Son giderler"
 
+#: templates/frontend/dashboard.html:154
 msgid "Hammasi"
 msgstr "Tümü"
 
+#: templates/frontend/dashboard.html:162
 msgid "Hozircha rasxod yo‘q"
 msgstr "Henüz gider yok"
 
+#: templates/frontend/egg_forecast.html:5
 msgid "Tuxum tug‘uvchanlik prognozi va samaradorligi"
 msgstr "Yumurta verimi tahmini ve verimlilik"
 
+#: templates/frontend/egg_forecast.html:10
 msgid ""
 "Prognoz uchun avval faol partiya va joja (tovuq) ma’lumotlarini kiriting."
 msgstr "Tahmin için önce aktif partileri ve kümes (tavuk) verilerini girin."
 
+#: templates/frontend/egg_forecast.html:11
 msgid "Partiya qo‘shish"
 msgstr "Parti ekle"
 
+#: templates/frontend/egg_forecast.html:20
 msgid "Bugun kutilayotgan tuxum (dona)"
 msgstr "Bugün beklenen yumurta (adet)"
 
+#: templates/frontend/egg_forecast.html:25
 msgid "O‘rtacha samaradorlik (real/standart)"
 msgstr "Ortalama verimlilik (gerçek/standart)"
 
+#: templates/frontend/egg_forecast.html:30
 msgid "Eng samarali partiya"
 msgstr "En verimli parti"
 
+#: templates/frontend/egg_forecast.html:35
 msgid "E’tibor kerak partiya"
 msgstr "Dikkat gereken parti"
 
+#: templates/frontend/egg_forecast.html:42
 #, python-format
 msgid "Tug‘uvchanlik egri chizig‘i (HDEP %%)"
 msgstr "Yumurtlama eğrisi (HDEP %%)"
 
+#: templates/frontend/egg_forecast.html:55
 msgid "Zot standarti"
 msgstr "Irk standardı"
 
+#: templates/frontend/egg_forecast.html:56
 msgid "Sizning real holatingiz"
 msgstr "Gerçek durumunuz"
 
+#: templates/frontend/egg_forecast.html:71
+#: templates/frontend/egg_forecast.html:84
+#: templates/frontend/kunlik_log.html:43
 msgid "Yosh (hafta)"
 msgstr "Yaş (hafta)"
 
+#: templates/frontend/egg_forecast.html:74
 msgid ""
 "Real chiziq uchun “Tuxum yig‘imi” bo‘limiga kunlik yig‘ilgan tuxumni "
 "kiriting."
@@ -917,299 +1542,276 @@ msgstr ""
 "Gerçek çizgi için günlük toplanan yumurtayı “Yumurta toplama” bölümüne "
 "girin."
 
+#: templates/frontend/egg_forecast.html:80
 msgid "Partiyalar samaradorligi"
 msgstr "Parti verimliliği"
 
+#: templates/frontend/egg_forecast.html:84
 msgid "Tirik tovuq"
 msgstr "Canlı tavuk"
 
+#: templates/frontend/egg_forecast.html:85
 msgid "Standart HDEP"
 msgstr "Standart HDEP"
 
+#: templates/frontend/egg_forecast.html:85
 msgid "Real HDEP"
 msgstr "Gerçek HDEP"
 
+#: templates/frontend/egg_forecast.html:86
 msgid "Kutilgan/kun"
 msgstr "Beklenen/gün"
 
+#: templates/frontend/egg_forecast.html:86
 msgid "Samaradorlik"
 msgstr "Verimlilik"
 
+#: templates/frontend/egg_forecast.html:86
 msgid "Tavsiya"
 msgstr "Öneri"
 
+#: templates/frontend/egg_forecast.html:101
 msgid "Faol partiya yo‘q"
 msgstr "Aktif parti yok"
 
+#: templates/frontend/kunlik_log.html:11
+msgid "Omborda qolgan yem"
+msgstr "Ambarda kalan yem"
+
+#: templates/frontend/kunlik_log.html:18
+msgid "Yem egri chizig‘i (standart va real)"
+msgstr "Yem eğrisi (standart ve gerçek)"
+
+#: templates/frontend/kunlik_log.html:28
+msgid "Standart yem"
+msgstr "Standart yem"
+
+#: templates/frontend/kunlik_log.html:29
+msgid "Real yem"
+msgstr "Gerçek yem"
+
+#: templates/frontend/kunlik_log.html:46
+msgid "Real chiziq uchun kunlik yem ma’lumotini kiriting."
+msgstr "Gerçek çizgi için günlük yem verisini girin."
+
+#: templates/frontend/login.html:8 templates/frontend/login.html:44
 msgid "Kirish"
 msgstr "Giriş"
 
+#: templates/frontend/login.html:26
 msgid "Login yoki parol noto‘g‘ri. Qayta urinib ko‘ring."
 msgstr "Kullanıcı adı veya şifre yanlış. Tekrar deneyin."
 
+#: templates/frontend/login.html:29
 msgid "Kirilmoqda"
 msgstr "Giriş yapılıyor"
 
+#: templates/frontend/login.html:33
 msgid "Foydalanuvchi nomi"
 msgstr "Kullanıcı adı"
 
+#: templates/frontend/login.html:35
 msgid "Login"
 msgstr "Giriş"
 
+#: templates/frontend/login.html:38
 msgid "Parol"
 msgstr "Şifre"
 
+#: templates/frontend/object_form.html:9
+#: templates/frontend/password_change.html:13
+#: templates/frontend/telegram.html:29
 msgid "Saqlanmoqda"
 msgstr "Kaydediliyor"
 
+#: templates/frontend/object_form.html:29
 msgid "Yangi sabab"
 msgstr "Yeni sebep"
 
+#: templates/frontend/object_form.html:33
+msgid "Sabablarni boshqarish"
+msgstr "Nedenleri yönet"
+
+#: templates/frontend/object_form.html:37
 msgid "Sabab nomi"
 msgstr "Sebep adı"
 
+#: templates/frontend/object_form.html:38
+#: templates/frontend/object_list.html:35 templates/frontend/poultry.html:35
+#: templates/frontend/poultry.html:47 templates/frontend/poultry.html:59
 msgid "Qo‘shish"
 msgstr "Ekle"
 
+#: templates/frontend/object_form.html:53
+#: templates/frontend/object_form.html:133
+#: templates/frontend/password_change.html:35
 msgid "Saqlash"
 msgstr "Kaydet"
 
+#: templates/frontend/object_form.html:124
+#: templates/frontend/object_form.html:184
+#| msgid "Hali faol kod yo‘q."
+msgid "Hali sabablar yo‘q"
+msgstr "Henüz neden yok"
+
+#: templates/frontend/object_form.html:129
+msgid "Ishlatilgan rasxodlar soni"
+msgstr "Kullanan gider sayısı"
+
+#: templates/frontend/object_form.html:158
+#| msgid "Sabab nomi"
+msgid "Sabab yangilandi"
+msgstr "Neden güncellendi"
+
+#: templates/frontend/object_form.html:168
+msgid "Tasdiqlash uchun yana bosing"
+msgstr "Onaylamak için tekrar tıklayın"
+
+#: templates/frontend/object_form.html:186
+#| msgid "Yozuv o‘chirildi."
+msgid "Sabab o‘chirildi"
+msgstr "Neden silindi"
+
+#: templates/frontend/object_list.html:17
 msgid "Excel"
 msgstr "Excel"
 
+#: templates/frontend/object_list.html:23
 msgid "Filter bo‘yicha"
 msgstr "Filtreye göre"
 
+#: templates/frontend/object_list.html:27
 msgid "Hammasini"
 msgstr "Tümü"
 
+#: templates/frontend/poultry.html:11
 msgid "Joja holati"
 msgstr "Civciv durumu"
 
+#: templates/frontend/poultry.html:12
 msgid "Haftalik vazn"
 msgstr "Haftalık ağırlık"
 
+#: templates/frontend/poultry.html:13 templates/frontend/poultry.html:56
 msgid "Joja haridi"
 msgstr "Civciv alımı"
 
+#: templates/frontend/poultry.html:22
 msgid "Sotib olingan"
 msgstr "Satın alınan"
 
+#: templates/frontend/poultry.html:32
 msgid "Nobud bo‘lganlar"
 msgstr "Ölenler"
 
+#: templates/frontend/poultry.html:44
 msgid "Haftalik vaznlar"
 msgstr "Haftalık ağırlıklar"
 
+#: templates/frontend/report_pdf.html:29
 msgid "Moliyaviy hisobot"
 msgstr "Mali rapor"
 
+#: templates/frontend/report_pdf.html:35 templates/frontend/reports.html:22
 msgid "Rasxod (umumiy)"
 msgstr "Giderler (toplam)"
 
+#: templates/frontend/report_pdf.html:42 templates/frontend/reports.html:31
 msgid "Oylarni taqqoslash"
 msgstr "Ayları karşılaştır"
 
+#: templates/frontend/report_pdf.html:45 templates/frontend/reports.html:45
 msgid "Ko‘rsatkich"
 msgstr "Gösterge"
 
+#: templates/frontend/report_pdf.html:48 templates/frontend/reports.html:48
 msgid "O‘zgarish"
 msgstr "Değişim"
 
+#: templates/frontend/report_pdf.html:60 templates/frontend/reports.html:87
 msgid "Rasxod sabablari bo‘yicha"
 msgstr "Nedene göre giderler"
 
+#: templates/frontend/report_pdf.html:67 templates/frontend/reports.html:99
 msgid "Tushum taqsimoti"
 msgstr "Gelir dağılımı"
 
+#: templates/frontend/reports.html:15
 msgid "PDF yuklab olish"
 msgstr "PDF indir"
 
+#: templates/frontend/reports.html:105
 msgid "Jami tushum"
 msgstr "Toplam gelir"
 
+#: templates/frontend/telegram.html:5
 msgid "Telegram bot"
 msgstr "Telegram bot"
 
+#: templates/frontend/telegram.html:12
 msgid "Ulanish"
 msgstr "Bağlantı"
 
+#: templates/frontend/telegram.html:15
 msgid "Telegramda botni oching:"
 msgstr "Botu Telegram’da açın:"
 
+#: templates/frontend/telegram.html:18
 msgid "Botga"
 msgstr "Bota yazın"
 
+#: templates/frontend/telegram.html:18
 msgid "deb yozing"
 msgstr "yazın"
 
+#: templates/frontend/telegram.html:19
 msgid "Quyidagi bir martalik kodni botga yuboring"
 msgstr "Aşağıdaki tek kullanımlık kodu bota gönderin"
 
+#: templates/frontend/telegram.html:24
 msgid "Kod 15 daqiqa amal qiladi va bir marta ishlatiladi."
 msgstr "Kod 15 dakika geçerlidir ve bir kez kullanılır."
 
+#: templates/frontend/telegram.html:26
 msgid "Hali faol kod yo‘q."
 msgstr "Henüz aktif kod yok."
 
+#: templates/frontend/telegram.html:33
 msgid "Yangi kod yaratish"
 msgstr "Yeni kod oluştur"
 
+#: templates/frontend/telegram.html:40
 msgid "Ulangan akkauntlar"
 msgstr "Bağlı hesaplar"
 
+#: templates/frontend/telegram.html:50
 msgid "Ulangan"
 msgstr "Bağlandı"
 
+#: templates/frontend/telegram.html:54
 msgid "Uzish"
 msgstr "Bağlantıyı kes"
 
+#: templates/frontend/telegram.html:59
 msgid "Hali hech qanday Telegram akkaunt ulanmagan."
 msgstr "Henüz Telegram hesabı bağlanmadı."
 
+#: templates/frontend/telegram.html:63
 msgid "Bot nima qiladi?"
 msgstr "Bot ne yapar?"
 
+#: templates/frontend/telegram.html:65
 msgid "Tizimdagi har bir yangilikni darhol yuboradi"
 msgstr "Her sistem güncellemesini anında gönderir"
 
+#: templates/frontend/telegram.html:66
 msgid "Har kuni kechqurun kunlik hisobot yuboradi"
 msgstr "Her akşam günlük rapor gönderir"
 
+#: templates/frontend/telegram.html:67
 msgid "So‘rov: /balance, /eggs, /poultry, /report"
 msgstr "Sorgu: /balance, /eggs, /poultry, /report"
 
+#: templates/frontend/telegram.html:68
 msgid "Til tanlash: /language"
 msgstr "Dil: /language"
-
-msgid "January"
-msgstr "Ocak"
-
-msgctxt "alt. month"
-msgid "January"
-msgstr "Ocak"
-
-msgid "February"
-msgstr "Şubat"
-
-msgctxt "alt. month"
-msgid "February"
-msgstr "Şubat"
-
-msgid "March"
-msgstr "Mart"
-
-msgctxt "alt. month"
-msgid "March"
-msgstr "Mart"
-
-msgid "April"
-msgstr "Nisan"
-
-msgctxt "alt. month"
-msgid "April"
-msgstr "Nisan"
-
-msgid "May"
-msgstr "Mayıs"
-
-msgctxt "alt. month"
-msgid "May"
-msgstr "Mayıs"
-
-msgid "June"
-msgstr "Haziran"
-
-msgctxt "alt. month"
-msgid "June"
-msgstr "Haziran"
-
-msgid "July"
-msgstr "Temmuz"
-
-msgctxt "alt. month"
-msgid "July"
-msgstr "Temmuz"
-
-msgid "August"
-msgstr "Ağustos"
-
-msgctxt "alt. month"
-msgid "August"
-msgstr "Ağustos"
-
-msgid "September"
-msgstr "Eylül"
-
-msgctxt "alt. month"
-msgid "September"
-msgstr "Eylül"
-
-msgid "October"
-msgstr "Ekim"
-
-msgctxt "alt. month"
-msgid "October"
-msgstr "Ekim"
-
-msgid "November"
-msgstr "Kasım"
-
-msgctxt "alt. month"
-msgid "November"
-msgstr "Kasım"
-
-msgid "December"
-msgstr "Aralık"
-
-msgctxt "alt. month"
-msgid "December"
-msgstr "Aralık"
-
-msgctxt "abbrev. month"
-msgid "jan"
-msgstr "Oca"
-
-msgctxt "abbrev. month"
-msgid "feb"
-msgstr "Şub"
-
-msgctxt "abbrev. month"
-msgid "mar"
-msgstr "Mar"
-
-msgctxt "abbrev. month"
-msgid "apr"
-msgstr "Nis"
-
-msgctxt "abbrev. month"
-msgid "may"
-msgstr "May"
-
-msgctxt "abbrev. month"
-msgid "jun"
-msgstr "Haz"
-
-msgctxt "abbrev. month"
-msgid "jul"
-msgstr "Tem"
-
-msgctxt "abbrev. month"
-msgid "aug"
-msgstr "Ağu"
-
-msgctxt "abbrev. month"
-msgid "sep"
-msgstr "Eyl"
-
-msgctxt "abbrev. month"
-msgid "oct"
-msgstr "Eki"
-
-msgctxt "abbrev. month"
-msgid "nov"
-msgstr "Kas"
-
-msgctxt "abbrev. month"
-msgid "dec"
-msgstr "Ara"

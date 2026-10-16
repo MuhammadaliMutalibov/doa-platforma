@@ -23,6 +23,13 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 DEBUG = env('DJANGO_DEBUG')
 ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS')
 
+# Tashqi tunnel (ngrok/cloudflared) orqali namoyish uchun — POST formalar ishlashi uchun kerak
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=[
+    'https://*.trycloudflare.com',
+    'https://*.ngrok-free.app',
+    'https://*.ngrok.io',
+])
+
 # --- Telegram bot ---
 TELEGRAM_BOT_TOKEN = env('TELEGRAM_BOT_TOKEN', default='')
 TELEGRAM_HISOBOT_SOATI = env.int('TELEGRAM_HISOBOT_SOATI', default=21)

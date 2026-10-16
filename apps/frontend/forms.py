@@ -9,15 +9,17 @@ from django.utils.translation import gettext_lazy as _
 
 from apps.accounts.models import Filial, User, Xodim
 from apps.finance.models import Kirim, Maosh, Rasxod
-from apps.inventory.models import JojaHarakat, JojaOchirish, JojaVazn, Partiya, TuxumYigim
+from apps.inventory.models import (Emlash, JojaHarakat, JojaOchirish, JojaVazn, KunlikLog,
+                                    Partiya, TuxumYigim)
 from apps.sales.models import Sotuv
 
 # Musbat (0 dan katta) bo'lishi shart bo'lgan pul/narx maydonlari
 PUL_MAYDONLAR = {'summa', 'dona_narxi', 'birlik_narxi', 'ortacha_vazn'}
-# Manfiy bo'lmasligi kerak (0 ga ruxsat) — masalan oylik
-NOMANFIY_MAYDONLAR = {'oylik'}
+# Manfiy bo'lmasligi kerak (0 ga ruxsat)
+NOMANFIY_MAYDONLAR = {'oylik', 'nobud', 'yem_berilgan', 'yem_kelgan', 'suv_berilgan',
+                      'yoruglik_lux', 'yoruglik_soat', 'a_sifat'}
 # Kamida 1 bo'lishi kerak bo'lgan son maydonlari
-SON_MAYDONLAR = {'soni', 'tuxum_soni'}
+SON_MAYDONLAR = {'soni', 'tuxum_soni', 'tirik_soni'}
 
 
 class StyledModelForm(forms.ModelForm):
@@ -172,11 +174,51 @@ class TuxumSotuvForm(StyledModelForm):
 
 
 class TuxumYigimForm(StyledModelForm):
-    """Kunlik tuxum yig'imi: sana, partiya, soni."""
+    """Kunlik tuxum yig'imi: sana, partiya, soni, A-sifat, o'rtacha og'irlik."""
 
     class Meta:
         model = TuxumYigim
-        fields = ['sana', 'partiya', 'soni', 'izoh']
+        fields = ['sana', 'partiya', 'soni', 'a_sifat', 'ortacha_vazn', 'izoh']
+
+    def clean(self):
+        c = super().clean()
+        soni, a = c.get('soni'), c.get('a_sifat')
+        if soni is not None and a is not None and a > soni:
+            self.add_error('a_sifat', _('A-sifat tuxum soni yig‘ilgan jami tuxumdan ko‘p bo‘lishi mumkin emas.'))
+        return c
+
+
+class KunlikLogForm(StyledModelForm):
+    """Partiya kunlik kuzatuvi: yem, suv, o'lim, tirik soni, og'irlik."""
+
+    class Meta:
+        model = KunlikLog
+        fields = ['partiya', 'sana', 'tirik_soni', 'nobud',
+                  'yem_berilgan', 'yem_kelgan', 'suv_berilgan', 'ortacha_vazn',
+                  'harorat', 'yoruglik_lux', 'yoruglik_soat', 'izoh']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['partiya'].queryset = Partiya.objects.filter(faol=True)
+
+    def clean(self):
+        c = super().clean()
+        tirik, nobud = c.get('tirik_soni'), c.get('nobud')
+        if tirik is not None and nobud is not None and nobud > tirik:
+            self.add_error('nobud', _('Nobud soni tirik qush sonidan ko‘p bo‘lishi mumkin emas.'))
+        return c
+
+
+class EmlashForm(StyledModelForm):
+    """Emlash / dori / muolaja jurnali."""
+
+    class Meta:
+        model = Emlash
+        fields = ['partiya', 'sana', 'tur', 'nomi', 'usul', 'doza', 'izoh']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['partiya'].queryset = Partiya.objects.filter(faol=True)
 
 
 class FilialForm(StyledModelForm):

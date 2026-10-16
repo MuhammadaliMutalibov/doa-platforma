@@ -154,6 +154,9 @@ class TuxumYigim(BazaModel):
         on_delete=models.PROTECT, null=True, blank=True, related_name='tuxum_yigimlari',
     )
     soni = models.PositiveIntegerField(_('Yig‘ilgan tuxum (dona)'))
+    a_sifat = models.PositiveIntegerField(_('A-sifat tuxum (dona)'), default=0)
+    ortacha_vazn = models.DecimalField(
+        _('O‘rtacha tuxum og‘irligi (g)'), max_digits=5, decimal_places=1, null=True, blank=True)
     izoh = models.CharField(_('Izoh'), max_length=255, blank=True)
     history = HistoricalRecords()
 
@@ -161,6 +164,13 @@ class TuxumYigim(BazaModel):
         verbose_name = _('Tuxum yig‘imi')
         verbose_name_plural = _('Tuxum yig‘imlari')
         ordering = ('-sana', '-id')
+
+    @property
+    def randiman(self):
+        """Randıman (chiqim) = A-sifat / jami yig'ilgan × 100."""
+        if self.soni:
+            return self.a_sifat / self.soni * 100
+        return 0
 
     def __str__(self):
         return f'{self.sana}: {self.soni} dona'
@@ -195,3 +205,110 @@ class JojaOchirish(BazaModel):
         if filial is not None:
             qs = qs.filter(filial=filial)
         return qs.aggregate(s=Sum('ochilgan'))['s'] or 0
+
+
+class KunlikLog(BazaModel):
+    """Partiya kunlik kuzatuvi: yem, suv, o'lim, tirik soni, og'irlik.
+    Har partiya uchun kuniga bitta yozuv."""
+
+    partiya = models.ForeignKey(
+        Partiya, verbose_name=_('Partiya'),
+        on_delete=models.PROTECT, related_name='kunlik_loglar',
+    )
+    sana = models.DateField(_('Sana'))
+    tirik_soni = models.PositiveIntegerField(_('Tirik qush soni'))
+    nobud = models.PositiveIntegerField(_('Nobud (dona)'), default=0)
+    yem_berilgan = models.DecimalField(_('Berilgan yem (kg)'), max_digits=12, decimal_places=2, default=0)
+    yem_kelgan = models.DecimalField(
+        _('Omborga kelgan yem (kg)'), max_digits=12, decimal_places=2, default=0,
+        help_text=_('Faqat yem yetkazib berilgan kunda'),
+    )
+    suv_berilgan = models.DecimalField(_('Berilgan suv (litr)'), max_digits=12, decimal_places=2, default=0)
+    ortacha_vazn = models.DecimalField(
+        _('O‘rtacha og‘irlik (g)'), max_digits=10, decimal_places=2, null=True, blank=True)
+    harorat = models.DecimalField(
+        _('Harorat (°C)'), max_digits=5, decimal_places=1, null=True, blank=True)
+    yoruglik_lux = models.PositiveIntegerField(_('Yorug‘lik kuchi (lk)'), null=True, blank=True)
+    yoruglik_soat = models.DecimalField(
+        _('Yorug‘lik davomiyligi (soat)'), max_digits=4, decimal_places=1, null=True, blank=True)
+    izoh = models.CharField(_('Izoh'), max_length=255, blank=True)
+    history = HistoricalRecords()
+
+    class Meta:
+        verbose_name = _('Kunlik log')
+        verbose_name_plural = _('Kunlik loglar')
+        ordering = ('-sana', '-id')
+        constraints = [
+            models.UniqueConstraint(fields=['partiya', 'sana'], name='kunlik_log_partiya_sana_uniq'),
+        ]
+
+    def __str__(self):
+        return f'{self.partiya} · {self.sana}'
+
+    @property
+    def yem_bosh(self):
+        """Bosh boshiga yem (gramm)."""
+        if self.tirik_soni:
+            return float(self.yem_berilgan) * 1000 / self.tirik_soni
+        return 0
+
+    @property
+    def suv_bosh(self):
+        """Bosh boshiga suv (litr)."""
+        if self.tirik_soni:
+            return float(self.suv_berilgan) / self.tirik_soni
+        return 0
+
+    @property
+    def olim_foiz(self):
+        if self.tirik_soni:
+            return self.nobud / self.tirik_soni * 100
+        return 0
+
+    @staticmethod
+    def yem_silo_qoldiq(filial=None):
+        """Omborda qolgan yem = jami kelgan − jami berilgan (kg)."""
+        qs = KunlikLog.objects.all()
+        if filial is not None:
+            qs = qs.filter(filial=filial)
+        agg = qs.aggregate(k=Sum('yem_kelgan'), b=Sum('yem_berilgan'))
+        return (agg['k'] or 0) - (agg['b'] or 0)
+
+
+class Emlash(BazaModel):
+    """Emlash / dori / muolaja jurnali — partiya salomatlik tarixi."""
+
+    class Tur(models.TextChoices):
+        EMLASH = 'emlash', _('Emlash (vaksina)')
+        DORI = 'dori', _('Dori')
+        VITAMIN = 'vitamin', _('Vitamin')
+        DEZINFEKSIYA = 'dezinfeksiya', _('Dezinfeksiya')
+        BOSHQA = 'boshqa', _('Boshqa')
+
+    class Usul(models.TextChoices):
+        SUV = 'suv', _('Suv orqali')
+        PURKASH = 'purkash', _('Purkash')
+        INEKSIYA = 'ineksiya', _('In’ektsiya')
+        YEM = 'yem', _('Yem orqali')
+        KOZ = 'koz', _('Ko‘zga tomizish')
+        BOSHQA = 'boshqa', _('Boshqa')
+
+    partiya = models.ForeignKey(
+        Partiya, verbose_name=_('Partiya'),
+        on_delete=models.PROTECT, related_name='emlashlar',
+    )
+    sana = models.DateField(_('Sana'))
+    tur = models.CharField(_('Turi'), max_length=12, choices=Tur.choices, default=Tur.EMLASH)
+    nomi = models.CharField(_('Nomi (vaksina/dori)'), max_length=150)
+    usul = models.CharField(_('Usuli'), max_length=10, choices=Usul.choices, blank=True)
+    doza = models.CharField(_('Doza'), max_length=100, blank=True)
+    izoh = models.CharField(_('Izoh'), max_length=255, blank=True)
+    history = HistoricalRecords()
+
+    class Meta:
+        verbose_name = _('Emlash/dori')
+        verbose_name_plural = _('Salomatlik jurnali')
+        ordering = ('-sana', '-id')
+
+    def __str__(self):
+        return f'{self.sana} · {self.get_tur_display()}: {self.nomi}'

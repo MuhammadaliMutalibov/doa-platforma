@@ -1,0 +1,50 @@
+{% extends 'frontend/object_list.html' %}
+{% load i18n humanize %}
+
+{% block before_list %}
+<div class="card stat reveal" style="margin-bottom:18px;max-width:360px">
+  <div class="stat-ico ico-amber">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+  </div>
+  <div>
+    <div class="num">{{ yem_qoldiq|floatformat:"-2"|intcomma }} <span style="font-size:1rem;color:var(--text-dim)">kg</span></div>
+    <div class="cap">{% trans "Omborda qolgan yem" %}</div>
+  </div>
+</div>
+
+{% if grafik %}
+<div class="card" style="margin-bottom:18px">
+  <div class="panel-head" style="margin-bottom:10px;flex-wrap:wrap;gap:12px">
+    <h3>{% trans "Yem egri chizig‘i (standart va real)" %}</h3>
+    {% if partiyalar %}
+    <form method="get" style="margin:0">
+      <select name="partiya" class="filial-select" onchange="this.form.submit()" style="min-width:160px">
+        {% for p in partiyalar %}<option value="{{ p.pk }}" {% if tanlangan and tanlangan.pk == p.pk %}selected{% endif %}>{{ p.nomi }}</option>{% endfor %}
+      </select>
+    </form>
+    {% endif %}
+  </div>
+  <div class="chart-legend">
+    <span class="lg-item"><span class="lg-dot" style="background:#10b981"></span>{% trans "Standart yem" %}</span>
+    <span class="lg-item"><span class="lg-dot" style="background:#ef4444"></span>{% trans "Real yem" %}</span>
+  </div>
+  <div class="hdep-chart">
+    <svg viewBox="0 0 {{ grafik.W }} {{ grafik.H }}" style="width:100%;height:auto">
+      {% for yl in grafik.y_lines %}
+      <line x1="30" y1="{{ yl.y }}" x2="{{ grafik.W|add:'-30' }}" y2="{{ yl.y }}" class="hdep-grid"/>
+      <text x="4" y="{{ yl.y|add:'4' }}" class="hdep-axis">{{ yl.val }}</text>
+      {% endfor %}
+      {% for xl in grafik.x_labels %}
+      <text x="{{ xl.x }}" y="{{ grafik.H|add:'-6' }}" class="hdep-axis" text-anchor="middle">{{ xl.hafta }}</text>
+      {% endfor %}
+      {% if grafik.std_pts %}<polyline points="{{ grafik.std_pts }}" class="hdep-std"/>{% endif %}
+      {% if grafik.real_pts %}<polyline points="{{ grafik.real_pts }}" class="hdep-real"/>{% endif %}
+    </svg>
+    <div class="hdep-xtitle">{% trans "Yosh (hafta)" %} · g/bosh</div>
+  </div>
+  {% if not grafik.bor_real %}
+  <p class="hint" style="margin-top:8px">{% trans "Real chiziq uchun kunlik yem ma’lumotini kiriting." %}</p>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}

@@ -19,15 +19,25 @@
         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
         {{ field }}
         {% if field.name == 'kategoriya' %}
-        <div class="inline-add" data-url="{% url 'sabab_qoshish' %}" data-target="{{ field.id_for_label }}">
-          <button type="button" class="add-mini" onclick="sababToggle(this)">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            {% trans "Yangi sabab" %}
-          </button>
+        <div class="inline-add" data-url="{% url 'sabab_qoshish' %}" data-target="{{ field.id_for_label }}"
+             data-list-url="{% url 'sabab_royhat' %}"
+             data-edit-url="{% url 'sabab_tahrirlash' 0 %}"
+             data-del-url="{% url 'sabab_ochirish' 0 %}">
+          <div class="inline-add-bar">
+            <button type="button" class="add-mini" onclick="sababToggle(this)">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              {% trans "Yangi sabab" %}
+            </button>
+            <button type="button" class="add-mini" onclick="sababManage(this)">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+              {% trans "Sabablarni boshqarish" %}
+            </button>
+          </div>
           <div class="add-mini-row" style="display:none">
             <input type="text" class="input add-mini-input" placeholder="{% trans 'Sabab nomi' %}">
             <button type="button" class="btn-add" onclick="sababSave(this)">{% trans "Qo‘shish" %}</button>
           </div>
+          <div class="sabab-manage" style="display:none"></div>
         </div>
         {% endif %}
         {% if field.help_text %}<div class="hint">{{ field.help_text }}</div>{% endif %}
@@ -92,6 +102,88 @@ function sababSave(btn) {
       else { sel.value = d.id; }
       input.value = '';
       box.querySelector('.add-mini-row').style.display = 'none';
+    });
+}
+
+// Sabablarni boshqarish: nomini o'zgartirish / o'chirish
+function sbEsc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+function sababManage(btn) {
+  var box = btn.closest('.inline-add');
+  var panel = box.querySelector('.sabab-manage');
+  if (panel.style.display !== 'none') { panel.style.display = 'none'; return; }
+  panel.style.display = 'block';
+  panel.innerHTML = '<div class="sb-empty">…</div>';
+  fetch(box.dataset.listUrl, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+    .then(function (r) { return r.json(); })
+    .then(function (d) { sababRender(panel, d.sabablar || []); });
+}
+
+function sababRender(panel, list) {
+  if (!list.length) {
+    panel.innerHTML = '<div class="sb-empty">{% trans "Hali sabablar yo‘q" %}</div>';
+    return;
+  }
+  panel.innerHTML = list.map(function (s) {
+    var band = s.soni > 0
+      ? '<span class="sb-count" title="{% trans "Ishlatilgan rasxodlar soni" %}">' + s.soni + '</span>'
+      : '';
+    return '<div class="sb-row" data-id="' + s.id + '">' +
+      '<input class="input sb-inp" value="' + sbEsc(s.nomi) + '">' + band +
+      '<button type="button" class="sb-btn sb-save" onclick="sababRename(this)" title="{% trans "Saqlash" %}">' +
+        '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+      '</button>' +
+      '<button type="button" class="sb-btn sb-del" onclick="sababDelete(this)" title="{% trans "O‘chirish" %}">' +
+        '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>' +
+      '</button>' +
+    '</div>';
+  }).join('');
+}
+
+function sababRename(btn) {
+  var box = btn.closest('.inline-add');
+  var row = btn.closest('.sb-row');
+  var id = row.dataset.id;
+  var nomi = row.querySelector('.sb-inp').value.trim();
+  if (!nomi) return;
+  var csrf = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  var fd = new FormData(); fd.append('nomi', nomi);
+  fetch(box.dataset.editUrl.replace('/0/', '/' + id + '/'),
+        { method: 'POST', body: fd, headers: { 'X-CSRFToken': csrf } })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d.xato) { if (window.showToast) showToast(d.xato, 'error'); return; }
+      var sel = document.getElementById(box.dataset.target);
+      Array.from(sel.options).forEach(function (o) { if (o.value == d.id) o.textContent = d.nomi; });
+      if (window.showToast) showToast('{% trans "Sabab yangilandi" %}', 'success');
+    });
+}
+
+function sababDelete(btn) {
+  var row = btn.closest('.sb-row');
+  // Ikki bosqichli tasdiq (browser confirm o'rniga)
+  if (btn.dataset.armed !== '1') {
+    btn.dataset.armed = '1';
+    btn.classList.add('sb-armed');
+    btn.setAttribute('title', '{% trans "Tasdiqlash uchun yana bosing" %}');
+    setTimeout(function () { btn.dataset.armed = ''; btn.classList.remove('sb-armed'); }, 3000);
+    return;
+  }
+  var box = btn.closest('.inline-add');
+  var id = row.dataset.id;
+  var csrf = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  fetch(box.dataset.delUrl.replace('/0/', '/' + id + '/'),
+        { method: 'POST', headers: { 'X-CSRFToken': csrf } })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d.xato) { if (window.showToast) showToast(d.xato, 'error'); return; }
+      var sel = document.getElementById(box.dataset.target);
+      Array.from(sel.options).forEach(function (o) { if (o.value == id) o.remove(); });
+      row.remove();
+      if (!box.querySelector('.sb-row')) {
+        box.querySelector('.sabab-manage').innerHTML = '<div class="sb-empty">{% trans "Hali sabablar yo‘q" %}</div>';
+      }
+      if (window.showToast) showToast('{% trans "Sabab o‘chirildi" %}', 'success');
     });
 }
 </script>

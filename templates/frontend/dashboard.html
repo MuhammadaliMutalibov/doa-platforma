@@ -23,7 +23,7 @@
 
   {# Moliya KPI (USD) — trend bilan, bosiladigan #}
   <div class="grid cols-5">
-    <a class="card kpi card-link reveal" href="{% url 'kirim_list' %}">
+    <a class="card kpi kpi-hero card-link reveal" href="{% url 'kirim_list' %}">
       <div class="kpi-top">
         <div class="stat-ico ico-emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
         {% if stats.inv_trend.bor %}<span class="trend {% if stats.inv_trend.up %}trend-up{% else %}trend-down{% endif %}">{% include 'frontend/_arrow.html' with up=stats.inv_trend.up %}{{ stats.inv_trend.foiz }}%</span>{% endif %}

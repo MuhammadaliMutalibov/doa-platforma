@@ -34,7 +34,8 @@
   --hover:         rgba(0, 0, 0, 0.04);
   --divider:       rgba(0, 0, 0, 0.06);
   --glow-op:       0.12;
-  --shadow:        0 10px 30px -14px rgba(0, 0, 0, 0.14);
+  --shadow:        0 1px 2px rgba(16,24,40,0.04), 0 12px 32px -12px rgba(16,24,40,0.12);
+  --shadow-lg:     0 2px 4px rgba(16,24,40,0.05), 0 24px 48px -16px rgba(16,24,40,0.18);
 
   /* Yashil sidebar (temadan qat'i nazar) */
   --sidebar-bg:        #0c4a34;
@@ -43,11 +44,13 @@
   --sidebar-hover:     rgba(255, 255, 255, 0.10);
   --sidebar-active-bg: rgba(255, 255, 255, 0.16);
 
-  --radius:        16px;
-  --radius-sm:     11px;
+  --radius:        20px;
+  --radius-sm:     13px;
+  --radius-lg:     26px;
   --sidebar-w:     264px;
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter",
+  --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
+  --ease: cubic-bezier(.22, 1, .36, 1);
 }
 
 /* ---- Dark (tungi) tema — override ---- */
@@ -217,6 +220,17 @@ button { font-family: inherit; cursor: pointer; }
   display: flex; flex-direction: column;
   padding: 22px 16px; position: sticky; top: 0; height: 100vh;
 }
+
+/* Kompyuterda sidebarni yopib/ochib qo'yish (ichkariga kirib-chiqadi) */
+@media (min-width: 861px) {
+  .sidebar {
+    overflow: hidden;
+    transition: width .28s var(--ease), padding .28s var(--ease), opacity .22s var(--ease);
+  }
+  html[data-nav="collapsed"] .sidebar {
+    width: 0; min-width: 0; padding-left: 0; padding-right: 0; opacity: 0; border-right: none;
+  }
+}
 .brand { display: flex; align-items: center; gap: 11px; padding: 4px 6px 22px; }
 .brand-logo {
   width: 54px; height: 54px; border-radius: 14px; flex-shrink: 0;
@@ -271,7 +285,7 @@ button { font-family: inherit; cursor: pointer; }
 .topbar .spacer { flex: 1; }
 .icon-btn {
   background: transparent; border: 1px solid var(--border); color: var(--text-muted);
-  width: 38px; height: 38px; border-radius: 10px; display: none; place-items: center;
+  width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
 }
 
 .userbox { display: flex; align-items: center; gap: 11px; }
@@ -380,11 +394,34 @@ img.avatar { object-fit: cover; }
 .acct-note { font-size: 0.72rem; color: var(--text-dim); padding: 0 18px 12px; text-align: center; }
 
 /* Xabarlar */
-.messages { margin-bottom: 18px; display: flex; flex-direction: column; gap: 10px; }
-.msg { padding: 12px 16px; border-radius: var(--radius-sm); font-size: 0.8438rem; border: 1px solid var(--border-strong); }
-.msg-warning { background: var(--warning-soft); border-color: var(--warning); color: var(--warning); }
-.msg-success { background: var(--primary-soft); border-color: var(--primary); color: var(--primary-2); }
-.msg-error { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+/* Toast bildirishnomalar (browser alert o'rniga — chiroyli, animatsiyali) */
+.toast-wrap {
+  position: fixed; top: 74px; right: 20px; z-index: 4000;
+  display: flex; flex-direction: column; gap: 12px;
+  width: 370px; max-width: calc(100vw - 32px); pointer-events: none;
+}
+.toast {
+  pointer-events: auto; display: flex; align-items: flex-start; gap: 12px;
+  background: var(--surface-solid); border: 1px solid var(--border-strong);
+  border-left-width: 4px; border-radius: 13px; padding: 13px 14px 13px 16px;
+  box-shadow: 0 16px 40px -14px rgba(0,0,0,0.3);
+  transform: translateX(120%); opacity: 0;
+  transition: transform .42s cubic-bezier(.2,.9,.3,1.15), opacity .3s;
+}
+.toast.show { transform: translateX(0); opacity: 1; }
+.toast.hide { transform: translateX(120%); opacity: 0; }
+.toast-ico { flex: none; width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; }
+.toast-ico svg { width: 19px; height: 19px; }
+.toast-msg { flex: 1; font-size: 0.875rem; color: var(--text); line-height: 1.4; padding-top: 6px; }
+.toast-x { flex: none; background: none; border: none; cursor: pointer; color: var(--text-dim); padding: 5px; border-radius: 6px; margin-top: 2px; }
+.toast-x:hover { background: var(--surface-2); color: var(--text); }
+.toast-success { border-left-color: var(--primary); }
+.toast-success .toast-ico { background: var(--primary-soft); color: var(--primary-2); }
+.toast-error { border-left-color: var(--danger); }
+.toast-error .toast-ico { background: var(--danger-soft); color: var(--danger); }
+.toast-warning, .toast-info, .toast-debug, .toast- { border-left-color: var(--warning); }
+.toast-warning .toast-ico, .toast-info .toast-ico, .toast-debug .toast-ico, .toast- .toast-ico { background: var(--warning-soft); color: var(--warning); }
+@media (max-width: 560px) { .toast-wrap { top: 64px; right: 10px; left: 10px; width: auto; } }
 
 .content { padding: 28px; max-width: 1280px; width: 100%; margin: 0 auto; }
 
@@ -392,11 +429,21 @@ img.avatar { object-fit: cover; }
    DASHBOARD — grafik, donut, trend, animatsiya
    ============================================================ */
 @keyframes reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-.reveal { animation: reveal .5s cubic-bezier(.2,.8,.2,1) both; }
-.reveal:nth-child(1) { animation-delay: .02s; }
-.reveal:nth-child(2) { animation-delay: .08s; }
-.reveal:nth-child(3) { animation-delay: .14s; }
-.reveal:nth-child(4) { animation-delay: .20s; }
+.reveal { animation: reveal .55s cubic-bezier(.2,.8,.2,1) both; }
+.reveal:nth-child(1) { animation-delay: .03s; }
+.reveal:nth-child(2) { animation-delay: .09s; }
+.reveal:nth-child(3) { animation-delay: .15s; }
+.reveal:nth-child(4) { animation-delay: .21s; }
+.reveal:nth-child(5) { animation-delay: .27s; }
+.reveal:nth-child(6) { animation-delay: .33s; }
+
+/* Gradient hero KPI karta (Donezo uslubi) */
+.card.kpi-hero { background: linear-gradient(145deg, #0e9f6e 0%, #0c6b49 55%, #0a4d37 100%); border: none; color: #fff; position: relative; overflow: hidden; }
+.kpi-hero::after { content: ''; position: absolute; right: -40px; top: -40px; width: 160px; height: 160px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%); }
+.kpi-hero .num, .kpi-hero .cap { color: #fff !important; }
+.kpi-hero .cap { opacity: .82; }
+.kpi-hero .stat-ico { background: rgba(255,255,255,0.18); color: #fff; }
+.kpi-hero .trend { background: rgba(255,255,255,0.18) !important; color: #fff !important; }
 
 /* KPI karta (trend bilan) */
 .kpi { display: flex; flex-direction: column; gap: 4px; }
@@ -420,7 +467,7 @@ img.avatar { object-fit: cover; }
 .chart-bars { display: flex; align-items: flex-end; justify-content: space-around; gap: 8px; height: 190px; margin-top: 20px; padding: 0 4px; }
 .bar-group { display: flex; flex-direction: column; align-items: center; gap: 9px; flex: 1; height: 100%; }
 .bars { display: flex; align-items: flex-end; justify-content: center; gap: 5px; height: 100%; width: 100%; }
-.bar { width: 42%; max-width: 20px; min-height: 2px; border-radius: 5px 5px 0 0; transform-origin: bottom; animation: growBar .9s cubic-bezier(.2,.8,.2,1) both; }
+.bar { width: 60%; max-width: 26px; min-height: 8px; border-radius: 999px; transform-origin: bottom; animation: growBar .9s cubic-bezier(.2,.8,.2,1) both; }
 .bar-inv { background: linear-gradient(180deg, var(--primary-2), var(--primary)); }
 .bar-rasxod { background: linear-gradient(180deg, #f87171, var(--danger)); }
 .bar-group:hover .bar { filter: brightness(1.08); }
@@ -462,17 +509,17 @@ img.avatar { object-fit: cover; }
 .cols-2 { grid-template-columns: repeat(2, 1fr); }
 
 .card {
-  background: var(--surface);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  background: var(--surface-solid);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 20px;
-  transition: border-color .18s, transform .18s;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  transition: border-color .2s, transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s;
 }
-.card:hover { border-color: var(--border-strong); }
+.card:hover { box-shadow: var(--shadow-lg); }
 .card-link { cursor: pointer; text-decoration: none; }
-.card-link:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow); }
-.card-link:active { transform: translateY(0); }
+.card-link:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.card-link:active { transform: translateY(-1px); }
 
 /* Balans kartasi */
 .bal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
@@ -752,13 +799,14 @@ th .th-label { display: inline-block; vertical-align: middle; }
   position: fixed; inset: 0; z-index: 100; background: rgba(0, 0, 0, 0.5);
   display: none; place-items: center; padding: 20px; backdrop-filter: blur(3px);
 }
-.modal-overlay.open { display: grid; animation: reveal .18s ease; }
+.modal-overlay.open { display: grid; animation: ov-in .25s ease both; }
+@keyframes ov-in { from { opacity: 0; } to { opacity: 1; } }
 .modal {
   width: 100%; max-width: 400px; background: var(--surface-solid);
-  border: 1px solid var(--border-strong); border-radius: 18px; padding: 28px 26px; text-align: center;
-  box-shadow: var(--shadow); animation: modalPop .22s cubic-bezier(.2,.9,.3,1);
+  border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 28px 26px; text-align: center;
+  box-shadow: var(--shadow-lg); animation: dlg-in .34s var(--ease) both;
 }
-@keyframes modalPop { from { transform: scale(.9); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes dlg-in { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
 .modal-ico { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 16px; background: var(--danger-soft); color: var(--danger); }
 .modal-ico svg { width: 26px; height: 26px; }
 .modal h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
@@ -774,14 +822,14 @@ th .th-label { display: inline-block; vertical-align: middle; }
 /* ---- Ro'yxat / jadval qo'shimchalari ---- */
 .btn-add, .panel-head a.btn-add {
   display: inline-flex; align-items: center; gap: 7px;
-  padding: 9px 16px; border-radius: 10px;
+  padding: 10px 18px; border-radius: 999px;
   background: linear-gradient(135deg, #059669, #047857);
   color: #ffffff; font-weight: 700; font-size: 0.8438rem;
-  box-shadow: 0 6px 18px -8px var(--primary-glow); transition: filter .15s, transform .12s;
+  box-shadow: 0 8px 20px -8px var(--primary-glow); transition: filter .15s, transform .16s, box-shadow .2s;
 }
 .btn-add svg { stroke: #ffffff; }
-.btn-add:hover { filter: brightness(1.07); }
-.btn-add:active { transform: translateY(1px); }
+.btn-add:hover { filter: brightness(1.07); transform: translateY(-2px); box-shadow: 0 12px 26px -8px var(--primary-glow); }
+.btn-add:active { transform: translateY(0); }
 .row-link { cursor: pointer; transition: background .12s; }
 .row-link:hover { background: var(--hover); }
 .pager { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 18px; font-size: 0.8125rem; color: var(--text-muted); }
@@ -811,13 +859,34 @@ input[type="file"].input::file-selector-button {
 .add-mini-row { display: flex; gap: 8px; margin-top: 8px; }
 .add-mini-row .input { flex: 1; padding: 9px 12px; }
 .add-mini-row .btn-add { white-space: nowrap; }
+.inline-add-bar { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Sabablarni boshqarish paneli */
+.sabab-manage { margin-top: 10px; display: flex; flex-direction: column; gap: 7px; }
+.sb-empty { font-size: .82rem; color: var(--muted); padding: 6px 2px; }
+.sb-row { display: flex; align-items: center; gap: 7px; }
+.sb-row .sb-inp { flex: 1; padding: 8px 11px; }
+.sb-count { flex: none; min-width: 22px; height: 22px; padding: 0 7px; display: inline-flex;
+  align-items: center; justify-content: center; font-size: .72rem; font-weight: 700;
+  color: var(--primary-2); background: var(--primary-soft); border-radius: 999px; }
+.sb-btn { flex: none; width: 34px; height: 34px; display: inline-flex; align-items: center;
+  justify-content: center; border: 1px solid var(--border-strong); background: var(--surface-solid);
+  border-radius: 10px; color: var(--muted);
+  transition: transform .18s var(--ease), background-color .18s var(--ease), color .18s var(--ease), border-color .18s var(--ease); }
+.sb-btn:hover { transform: translateY(-1px); }
+.sb-btn:active { transform: scale(.94); }
+.sb-save:hover { color: #fff; background: var(--primary); border-color: var(--primary); }
+.sb-del:hover { color: #e5484d; border-color: #e5484d; background: #e5484d12; }
+.sb-del.sb-armed { color: #fff; background: #e5484d; border-color: #e5484d; animation: sb-pulse .4s var(--ease); }
+@keyframes sb-pulse { from { transform: scale(.88); } to { transform: scale(1); } }
 .err { font-size: 0.7812rem; color: var(--danger); margin-top: 5px; }
 .form-actions { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border); }
 .btn-ghost {
-  display: inline-flex; align-items: center; padding: 12px 22px; border-radius: var(--radius-sm);
+  display: inline-flex; align-items: center; padding: 11px 22px; border-radius: 999px;
   border: 1px solid var(--border-strong); color: var(--text-muted); font-weight: 600; font-size: 0.875rem; transition: all .15s;
 }
-.btn-ghost:hover { color: var(--text); border-color: var(--text-dim); }
+.btn-ghost:hover { color: var(--text); border-color: var(--primary); }
+.btn-exp { border-radius: 999px !important; }
 
 /* ============================================================
    RESPONSIVE
@@ -832,3 +901,31 @@ input[type="file"].input::file-selector-button {
   .userbox .who { display: none; }
 }
 @media (max-width: 560px) { .cols-4, .cols-5, .cols-2, .form-grid { grid-template-columns: 1fr; } .content { padding: 18px; } .topbar { padding: 14px 16px; } }
+
+/* ============================================================
+   Fernly uslubidagi silliq micro-interaction'lar (--ease)
+   ============================================================ */
+.btn, .btn-add, .btn-ghost, .btn-danger, .btn-exp, .icon-btn,
+.theme-toggle, .dd-btn, .fs-opt, .add-mini, .pager a, .filial-switch {
+  transition: transform .22s var(--ease), background-color .2s var(--ease),
+              box-shadow .2s var(--ease), color .2s var(--ease),
+              border-color .2s var(--ease), filter .2s var(--ease);
+}
+.btn:active, .btn-add:active, .btn-ghost:active,
+.btn-danger:active, .btn-exp:active, .add-mini:active { transform: scale(.96); }
+.icon-btn:hover, .theme-toggle:hover, .bell:hover { transform: translateY(-2px); }
+.icon-btn:active, .theme-toggle:active { transform: translateY(0) scale(.93); }
+.nav-item { transition: background-color .18s var(--ease), color .18s var(--ease), transform .18s var(--ease); }
+.nav-item:active { transform: scale(.98); }
+
+/* Ikki halqali yashil fokus ringi (faqat klaviatura bilan) */
+:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--surface-solid), 0 0 0 5px var(--primary); }
+.input:focus-visible { box-shadow: 0 0 0 3px var(--primary-soft); border-color: var(--primary); }
+
+/* Harakatni kamaytirish rejimini hurmat qilish (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important; scroll-behavior: auto !important;
+  }
+}

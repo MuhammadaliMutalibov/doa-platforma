@@ -56,6 +56,14 @@
       <tr><td colspan="{{ headers|length|add:1 }}" class="empty">{% trans "Hozircha yozuv yo‘q" %}</td></tr>
       {% endfor %}
     </tbody>
+    {% if totals %}
+    <tfoot>
+      <tr style="font-weight: bold; background: var(--bg-hover, #f8f9fa);">
+        {% for tot in totals %}<td>{{ tot }}</td>{% endfor %}
+        <td></td>
+      </tr>
+    </tfoot>
+    {% endif %}
   </table>
   </div>
 

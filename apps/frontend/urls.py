@@ -46,6 +46,9 @@ urlpatterns = [
     path('rasxod/yangi/', views.RasxodCreate.as_view(), name='rasxod_add'),
     path('rasxod/<int:pk>/', views.RasxodUpdate.as_view(), name='rasxod_edit'),
     path('rasxod/sabab/qoshish/', views.sabab_qoshish, name='sabab_qoshish'),
+    path('rasxod/sabab/royhat/', views.sabab_royhat, name='sabab_royhat'),
+    path('rasxod/sabab/<int:pk>/tahrirlash/', views.sabab_tahrirlash, name='sabab_tahrirlash'),
+    path('rasxod/sabab/<int:pk>/ochirish/', views.sabab_ochirish, name='sabab_ochirish'),
 
     # Maosh
     path('maosh/', views.MaoshList.as_view(), name='maosh_list'),
@@ -63,6 +66,12 @@ urlpatterns = [
     path('joja-ochirish/', views.JojaOchirishList.as_view(), name='joja_list'),
     path('joja-ochirish/yangi/', views.JojaOchirishCreate.as_view(), name='joja_add'),
     path('joja-ochirish/<int:pk>/', views.JojaOchirishUpdate.as_view(), name='joja_edit'),
+    path('kunlik-log/', views.KunlikLogList.as_view(), name='kunlik_log_list'),
+    path('kunlik-log/yangi/', views.KunlikLogCreate.as_view(), name='kunlik_log_add'),
+    path('kunlik-log/<int:pk>/', views.KunlikLogUpdate.as_view(), name='kunlik_log_edit'),
+    path('salomatlik/', views.EmlashList.as_view(), name='emlash_list'),
+    path('salomatlik/yangi/', views.EmlashCreate.as_view(), name='emlash_add'),
+    path('salomatlik/<int:pk>/', views.EmlashUpdate.as_view(), name='emlash_edit'),
 
     # Partiyalar
     path('partiyalar/', views.PartiyaList.as_view(), name='partiya_list'),
