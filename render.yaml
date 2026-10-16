@@ -35,9 +35,4 @@ services:
         value: ".onrender.com"
       - key: CSRF_TRUSTED_ORIGINS
         value: "https://*.onrender.com"
-      - key: DJANGO_SUPERUSER_USERNAME
-        value: admin
-      - key: DJANGO_SUPERUSER_EMAIL
-        value: admin@doa.local
-      - key: DJANGO_SUPERUSER_PASSWORD
-        sync: false                   # parolni Render dashboard'da o'zingiz kiritasiz
+      # Admin va barcha ma'lumotlar mavjud bazadan ko'chiriladi (loaddata).
